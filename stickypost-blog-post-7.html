@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>84% of Executives Check Your Social Before They Call You. What Are They Finding? — StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── ARTICLE ── */
+        .article-wrapper {
+            background: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 1.5em;
+        }
+
+        article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        article h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        article a:hover {
+            color: #c44e32;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.4em;
+        }
+
+        article li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 0.5em;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            background: rgba(178, 232, 227, 0.15);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ── CTA BOX ── */
+        .cta-box {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--pale-teal);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .cta-button:hover {
+            background: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--charcoal);
+            padding: 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+        }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(253, 252, 250, 0.45);
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pale-teal);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 110px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            article p,
+            article li {
+                font-size: 1.05rem;
+            }
+
+            article h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-tag">Buyer Behavior</span>
+        <h1>84% of Executives Check Your Social Before They Call You. What Are They Finding?</h1>
+        <div class="hero-meta">
+            By <strong>Clarisse</strong>, Founder of StickyPost.Social &nbsp;&middot;&nbsp; February 24, 2026
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article>
+
+            <p>Here's something that keeps me up at night on behalf of our clients — and should probably keep you up too. Right now, somewhere, a potential client or customer is looking at your company's social media. They're scrolling your LinkedIn. They're checking your Instagram. They're forming an opinion about whether your business is legitimate, current, and worth their money.</p>
+
+            <p>And most service businesses have absolutely no idea this is happening.</p>
+
+            <p>According to Sprinklr, <strong>84% of executives review a company's social media presence before deciding to work with them</strong>. Not some of them. Not a small slice. Eighty-four percent. That means for every ten decision-makers who might hire your firm, more than eight are going to look at your social pages before they ever pick up the phone.</p>
+
+            <p>The question isn't whether they're looking. They are. The question is: what are they finding when they get there?</p>
+
+            <h2>The Invisible Pipeline Leak</h2>
+
+            <p>This is the part that stings. Because unlike a bad website or a poorly written proposal — things you'd eventually notice and fix — a dead or weak social media presence kills deals you never even knew existed.</p>
+
+            <p>Think about it. A prospect hears about your accounting firm from a colleague. They Google you, land on your site, and it looks fine. Professional enough. Then they do what 75% of B2B buyers do, according to Sopro — they check your social media to help make their purchasing decision. They find a LinkedIn page with a blurry logo, a cover image from 2021, and your last post was seven months ago wishing everyone a happy Fourth of July.</p>
+
+            <p>They don't call. They don't email. They just... move on to the next firm. And you never know they existed.</p>
+
+            <p>That's the invisible pipeline leak. Leads are coming in, doing their homework, deciding against you, and leaving without a trace. No bounced email. No missed call. No notification. Just silence — and a prospect who chose someone else because their company page looked like it belonged to a business that was still open.</p>
+
+            <h2>What Prospects Are Actually Looking For</h2>
+
+            <p>When someone lands on your company page, they're not looking for viral content. They're not expecting you to be some kind of social media powerhouse with millions of followers. What they are looking for is much simpler — and much more telling.</p>
+
+            <p><strong>Recent activity.</strong> Is this business active? Is anyone home? A page with consistent, recent posts signals that the company is running, engaged, and paying attention. A page that hasn't posted in months signals the opposite — whether that's fair or not.</p>
+
+            <p><strong>Professionalism.</strong> Does the page look like someone cares about it? Are the visuals clean? Is the messaging coherent? Does it feel like a real business with a real brand — or does it look like someone's nephew set it up in 2019 and nobody's touched it since?</p>
+
+            <p><strong>Proof of expertise.</strong> This is the big one for service businesses. Prospects want signals that you actually know your stuff. Thoughtful posts about your industry. Insights that show you're paying attention to trends and changes. Content that demonstrates you're not just operating — you're leading.</p>
+
+            <p>None of this requires going viral. It requires showing up consistently with content that looks and reads like it came from a business that takes itself seriously.</p>
+
+            <h2>The Dead Page Tax</h2>
+
+            <p>There's a real cost to having a social presence that's been neglected — and it's steeper than most people realize.</p>
+
+            <p>When your last post is from six months ago, here's what that actually communicates to a prospect: This company might not be doing well. They might be too disorganized to keep up with basic marketing. They might not care about their brand. Or worst of all — maybe they're not even around anymore.</p>
+
+            <p>None of those might be true. Your firm could be crushing it. You might be turning away business because you're at capacity. But the prospect doesn't know that. All they see is a silent page. And silence gets interpreted as absence.</p>
+
+            <div class="pull-quote">
+                <p>"81% of B2B buyers already have a preferred vendor before they ever make first contact. The decision was made during the research phase — not during your sales call." — 6sense</p>
+            </div>
+
+            <p>Read that again. Eighty-one percent have already picked their favorite before anyone even talks to a sales rep. Demand Gen Report backs this up — B2B buyers are typically 80% through their buying process before they reach out. That means by the time someone calls your office or fills out your contact form, the evaluation is basically done. Your social pages were part of that evaluation whether you wanted them to be or not.</p>
+
+            <p>If your pages were dead during that research phase, you didn't just miss an opportunity. You were never even in the running.</p>
+
+            <h2>Why This Hits Service Businesses Harder</h2>
+
+            <p>Product companies have a built-in advantage here. If you sell a physical product, a prospect can look at photos, read reviews, compare specs. The product itself is tangible proof of what they're buying.</p>
+
+            <p>Service businesses don't have that luxury. You're selling expertise. Trust. A promise that your team will deliver something valuable — something the buyer can't hold in their hands before they pay for it. That makes the trust gap wider, and it makes every trust signal matter more.</p>
+
+            <p>Your social presence is one of the biggest trust signals available to you. It's public. It's free to access. And prospects are already trained to look at it — 58% of consumers discover new businesses through social media, according to Sprout Social, which now beats traditional search. And once they find you? 77% of consumers say they're more likely to buy from a brand they follow on social.</p>
+
+            <p>For a law firm, an IT managed services company, a healthcare consulting practice — where the "product" is invisible until the engagement starts — your company page is doing heavy lifting that nothing else can. It's showing prospects who you are, how you think, and whether you feel like the kind of firm they want to work with.</p>
+
+            <p>This is especially true in healthcare. 78% of patients check a dental practice's social media before booking an appointment, according to dental industry research. Not the website. The social. If that number holds even roughly true across other healthcare verticals — physical therapy, mental health, medical billing — then a neglected social page isn't just a branding problem. It's a patient acquisition problem.</p>
+
+            <p>And for B2B? A study published in Cogent Business & Management found that 92.5% of people use social media to inform their purchase decisions. That's not just a majority — that's practically everyone. If your company page isn't part of the conversation, you're effectively invisible during the exact moment your prospects are making up their minds.</p>
+
+            <h2>What a Strong Company Page Actually Does</h2>
+
+            <p>A well-managed company page doesn't just prevent lost deals. It actively pulls prospects closer — even when you're not in the room.</p>
+
+            <p>Here's what happens when your social presence is working the way it should:</p>
+
+            <p><strong>It pre-sells before the first conversation.</strong> Remember that 81% stat? If buyers are choosing their preferred vendor before they even make contact, your content is your first impression, your pitch, and your credibility check — all rolled into one. A strong page means they show up to the discovery call already warm. Already leaning your way. Already half-sold.</p>
+
+            <p><strong>It builds familiarity over time.</strong> Not every prospect is ready to buy today. But when they see your company consistently showing up in their feed — sharing smart takes, posting useful content, looking sharp — you stay in their mental shortlist. When the need arises, you're the first name they think of. Not because you cold-called them. Because you were already there.</p>
+
+            <p><strong>It validates referrals.</strong> Someone refers a friend to your firm. First thing that friend does? Checks your social. If your page backs up the referral — looks professional, active, credible — you've reinforced the trust that referral created. If your page is dead, you've just undercut the best marketing channel in existence.</p>
+
+            <p><strong>It works while you sleep.</strong> Your team goes home at 5 PM. Your sales team isn't answering calls at midnight. But your company pages are there 24/7, and prospects research on their own schedule. A strong social presence means your brand is making a good impression at 11 PM on a Tuesday when someone finally gets around to Googling "HR consulting firms near me" and lands on your LinkedIn.</p>
+
+            <h2>If This Made You Cringe at Your Own Page</h2>
+
+            <p>Look — if you just mentally pulled up your company's LinkedIn or Instagram and felt a little knot in your stomach, you're not alone. Most professional service businesses know their social media isn't where it should be. They've just been too busy doing the actual work to deal with it.</p>
+
+            <p>That's completely fair. You got into accounting or law or IT services because you're great at that work, not because you wanted to spend your evenings writing LinkedIn posts and designing Instagram carousels.</p>
+
+            <p>But the data is pretty clear. Your prospects are checking. They're forming opinions. And for most service businesses, those opinions are being shaped by a page that doesn't come close to reflecting how good the actual business is.</p>
+
+            <p>That's the gap we close at StickyPost.Social. We take over your company pages — all of them, across every platform that matters — and make them look like they belong to the business you've actually built. Full team behind every account: strategist, designer, video editor, project manager. Not one overwhelmed social media manager trying to do everything. A real team that studies your business, your industry, and your audience before we create a single post.</p>
+
+            <p>Month-to-month. No lock-in contracts. If the work doesn't speak for itself, you can walk. But our clients don't — because the content is good and the process is painless.</p>
+
+            <p>Your next client is already researching you. Let's make sure they like what they find.</p>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Ready to Fix What Prospects Are Finding?</h3>
+                <p>Your company page is making a first impression whether you manage it or not. We make sure it's the right one — across every platform, every month.</p>
+                <a href="stickypost-website-v4.html" class="cta-button">See How We Work</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <a href="stickypost-website-v4.html">StickyPost.Social</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

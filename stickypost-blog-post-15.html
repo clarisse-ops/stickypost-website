@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Happens After You Sign Up: Our Onboarding Process Start to Finish | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --charcoal: #272626; --cream: #FDFCFA; --terracotta: #DC5A3B; --teal: #30A5A5; --pale-teal: #B2E8E3; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--charcoal); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: var(--charcoal); padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--cream); text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase; }
+        .nav-logo span { color: var(--terracotta); }
+        .logo-i { text-transform: lowercase; color: inherit !important; }
+        .nav-right { display: flex; align-items: center; gap: 28px; }
+        .nav-link { font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--pale-teal); text-decoration: none; transition: color 0.2s; }
+        .nav-link:hover { color: var(--cream); }
+        .nav-cta { font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--cream); background-color: var(--terracotta); padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: background-color 0.2s, transform 0.15s; }
+        .nav-cta:hover { background-color: #c44e32; transform: translateY(-1px); }
+        .hero { background-color: var(--charcoal); padding: 140px 40px 80px; text-align: center; }
+        .hero-tag { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--charcoal); background-color: var(--teal); padding: 5px 14px; border-radius: 4px; margin-bottom: 28px; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 3rem; line-height: 1.15; color: var(--cream); max-width: 940px; margin: 0 auto 28px; text-transform: uppercase; }
+        .hero-meta { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--pale-teal); line-height: 1.6; }
+        .hero-meta .author { font-weight: 600; color: var(--cream); }
+        .hero-meta .separator { margin: 0 10px; opacity: 0.4; }
+        .article-wrapper { background-color: var(--cream); padding: 64px 24px 80px; }
+        .article { max-width: 880px; margin: 0 auto; }
+        .article p { font-size: 1.125rem; line-height: 1.8; color: var(--charcoal); margin-bottom: 1.5em; }
+        .article p.intro { font-size: 1.25rem; font-weight: 500; line-height: 1.7; color: var(--charcoal); }
+        .article h2 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.75rem; color: var(--charcoal); margin-top: 2.5em; margin-bottom: 0.75em; text-transform: uppercase; letter-spacing: 0.3px; }
+        .article h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 1.35rem; color: var(--charcoal); margin-top: 2em; margin-bottom: 0.6em; }
+        .article strong { font-weight: 600; }
+        .article a { color: var(--terracotta); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .article a:hover { color: #c44e32; }
+        .article ul, .article ol { font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5em; padding-left: 1.5em; }
+        .article li { margin-bottom: 0.5em; }
+        .pull-quote { border-left: 4px solid var(--teal); padding: 24px 28px; margin: 2.5em 0; background-color: #f3fafa; border-radius: 0 8px 8px 0; }
+        .pull-quote p { font-size: 1.15rem; font-weight: 500; line-height: 1.7; color: var(--charcoal); margin-bottom: 0; }
+        .cta-box { background-color: var(--charcoal); border-radius: 12px; padding: 48px 40px; text-align: center; margin-top: 3.5em; }
+        .cta-box h3 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.6rem; color: var(--cream); margin-bottom: 12px; text-transform: uppercase; }
+        .cta-box p { font-size: 1.05rem; color: var(--pale-teal); margin-bottom: 28px; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .cta-box .cta-button { display: inline-block; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--cream); background-color: var(--terracotta); padding: 14px 36px; border-radius: 8px; text-decoration: none; transition: background-color 0.2s, transform 0.15s; }
+        .cta-box .cta-button:hover { background-color: #c44e32; transform: translateY(-2px); }
+        footer { background-color: var(--charcoal); padding: 40px; text-align: center; }
+        .footer-logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--cream); margin-bottom: 8px; text-transform: uppercase; }
+        .footer-logo span { color: var(--terracotta); }
+        .footer-text { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--pale-teal); opacity: 0.6; }
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; height: 56px; }
+            .nav-logo { font-size: 1.1rem; }
+            .nav-right { gap: 16px; }
+            .nav-link { display: none; }
+            .nav-cta { font-size: 0.8rem; padding: 8px 16px; }
+            .hero { padding: 120px 20px 56px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-meta { font-size: 0.85rem; }
+            .hero-meta .separator { display: none; }
+            .hero-meta span { display: block; margin-bottom: 4px; }
+            .article-wrapper { padding: 40px 20px 56px; }
+            .article p, .article ul, .article ol { font-size: 1rem; }
+            .article p.intro { font-size: 1.1rem; }
+            .article h2 { font-size: 1.5rem; }
+            .pull-quote { padding: 20px 22px; margin: 2em 0; }
+            .pull-quote p { font-size: 1.05rem; }
+            .cta-box { padding: 36px 24px; }
+            .cta-box h3 { font-size: 1.35rem; }
+            footer { padding: 32px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-tag">Process</div>
+        <h1>What Happens After You Sign Up: Our Onboarding Process Start to Finish</h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>March 28, 2026 · 7 min read</span>
+        </div>
+    </section>
+
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">One of the most common questions we get before someone signs up is: "Okay, but what actually happens after I say yes?" Fair question. Most agencies are vague about what comes next — and that vagueness is usually hiding a messy process. Ours isn't. We've done this enough times to have it dialed in, and we move fast. Here's exactly what onboarding looks like from the moment you sign up to the moment your first posts go live.</p>
+
+            <h2>Before Week 1: The Research Phase</h2>
+
+            <p>This starts the second you come on. Before we design anything, write anything, or build anything — our entire team researches your business. Not just the strategist. Every person on the team — strategist, designer, video editor, project manager — independently digs into your company, your competitors, your audience, and your industry.</p>
+
+            <p>We look at your website, your existing social presence (even if it's dead — that tells us something), your competitors' pages, your reviews, your team, your culture. By the time we get on the onboarding call, we already have a working understanding of who you are and how you should show up on social.</p>
+
+            <p>This is the one part of the process we never rush. The research is what makes everything after it work. It's why clients tell us they're surprised by how prepared we are on the first call. It's why the content sounds like it came from inside their company. And it's why we can move so fast once we get going — because we're not guessing. We already know.</p>
+
+            <div class="pull-quote">
+                <p>We study our clients like they're our own company. That research phase is non-negotiable — it's the foundation everything else is built on.</p>
+            </div>
+
+            <h2>Week 1: Design, Copy, and Internal Review</h2>
+
+            <p>Once the onboarding call is done and we have everything we need, the team gets to work — and we move fast.</p>
+
+            <p>The designer builds custom templates for your brand. Not Canva templates pulled from the internet — templates designed specifically for your account. Your colors, your fonts, your visual tone. If someone from your company saw the posts without the logo, they'd still recognize them.</p>
+
+            <p>At the same time, the strategist is building the content strategy and writing captions from scratch. Every caption is written in your voice — the way your company would actually talk to your audience. LinkedIn gets longer, more thought-leadership style copy. Instagram is tighter, more direct. Facebook sits somewhere in between. Every caption has a specific purpose and a clear call to action.</p>
+
+            <p>The video editor is building reel and short-form video templates — text-based reels with motion graphics that match the brand. No one needs to get on camera.</p>
+
+            <p>Before any of this reaches you, the whole team reviews it together. The project manager coordinates the internal review — making sure the designs, copy, and strategy all align. The designer might catch a copy issue. The strategist might flag a design that doesn't match the tone. The video editor might suggest turning a static post into a reel because it would perform better that way.</p>
+
+            <p>All of this — design, copy, video, internal review — happens in week one. Four people working in parallel on the same account. That's why it moves fast.</p>
+
+            <h2>Week 2: Client Approval, Content Calendar, and Go Live</h2>
+
+            <p>Week two is where you come in. We send over the templates and designs for your approval. You review the look, the feel, the direction. Most clients — and we're genuinely proud of this — approve everything on the first round. Not because they're not paying attention, but because the content actually sounds and looks like their brand. If there are changes, we turn them around fast. No drama.</p>
+
+            <p>Once templates are approved, we build out the full content calendar. Depending on your package, that's either a full month or two weeks of content. Every post is laid out: the graphic, the caption, the date, the platform. You can see exactly what's going on your pages before anything goes live.</p>
+
+            <p>The content calendar goes back to you for approval within the same week. Once you sign off, we schedule and publish using native platform tools — not third-party schedulers. We post directly through LinkedIn, Instagram, Facebook, and wherever else you're active. We've found that native posting gives better reach and fewer formatting issues.</p>
+
+            <p>By the end of week two, your content is live and running. Two weeks from onboarding to posts going out. That's the pace we operate at.</p>
+
+            <h2>From There: It Becomes a Smooth Monthly Cycle</h2>
+
+            <p>Once onboarding is done, it turns into a consistent monthly process. We create, you approve, we post. The strategist reviews performance data each month and adjusts the plan based on what's working. If carousels are outperforming single images, we shift the mix. If a certain topic is getting traction, we build on it.</p>
+
+            <p>Clients on our Growth and Premium plans get performance reporting so they can see what's happening. No vanity metrics — just the numbers that actually matter for your business.</p>
+
+            <p>You stop thinking about social media. You stop worrying about what to post, when to post, or whether your company page looks dead. That's our job now.</p>
+
+            <h2>Why We Can Move This Fast</h2>
+
+            <p>Two weeks from sign-up to live content sounds aggressive. And it is — but it's not rushed. The reason we can do it is the team structure. Four people working in parallel, each with a specific skill set, each already informed by the research phase. We're not waiting on one overworked social media manager to get through a backlog. We're running a production cycle built for speed and quality at the same time.</p>
+
+            <p>The research doesn't get diluted. The design doesn't get templated. The copy doesn't get generic. We just don't waste time between steps. When the research is done, we build. When the build is done, we review. When the review is done, you approve. When you approve, we go live. No dead time. No unnecessary back-and-forth. Just a clean process that works.</p>
+
+            <p>That's what four years of doing this has taught us — how to move fast without sacrificing the things that make the content actually good.</p>
+
+            <div class="cta-box">
+                <h3>Want This for Your Company Page?</h3>
+                <p>We handle everything — strategy, design, copy, scheduling, reporting. You approve the content and get back to running your business.</p>
+                <a href="stickypost-contact.html" class="cta-button">Book a Discovery Call</a>
+            </div>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

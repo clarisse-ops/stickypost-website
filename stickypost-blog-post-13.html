@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Tried an Agency Before and It Didn't Work. Here's Why. | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span { color: var(--terracotta); }
+        .logo-i { text-transform: lowercase; color: inherit !important; }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: var(--cream); }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background-color: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            background-color: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background-color: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 28px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta .author { font-weight: 600; color: var(--cream); }
+        .hero-meta .separator { margin: 0 10px; opacity: 0.4; }
+
+        .article-wrapper {
+            background-color: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        .article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.5em;
+        }
+
+        .article p.intro {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .article strong { font-weight: 600; }
+
+        .article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .article a:hover { color: #c44e32; }
+
+        .article ul, .article ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            padding-left: 1.5em;
+        }
+
+        .article li { margin-bottom: 0.5em; }
+
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            padding: 24px 28px;
+            margin: 2.5em 0;
+            background-color: #f3fafa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 0;
+        }
+
+        .cta-box {
+            background-color: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .cta-box p {
+            font-size: 1.05rem;
+            color: var(--pale-teal);
+            margin-bottom: 28px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-box .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .cta-box .cta-button:hover {
+            background-color: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--charcoal);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .footer-logo span { color: var(--terracotta); }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pale-teal);
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; height: 56px; }
+            .nav-logo { font-size: 1.1rem; }
+            .nav-right { gap: 16px; }
+            .nav-link { display: none; }
+            .nav-cta { font-size: 0.8rem; padding: 8px 16px; }
+            .hero { padding: 120px 20px 56px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-meta { font-size: 0.85rem; }
+            .hero-meta .separator { display: none; }
+            .hero-meta span { display: block; margin-bottom: 4px; }
+            .article-wrapper { padding: 40px 20px 56px; }
+            .article p, .article ul, .article ol { font-size: 1rem; }
+            .article p.intro { font-size: 1.1rem; }
+            .article h2 { font-size: 1.5rem; }
+            .pull-quote { padding: 20px 22px; margin: 2em 0; }
+            .pull-quote p { font-size: 1.05rem; }
+            .cta-box { padding: 36px 24px; }
+            .cta-box h3 { font-size: 1.35rem; }
+            footer { padding: 32px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-tag">Agency Life</div>
+        <h1>We Tried an Agency Before and It Didn't Work. Here's Why.</h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>March 28, 2026 · 7 min read</span>
+        </div>
+    </section>
+
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">We hear this on almost every discovery call. "We tried an agency before. It didn't work." And every time, the story sounds almost identical: they hired someone, handed over their accounts, waited a couple months, saw nothing meaningful happen, and walked away feeling like they wasted their money. So now they're skeptical. And honestly? They should be.</p>
+
+            <p>Because most of the time, it wasn't a bad investment in the concept of social media. It was a bad experience with an agency that wasn't set up to do the job right. And when you understand what actually went wrong, the pattern is pretty clear.</p>
+
+            <h2>Problem #1: One Person Doing Seven Jobs</h2>
+
+            <p>This is the most common setup at most agencies. You get assigned a "social media manager" — one person who's supposed to handle your strategy, write your captions, design your graphics, edit your videos, schedule your posts, respond to comments, and report on performance. All for one client. Usually while juggling four or five others at the same time.</p>
+
+            <p>It doesn't matter how talented that person is. That workload isn't sustainable, and the quality suffers. The graphics start looking like Canva templates. The captions get generic. The strategy stops evolving because there's no time to think — just time to post.</p>
+
+            <p>At StickyPost, every client gets a strategist, a designer, a video editor, and a project manager. Four people, four skill sets, all working on your account. That's not a luxury add-on — it's the minimum you need to do this well.</p>
+
+            <h2>Problem #2: They Never Learned Your Business</h2>
+
+            <p>Most agencies onboard you with a questionnaire. Maybe a 30-minute kickoff call. Then they start posting. And the content feels... off. It's technically fine — nice enough graphics, decent captions — but it doesn't sound like you. It doesn't reflect how your business actually works, who your clients really are, or what makes you different from the twelve other companies doing the same thing.</p>
+
+            <p>That's because they never dug in. They took surface-level information and started producing surface-level content.</p>
+
+            <div class="pull-quote">
+                <p>When we onboard a new client, every person on the team independently researches the business before we create anything. The strategist, the designer, the video editor, the project manager — they all go deep. Then we come together and brainstorm. Four perspectives, not one.</p>
+            </div>
+
+            <p>That research phase is why our clients regularly tell us the content sounds like it came from inside their company. Because in a way, it did. We studied them like we work there.</p>
+
+            <h2>Problem #3: No Real Strategy — Just Posting</h2>
+
+            <p>There's a massive difference between "posting on social media" and "running a social media strategy." A lot of agencies are just posting. They're filling a content calendar with whatever feels right that week, scheduling it, and moving on. There's no plan behind what they're creating, no reason a specific post exists on a specific day, and no connection between what goes out this month and what went out last month.</p>
+
+            <p>Real strategy means every piece of content has a purpose. It's tied to your business goals, your audience's pain points, and a content plan that builds on itself over time. You should be able to look at three months of content and see a clear arc — not random disconnected posts that could belong to any company in any industry.</p>
+
+            <h2>Problem #4: They Disappeared After the Sale</h2>
+
+            <p>You signed the contract, paid the invoice, and then... silence. Maybe you get a content calendar dropped in your inbox once a month. Maybe you don't. When you have questions, it takes two days to get a reply. When you want changes, it feels like pulling teeth. The energy they had during the sales process evaporated the moment you became a client.</p>
+
+            <p>Communication is half the job. If you're managing someone's brand — their public-facing presence — and you're not responsive, organized, and easy to work with, the relationship is dead on arrival. One of our clients put it perfectly: "organized, communicative, and consistently responsive." That's not a bonus. That's the baseline.</p>
+
+            <h2>Problem #5: Lock-In Contracts Hiding Bad Work</h2>
+
+            <p>A lot of agencies lock you into 6- or 12-month contracts. And there's a reason for that — it's not because they're confident you'll be thrilled with the results. It's because they know there's a decent chance you won't be, and they want your money anyway.</p>
+
+            <p>We don't do contracts. Every plan is month-to-month. You stay because the work is good, not because a contract says you have to. If we're not delivering, you should leave. That pressure keeps us sharp. It means we can't coast. And honestly, that's how it should be.</p>
+
+            <h2>So What Does "Working" Actually Look Like?</h2>
+
+            <p>When social media is done right for a professional service business, here's what happens:</p>
+
+            <ul>
+                <li>Your company page looks like a business that's active, professional, and worth paying attention to</li>
+                <li>Prospects who find you on social already trust you before the first call — they've been watching your content for weeks or months</li>
+                <li>Your team stops getting asked "do you guys even have a social media presence?"</li>
+                <li>Engagement builds slowly but consistently — more profile visits, more follows, more DMs, more "I saw your post" conversations</li>
+                <li>You stop thinking about social media entirely because someone else is handling it and doing it well</li>
+            </ul>
+
+            <p>That's not magic. That's what happens when you have a real team, doing real research, executing a real strategy, and communicating like actual human beings. The agencies that didn't work for you probably weren't doing any of those things.</p>
+
+            <h2>It Wasn't Social Media That Failed You</h2>
+
+            <p>If your last agency experience left a bad taste — that makes sense. But the problem wasn't social media. The problem was the setup. One person trying to do everything, no real research, no strategy, bad communication, and a contract that kept you stuck even after you knew it wasn't working.</p>
+
+            <p>That's not what this is supposed to look like. And if you're open to seeing what it looks like when it's done differently, we're happy to have that conversation.</p>
+
+            <div class="cta-box">
+                <h3>Ready to See What "Done Right" Looks Like?</h3>
+                <p>One conversation. No pitch, no pressure. Just a real look at what your company page could do with the right team behind it.</p>
+                <a href="stickypost-contact.html" class="cta-button">Book a Discovery Call</a>
+            </div>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Research a New Client Before We Create a Single Post | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --charcoal: #272626; --cream: #FDFCFA; --terracotta: #DC5A3B; --teal: #30A5A5; --pale-teal: #B2E8E3; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--charcoal); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: var(--charcoal); padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--cream); text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase; }
+        .nav-logo span { color: var(--terracotta); }
+        .logo-i { text-transform: lowercase; color: inherit !important; }
+        .nav-right { display: flex; align-items: center; gap: 28px; }
+        .nav-link { font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--pale-teal); text-decoration: none; transition: color 0.2s; }
+        .nav-link:hover { color: var(--cream); }
+        .nav-cta { font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 600; color: var(--cream); background-color: var(--terracotta); padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: background-color 0.2s, transform 0.15s; }
+        .nav-cta:hover { background-color: #c44e32; transform: translateY(-1px); }
+        .hero { background-color: var(--charcoal); padding: 140px 40px 80px; text-align: center; }
+        .hero-tag { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--charcoal); background-color: var(--teal); padding: 5px 14px; border-radius: 4px; margin-bottom: 28px; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 3rem; line-height: 1.15; color: var(--cream); max-width: 940px; margin: 0 auto 28px; text-transform: uppercase; }
+        .hero-meta { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--pale-teal); line-height: 1.6; }
+        .hero-meta .author { font-weight: 600; color: var(--cream); }
+        .hero-meta .separator { margin: 0 10px; opacity: 0.4; }
+        .article-wrapper { background-color: var(--cream); padding: 64px 24px 80px; }
+        .article { max-width: 880px; margin: 0 auto; }
+        .article p { font-size: 1.125rem; line-height: 1.8; color: var(--charcoal); margin-bottom: 1.5em; }
+        .article p.intro { font-size: 1.25rem; font-weight: 500; line-height: 1.7; color: var(--charcoal); }
+        .article h2 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.75rem; color: var(--charcoal); margin-top: 2.5em; margin-bottom: 0.75em; text-transform: uppercase; letter-spacing: 0.3px; }
+        .article strong { font-weight: 600; }
+        .article a { color: var(--terracotta); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .article a:hover { color: #c44e32; }
+        .article ul, .article ol { font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5em; padding-left: 1.5em; }
+        .article li { margin-bottom: 0.5em; }
+        .pull-quote { border-left: 4px solid var(--teal); padding: 24px 28px; margin: 2.5em 0; background-color: #f3fafa; border-radius: 0 8px 8px 0; }
+        .pull-quote p { font-size: 1.15rem; font-weight: 500; line-height: 1.7; color: var(--charcoal); margin-bottom: 0; }
+        .cta-box { background-color: var(--charcoal); border-radius: 12px; padding: 48px 40px; text-align: center; margin-top: 3.5em; }
+        .cta-box h3 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.6rem; color: var(--cream); margin-bottom: 12px; text-transform: uppercase; }
+        .cta-box p { font-size: 1.05rem; color: var(--pale-teal); margin-bottom: 28px; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .cta-box .cta-button { display: inline-block; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--cream); background-color: var(--terracotta); padding: 14px 36px; border-radius: 8px; text-decoration: none; transition: background-color 0.2s, transform 0.15s; }
+        .cta-box .cta-button:hover { background-color: #c44e32; transform: translateY(-2px); }
+        footer { background-color: var(--charcoal); padding: 40px; text-align: center; }
+        .footer-logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--cream); margin-bottom: 8px; text-transform: uppercase; }
+        .footer-logo span { color: var(--terracotta); }
+        .footer-text { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--pale-teal); opacity: 0.6; }
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; height: 56px; }
+            .nav-logo { font-size: 1.1rem; }
+            .nav-right { gap: 16px; }
+            .nav-link { display: none; }
+            .nav-cta { font-size: 0.8rem; padding: 8px 16px; }
+            .hero { padding: 120px 20px 56px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-meta { font-size: 0.85rem; }
+            .hero-meta .separator { display: none; }
+            .hero-meta span { display: block; margin-bottom: 4px; }
+            .article-wrapper { padding: 40px 20px 56px; }
+            .article p, .article ul, .article ol { font-size: 1rem; }
+            .article p.intro { font-size: 1.1rem; }
+            .article h2 { font-size: 1.5rem; }
+            .pull-quote { padding: 20px 22px; margin: 2em 0; }
+            .pull-quote p { font-size: 1.05rem; }
+            .cta-box { padding: 36px 24px; }
+            .cta-box h3 { font-size: 1.35rem; }
+            footer { padding: 32px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-tag">Process</div>
+        <h1>How We Research a New Client Before We Create a Single Post</h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>March 28, 2026 · 7 min read</span>
+        </div>
+    </section>
+
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">One of the nicest things a client has ever said to us was this: "She was so well prepared for our first call that we were able to jump right in and get to work without my having to spend a lot of time explaining how we do things. She already knew from her own research." That wasn't a fluke. That's how we work with every single client.</p>
+
+            <p>Before we write a caption, design a graphic, or touch a content calendar, our entire team goes through a research process that most agencies skip entirely. Not because they don't care — but because they don't have the structure for it. When you've got one social media manager handling five accounts, there's no time to go deep. There's barely time to go at all.</p>
+
+            <p>We built our team specifically so this research phase is possible. Here's what it actually looks like.</p>
+
+            <h2>Every Team Member Researches Independently</h2>
+
+            <p>This is the part that surprises most people. When a new client comes on, we don't just have the strategist do research while everyone else waits for direction. Every person on the team — the strategist, the designer, the video editor, the project manager — independently digs into the client's business before we sit down together.</p>
+
+            <p>That means four people looking at the same company from four different angles. The strategist is studying the market positioning and competitors. The designer is looking at the brand's visual language — colors, fonts, the feel of their existing materials. The video editor is looking at what kind of video content would work for this industry and this audience. The project manager is mapping out how the workflow will run based on the client's communication style and schedule.</p>
+
+            <p>When we finally come together to brainstorm, we're not starting from scratch. We're starting with four informed perspectives. And that's where the best ideas come from.</p>
+
+            <h2>What We Actually Look At</h2>
+
+            <p>Our research isn't a 20-minute Google session. We go through the business from every angle a prospect would:</p>
+
+            <ul>
+                <li><strong>Their website</strong> — services, messaging, tone, what they emphasize, what they don't. How they describe themselves vs how their competitors describe similar services.</li>
+                <li><strong>Their existing social media</strong> — what's been posted, when, how often, what got engagement, what didn't. Even a dead page tells us something.</li>
+                <li><strong>Their competitors</strong> — not just who they compete with, but what those competitors are doing on social. Where are the gaps? What's everyone saying that nobody's saying well?</li>
+                <li><strong>Their industry</strong> — what does the audience in this space care about? What questions are they asking? What content format works best for this type of buyer?</li>
+                <li><strong>Their reviews and testimonials</strong> — Google reviews, case studies, anything that shows how clients talk about them. This is gold for figuring out what makes them different in their clients' own words.</li>
+                <li><strong>Their team and culture</strong> — who works there, what's the vibe, is there team content we can work with? Company culture content is one of the highest-performing categories on company pages.</li>
+            </ul>
+
+            <p>By the time we get on the onboarding call, we already have a mental model of the client's business. The call isn't us learning about them from zero — it's us confirming and sharpening what we've already figured out.</p>
+
+            <h2>The Onboarding Call Is a Conversation, Not a Survey</h2>
+
+            <p>Because we've done the research before the call, the onboarding conversation is different from what most clients expect. We're not reading off a questionnaire. We're asking specific questions about things we noticed during research. "We saw that your competitors are all leading with price — is that a race you want to run, or do you position differently?" That kind of thing.</p>
+
+            <p>Clients notice the difference immediately. They can tell we've done the homework. And it sets the tone for the entire relationship — this is a team that takes the work seriously.</p>
+
+            <div class="pull-quote">
+                <p>We study our clients like they're our own company. We don't just manage their social media — we get inside their business, their audience, and their voice before we create anything.</p>
+            </div>
+
+            <h2>Why This Matters for the Content</h2>
+
+            <p>The research phase isn't just a nice process to have. It directly affects the quality of the content we create.</p>
+
+            <p>When you skip research, you get generic content. "Happy Monday!" posts. Stock photo carousels with recycled tips. Captions that could belong to any company in any industry. That's what happens when someone's creating content for a business they don't actually understand.</p>
+
+            <p>When you do the research, the content sounds like it came from inside the company. The messaging hits the right pain points. The design reflects the brand's actual identity. The strategy targets the audience that actually matters. And when prospects see that content, they trust it — because it feels real. Because it is real.</p>
+
+            <h2>This Is What "Full Team" Actually Means</h2>
+
+            <p>When we say every client gets a full team, we don't mean four people who each do their piece in isolation. We mean four people who each independently know your business, then come together to create something none of them could have made alone.</p>
+
+            <p>The strategist catches things the designer wouldn't think of. The designer sees visual opportunities the strategist would miss. The video editor brings format ideas that change how a concept gets delivered. The project manager keeps everything moving so quality doesn't slip through the cracks.</p>
+
+            <p>That's not an assembly line. That's a creative team. And that's the difference between content that fills a calendar and content that actually builds your brand.</p>
+
+            <h2>You Can Tell When Someone Did the Work</h2>
+
+            <p>Prospects can feel it. Clients can feel it. When content is built on real understanding of a business, it shows. When it's not, that shows too.</p>
+
+            <p>We'd rather spend an extra week in the research phase and get it right than rush into content that doesn't land. Because once you start posting, everything you put out is a reflection of the brand. And we don't take that lightly.</p>
+
+            <p>If you've worked with an agency before and the content felt off — there's a good chance this is the step they skipped. It's the most important part of the process, and it's the one most agencies don't have time for.</p>
+
+            <p>We make time for it. Every single client.</p>
+
+            <div class="cta-box">
+                <h3>Want to See What Happens When a Team Actually Studies Your Business?</h3>
+                <p>Book a discovery call and we'll show you how we work — no commitment, no pitch. Just a real conversation about your company page.</p>
+                <a href="stickypost-contact.html" class="cta-button">Book a Discovery Call</a>
+            </div>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

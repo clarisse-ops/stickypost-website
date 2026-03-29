@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousels Get 6x More Engagement Than Images. Are You Using Them? — StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── ARTICLE ── */
+        .article-wrapper {
+            background: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 1.5em;
+        }
+
+        article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        article h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        article a:hover {
+            color: #c44e32;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.4em;
+        }
+
+        article li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 0.5em;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            background: rgba(178, 232, 227, 0.15);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ── CTA BOX ── */
+        .cta-box {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--pale-teal);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .cta-button:hover {
+            background: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--charcoal);
+            padding: 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+        }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(253, 252, 250, 0.45);
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pale-teal);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 110px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            article p,
+            article li {
+                font-size: 1.05rem;
+            }
+
+            article h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-tag">Platform Strategy</span>
+        <h1>LinkedIn Carousels Get 6x More Engagement Than Images. Are You Using Them?</h1>
+        <div class="hero-meta">
+            By <strong>Clarisse</strong>, Founder of StickyPost.Social &nbsp;&middot;&nbsp; February 8, 2026
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article>
+
+            <h2>The "Just Post Something" Trap</h2>
+
+            <p>If you run a professional service business — accounting, law, IT services, HR consulting, whatever it is — there's a good chance someone on your team has said some version of this: "We should really be posting on social media more." And then someone else (maybe a VA, maybe an intern, maybe you at 11pm) starts throwing up stock photos with generic captions three times a week.</p>
+
+            <p>Here's the thing: posting for the sake of posting is almost worse than not posting at all. Because now you've spent time, energy, and maybe even money on content that does absolutely nothing. It doesn't build trust. It doesn't generate leads. It just... sits there. And you start thinking social media doesn't work for your business.</p>
+
+            <p>But it does work. The problem isn't social media — it's <strong>what</strong> you're posting and <strong>where</strong> you're posting it. The data on this is pretty clear, and most service businesses are completely ignoring it.</p>
+
+            <h2>LinkedIn: The Gold Mine Nobody's Working Properly</h2>
+
+            <p>Let's start with the platform that should matter most to B2B service businesses — and increasingly to B2C ones too.</p>
+
+            <p>LinkedIn generates <strong>75-85% of all B2B leads from social media</strong>. That's not a typo. The vast majority of your social-driven B2B leads are coming from one platform. And 93% of B2B marketers are already using it, with 84% saying it delivers the best value of any social platform they use.</p>
+
+            <p>So the platform itself? Not the problem. The problem is how most businesses show up there.</p>
+
+            <p>Here's where it gets interesting. LinkedIn's overall engagement rate has climbed to between 5.20% and 6.50% — that's up roughly 30% compared to 2024. The platform is actively rewarding good content right now. But not all content types are created equal.</p>
+
+            <p><strong>Carousel posts on LinkedIn hit a 6.60% engagement rate.</strong> That's 278% more than video posts. 303% more than single image posts. And a staggering 596% more than text-only posts. Read those numbers again — carousels outperform everything else on the platform by a massive margin.</p>
+
+            <div class="pull-quote">
+                <p>"Most service businesses are posting single images with a paragraph of text on LinkedIn and wondering why nothing happens. Meanwhile, carousels are pulling nearly 6x the engagement of those exact posts."</p>
+            </div>
+
+            <p>And video is growing fast too — LinkedIn video uploads increased 36% year over year. The platform is clearly pushing visual, swipeable, educational content. If your company page is still posting text updates and the occasional team photo, you're leaving a huge amount of engagement on the table.</p>
+
+            <p>The opportunity here is massive, especially for service businesses in "boring" industries. An accounting firm that creates a carousel breaking down common tax mistakes? An IT managed services company that walks through a cybersecurity checklist in ten slides? That kind of content performs incredibly well — because it's useful, specific, and easy to consume. You don't need to be flashy. You need to be helpful in a format people actually engage with.</p>
+
+            <h2>Instagram and Facebook: The Organic Reach Problem</h2>
+
+            <p>Now let's talk about the platforms most businesses default to — and why that default is costing them.</p>
+
+            <p>Facebook organic reach has dropped to <strong>1.37%</strong>. To put that in perspective, it was 16% back in 2012. So if your company page has 1,000 followers, your average post is being shown to about 14 of them. That's not a strategy — that's shouting into a mostly empty room.</p>
+
+            <p>Instagram isn't doing much better. Reach dropped 18% in 2024 and another 12% in 2025. Engagement fell 26% in that same period. The platform is pushing harder and harder toward paid content and Reels, which means your static image posts — the ones most businesses are still relying on — are getting buried.</p>
+
+            <p>Does that mean you should abandon Instagram and Facebook? Not necessarily. But it does mean you need to be very intentional about what you post there. Static image posts with stock photos and a generic caption? Those are essentially invisible now.</p>
+
+            <p>What still works on these platforms:</p>
+
+            <ul>
+                <li><strong>Reels</strong> — short-form video is still getting priority in the algorithm on both Instagram and Facebook</li>
+                <li><strong>Carousels</strong> — same swipeable format that dominates LinkedIn, and Instagram rewards the time people spend swiping through them</li>
+                <li><strong>Stories</strong> — not for reach, but for keeping your existing audience engaged and moving them closer to taking action</li>
+            </ul>
+
+            <p>What doesn't work anymore: posting a stock image of a handshake with the caption "We're here for all your consulting needs!" three times a week. That was barely working in 2020. In 2026, it's completely dead.</p>
+
+            <h2>The Platform-by-Platform Reality Check</h2>
+
+            <p>Here's something we tell every client during onboarding: <strong>you do not need to be on every platform.</strong> You need to be strategic about where you show up and what you do when you get there.</p>
+
+            <p>TikTok, for example, still has strong engagement — around 4.86% on average. But if you're a B2B accounting firm, is your ideal client scrolling TikTok looking for their next bookkeeper? Probably not. Could it work for brand awareness with the right approach? Sure. But it shouldn't be your first priority when LinkedIn is sitting right there generating 80% of B2B social leads.</p>
+
+            <p>Pinterest can be great for certain businesses — especially anything visual or consumer-facing. YouTube is a powerhouse for long-form educational content. X (Twitter) still has a place for real-time conversation and thought leadership in certain industries.</p>
+
+            <p>But the key word is <strong>strategic</strong>. Spreading yourself thin across six platforms with mediocre content on all of them will always lose to showing up strong on two or three with content that actually matches what each platform rewards.</p>
+
+            <p>And what each platform rewards is changing constantly — which brings us to the real problem.</p>
+
+            <h2>Keeping Up with the Algorithm Is a Full-Time Job</h2>
+
+            <p>Algorithm changes negatively affect <strong>62% of small businesses'</strong> organic reach. And 54% of small and mid-sized businesses say they struggle to stay current with social media trends. Those numbers make perfect sense when you think about what's actually being asked of business owners.</p>
+
+            <p>You're running a law firm. Or an IT company. Or a healthcare practice. You have clients to serve, a team to manage, a business to grow. And somehow you're also supposed to keep track of the fact that LinkedIn carousels now outperform video by 278%, Instagram reach dropped another 12% this year, and the best posting times shifted again?</p>
+
+            <p>That's not a reasonable ask. And it's exactly why so many service businesses either give up on social entirely or default to the "just post something" approach that doesn't move the needle.</p>
+
+            <div class="pull-quote">
+                <p>"The businesses winning on social right now aren't the ones posting the most — they're the ones posting the right content on the right platforms, based on what's actually working today."</p>
+            </div>
+
+            <p>There's another layer to this too. Consumers are paying attention to <strong>how</strong> content is made. Nearly a third of people say they're less likely to choose a brand that uses AI-generated content. People want original, human-centric content from the brands they follow. They want to feel like there's a real company behind those posts — not a robot churning out generic updates.</p>
+
+            <p>For professional service businesses, that matters even more. Your clients are trusting you with their finances, their legal matters, their health, their IT infrastructure. The content coming from your company page needs to reflect that level of care and expertise. Cookie-cutter posts don't build that kind of trust.</p>
+
+            <h2>Why This Is What We Do Every Day</h2>
+
+            <p>At StickyPost, this is literally all we think about. Our team — strategist, designer, video editor, project manager — lives inside these platforms every single day. We're tracking what's working right now, not what worked six months ago. When LinkedIn's algorithm starts favoring a new content type, we know about it before most people even notice the shift.</p>
+
+            <p>We're not a one-person-does-everything setup. Every client gets the full team, and every person on that team independently researches the client's business, audience, and industry before we create anything. That's how we build content strategies that are specific, current, and actually tied to what the data says works — platform by platform.</p>
+
+            <p>Our specialty is company pages for professional service businesses. The "boring" industries that most agencies don't know how to make interesting. We know how to turn a commercial cleaning company's expertise into LinkedIn carousels that get real engagement. We know how to make a healthcare practice's Instagram feel human and trustworthy. We know which platforms deserve your energy and which ones are just noise for your specific business.</p>
+
+            <p>Because here's the honest truth: the gap between businesses doing social media well and businesses doing it poorly is getting wider every year. Organic reach is harder to earn. Algorithms are pickier. The content that works keeps evolving. But the businesses that get it right? They're building brand awareness, trust, and yes — real leads — from their organic social presence.</p>
+
+            <p>You just need a team that knows what "right" looks like right now.</p>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Want a Team That Actually Knows What Works on Each Platform?</h3>
+                <p>We manage every platform for professional service businesses — with content strategies built on what the data says works today, not last year. No lock-in contracts. Full team on your account from day one.</p>
+                <a href="stickypost-website-v4.html" class="cta-button">See How We Work</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <a href="stickypost-website-v4.html">StickyPost.Social</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

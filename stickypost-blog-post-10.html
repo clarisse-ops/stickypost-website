@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The LinkedIn Playbook for Professional Service Company Pages (What Actually Works in 2026) — StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── ARTICLE ── */
+        .article-wrapper {
+            background: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 1.5em;
+        }
+
+        article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        article h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        article a:hover {
+            color: #c44e32;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.4em;
+        }
+
+        article li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 0.5em;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            background: rgba(178, 232, 227, 0.15);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ── CTA BOX ── */
+        .cta-box {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--pale-teal);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .cta-button:hover {
+            background: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--charcoal);
+            padding: 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+        }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(253, 252, 250, 0.45);
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pale-teal);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 110px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            article p,
+            article li {
+                font-size: 1.05rem;
+            }
+
+            article h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-tag">LinkedIn</span>
+        <h1>The LinkedIn Playbook for Professional Service Company Pages (What Actually Works in 2026)</h1>
+        <div class="hero-meta">
+            By <strong>Clarisse</strong>, Founder of StickyPost.Social &nbsp;&middot;&nbsp; January 28, 2026
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article>
+
+            <h2>75-85% of Your B2B Leads Are Coming From One Platform. Act Accordingly.</h2>
+
+            <p>If you run a professional service business — whether that's an accounting firm, a law practice, an IT managed services company, or an HR consultancy — there's a question you should be asking right now: <strong>How much of your new business pipeline is being influenced by LinkedIn?</strong></p>
+
+            <p>Because here's the number that should reframe your entire social media strategy: LinkedIn generates 75-85% of all B2B leads from social media. Not a third. Not half. The overwhelming majority. And yet, most professional service company pages on LinkedIn look like they were set up in 2019 and forgotten about.</p>
+
+            <p>This isn't a "you should probably think about LinkedIn" conversation. This is a "LinkedIn is already where your buyers are making decisions, and you're either showing up properly or you're invisible" conversation.</p>
+
+            <p>58% of decision-makers spend an hour or more reading thought leadership content every week. And 60% of them said that thought leadership directly led them to award business to a company. That's not brand awareness for the sake of brand awareness. That's revenue.</p>
+
+            <p>So the question isn't whether LinkedIn matters. It's whether you're doing it right. And for most professional service company pages? The answer is no. Here's the actual playbook for what's working right now.</p>
+
+            <h2>The Content Hierarchy: What Actually Gets Engagement (Ranked)</h2>
+
+            <p>Not all LinkedIn content is performing equally in 2026, and the hierarchy might surprise you. Here's what the data says, ranked by engagement rate:</p>
+
+            <p><strong>1. Native documents and PDFs — 7.00% engagement.</strong> These are up 14% year-over-year, and they're the top-performing format on the platform right now. Think multi-page guides, frameworks, checklists — the kind of content people actually save and come back to. For a service business, this is gold. A commercial cleaning company sharing a "Facility Maintenance Audit Checklist" as a native PDF? That's the kind of thing facility managers save, share with their team, and remember when it's time to switch providers.</p>
+
+            <p><strong>2. Carousels — 6.60% engagement.</strong> That's 3x more than video. Carousels are visual, swipeable, and they keep people on your post longer (more on why that matters in a second). An accounting firm breaking down "5 Tax Mistakes Costing Your Business Real Money" as a carousel will outperform that same content as a video or a single image almost every time.</p>
+
+            <p><strong>3. Video — 5.60% engagement.</strong> Video is the most shared format on LinkedIn, which matters for reach. Native video gets a 69% boost from the algorithm compared to external links, and vertical video outperforms horizontal by 71%. If you're posting video, it needs to be native, vertical, and designed for people scrolling on their phone. Horizontal YouTube embeds are basically invisible in the feed now.</p>
+
+            <p><strong>4. Text-only posts — the quiet comeback.</strong> Here's one people don't see coming: text-only posts grew 12% year-over-year in engagement. That's the highest growth rate of any format. There's something about a well-written, personal, insight-driven text post that stops people mid-scroll. No image needed. Just a good story or a sharp observation. The key word there is "good" — a generic motivational quote doesn't count.</p>
+
+            <p>The takeaway: if your company page is only posting single images with captions, you're playing the lowest-engagement hand possible. Mix it up. Lead with documents and carousels. Use video strategically for shareability. And don't sleep on text posts that actually say something worth reading.</p>
+
+            <h2>The Algorithm Shift: What LinkedIn Actually Rewards Right Now</h2>
+
+            <p>LinkedIn's algorithm has changed meaningfully over the past year, and most company pages haven't caught up. Here's what's different:</p>
+
+            <p><strong>Dwell time is now one of the most influential ranking signals.</strong> Translation: LinkedIn is tracking how long people spend looking at your post. It's not just about likes and comments anymore — it's about whether someone actually stopped and read (or swiped through) your content. This is exactly why documents and carousels are dominating. They take time to consume. A seven-page carousel about healthcare compliance frameworks keeps someone on your post for 30-60 seconds. A single image with a two-line caption? Three seconds, and they're gone.</p>
+
+            <p><strong>LinkedIn now prioritizes "knowledge and advice" content.</strong> Educational posts get 3-5x more reach than promotional ones. The algorithm is specifically built to reward content that teaches something, shares expertise, or offers a genuine perspective. For professional service businesses, this should feel like a gift. You literally sell expertise. Your entire business is built on knowing things other people don't. Put that on LinkedIn and the algorithm will do the heavy lifting.</p>
+
+            <div class="pull-quote">
+                <p>"LinkedIn's algorithm is designed to reward expertise — the exact thing professional service businesses are built on. The platform is practically begging you to show what you know."</p>
+            </div>
+
+            <p><strong>Saves and private shares now factor into ranking.</strong> This is subtle but important. When someone saves your post or sends it to a colleague in a DM, LinkedIn treats that as a stronger signal than a like. Think about what that means for your content strategy: you want to create things people bookmark for later or forward to their business partner with "we need to do this." Frameworks, checklists, process breakdowns, industry-specific guides — that's save-worthy content.</p>
+
+            <p><strong>Hashtags are dialed way back.</strong> The recommendation is 1-3 hashtags max. Heavy hashtag use now gets flagged as spam behavior. If your posts still have 15 hashtags at the bottom, you're actively hurting your reach.</p>
+
+            <h2>Company Pages: Lower Reach, 6x Higher Conversions. Here's How to Play It.</h2>
+
+            <p>Alright, let's talk about the elephant in the room. Company pages on LinkedIn reach only about 1.6% of followers organically. That sounds terrible. And compared to personal profiles, the raw reach is lower.</p>
+
+            <p>But here's the number that matters more: <strong>company pages drive 6x more conversions than personal profiles.</strong></p>
+
+            <p>Read that again. Six times more conversions. The people who do see your company page content are significantly more likely to take action — visit your website, fill out a form, book a call. Why? Because company page followers have higher intent. They followed your business specifically. They're not there for hot takes and personal stories. They're there because they're evaluating whether to work with you.</p>
+
+            <p>So the strategy for company pages isn't about chasing massive reach numbers. It's about making every post count for the people who do see it. That means:</p>
+
+            <ul>
+                <li><strong>Every post should demonstrate competence.</strong> Not "we're hiring" and "happy holidays" — actual expertise. Show your thinking. Share how you solve problems.</li>
+                <li><strong>Use the high-engagement formats.</strong> Documents, carousels, and native video will push your organic reach as high as possible within that 1.6% constraint — and beyond it when the algorithm picks up strong engagement signals.</li>
+                <li><strong>Reply to every comment.</strong> More on this below, but this is non-negotiable for company pages specifically.</li>
+                <li><strong>Build a content library, not just a feed.</strong> Because of that 6x conversion rate, your company page functions more like a website than a social feed. When a prospect is evaluating you, they will scroll your page. Make sure what they find there makes them think, "these people clearly know what they're doing."</li>
+            </ul>
+
+            <h2>The Posting Rhythm That Actually Moves the Needle</h2>
+
+            <p>Frequency, timing, and engagement habits — three things most company pages get wrong.</p>
+
+            <p><strong>Posting frequency: 2-5 times per week.</strong> That's the sweet spot right now. Fewer than two and you're not staying visible. More than five and you start cannibalizing your own reach (LinkedIn won't show back-to-back posts from the same page to the same people). For most professional service businesses, three posts per week is the realistic starting point that delivers results without overwhelming your pipeline.</p>
+
+            <p><strong>Timing has shifted.</strong> Late afternoon and evening posts now drive the highest engagement — this is a meaningful change from the "post at 8am Tuesday" advice that dominated for years. Decision-makers are scrolling LinkedIn during their commute home, after dinner, or when they finally put their laptop away for the day. Test your own audience, but start with late afternoon and adjust from there.</p>
+
+            <p><strong>Comment engagement is the multiplier most pages ignore.</strong> Replying to comments on your posts boosts performance for 80%+ of profiles and pages. This isn't optional. When someone takes the time to comment on your company page post, and you reply thoughtfully within a few hours, it signals to the algorithm that this is an active conversation worth showing to more people. It also signals to that human being that your company actually pays attention — which, for service businesses, is a pretty powerful demonstration of what it's like to work with you.</p>
+
+            <h2>LinkedIn Newsletters: The Most Underused Tool on the Platform</h2>
+
+            <p>If you're not using LinkedIn newsletters from your company page, you're leaving one of the best distribution channels on the platform completely untouched.</p>
+
+            <p>LinkedIn newsletters average 30-40% open rates. Compare that to email marketing, where the average open rate sits around 21%. That's nearly double the engagement, delivered directly into your subscribers' notifications and inboxes — and you didn't have to build a separate email list to get there.</p>
+
+            <div class="pull-quote">
+                <p>"LinkedIn newsletters hit 30-40% open rates — nearly double what email delivers. And you don't have to build the list from scratch. The platform brings subscribers to you."</p>
+            </div>
+
+            <p>Here's why newsletters work so well for professional service company pages: they let you go deep. A regular post might touch on a topic. A newsletter lets you unpack it — walk through a framework, break down a case study, explain a process in detail. For an IT managed services company, a monthly newsletter on cybersecurity trends for small businesses is the kind of content that builds serious trust over time. For a healthcare consulting firm, a bi-weekly update on compliance changes is genuinely useful — and positions you as the team that's always a step ahead.</p>
+
+            <p>The barrier to entry is still low. Most company pages haven't started a newsletter, which means early adopters get disproportionate subscriber growth. LinkedIn actively promotes new newsletters to your page followers and suggests them to relevant audiences. The platform wants this feature to succeed, and it's putting its algorithm behind it.</p>
+
+            <p>Start with once or twice a month. Make it specific to your industry. Make it useful enough that people would be annoyed if you stopped publishing it. That's the bar.</p>
+
+            <h2>One Thing to Do This Week</h2>
+
+            <p>If you've read this far, you're probably thinking about all the things your company page should be doing differently. That's good. But don't try to overhaul everything at once.</p>
+
+            <p>Here's your one move this week: <strong>create one native document post.</strong> Take a piece of expertise your team has — a process, a framework, a checklist, a set of common mistakes in your industry — and turn it into a multi-page PDF or document. Upload it natively to LinkedIn. Write a short intro that gives context. Use 1-2 relevant hashtags. Post it late afternoon.</p>
+
+            <p>That's it. One post. The format that's pulling 7.00% engagement, designed for the algorithm that rewards dwell time and saves. See what happens. Then build from there.</p>
+
+            <p>Because the gap between professional service companies that are doing LinkedIn well and those that aren't? It's massive right now. And the ones who figure this out first are the ones who'll own the trust in their market for years to come.</p>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Want Your Company Page to Actually Work This Hard?</h3>
+                <p>We build and manage LinkedIn strategies for professional service businesses — the full thing, from content creation to scheduling to engagement. If you'd rather have a team handle this than figure it out yourself, we should talk.</p>
+                <a href="stickypost-website-v4.html" class="cta-button">See How We Work</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <a href="stickypost-website-v4.html">StickyPost.Social</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

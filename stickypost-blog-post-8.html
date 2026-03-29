@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Don't Have a Content Problem. You Have a "Who's Doing This?" Problem. — StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── ARTICLE ── */
+        .article-wrapper {
+            background: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 1.5em;
+        }
+
+        article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        article h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        article a:hover {
+            color: #c44e32;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.4em;
+        }
+
+        article li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 0.5em;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            background: rgba(178, 232, 227, 0.15);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ── CTA BOX ── */
+        .cta-box {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--pale-teal);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .cta-button:hover {
+            background: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--charcoal);
+            padding: 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+        }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(253, 252, 250, 0.45);
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pale-teal);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 110px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            article p,
+            article li {
+                font-size: 1.05rem;
+            }
+
+            article h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-tag">Operations</span>
+        <h1>You Don't Have a Content Problem. You Have a "Who's Doing This?" Problem.</h1>
+        <div class="hero-meta">
+            By <strong>Clarisse</strong>, Founder of StickyPost.Social &nbsp;&middot;&nbsp; February 16, 2026
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article>
+
+            <p>Every service business owner I've ever talked to says some version of the same thing: "We know we need to be on social media. We just... haven't figured it out yet."</p>
+
+            <p>They don't say it with confusion. They say it with guilt. Because they've tried. They've started Instagram accounts that went quiet after three weeks. They've asked their office manager to "throw something up on LinkedIn when you get a chance." They've downloaded Canva, watched a YouTube tutorial, drafted two posts, and then gotten pulled into a client emergency that ate the rest of their week.</p>
+
+            <p>Sound familiar? You're not alone. And your problem isn't what you think it is.</p>
+
+            <h2>The "We'll Figure It Out" Trap</h2>
+
+            <p>Here's what happens at almost every service business between $200K and $7M in revenue. The founder knows social media matters. They're already running Google ads, they understand marketing spend, they get the concept of brand awareness. They're not clueless about this stuff. They just haven't been able to make social work.</p>
+
+            <p>So they say, "We'll figure it out." And they mean it. The intention is genuine. But "figuring it out" requires something that small business owners simply don't have: time.</p>
+
+            <p>According to Small Business Expo, <strong>46.5% of small business owners say more time is the single biggest thing they need</strong> — more than money, more than cost reduction, more than anything else. And Venturu's research backs this up: small business owners spend 68% of their time working IN the business and only 32% working ON the business. Social media falls firmly in the "on the business" category — which means it's the first thing to get pushed to next week. And then the week after that. And then never.</p>
+
+            <p>The "we'll figure it out" trap isn't about laziness. It's about math. There are only so many hours, and the stuff that keeps the lights on always wins.</p>
+
+            <h2>Why the Owner Ends Up Doing It (And Why They Eventually Stop)</h2>
+
+            <p>When social media does get any attention, it usually starts with the founder. And that makes sense — nobody knows the business better. Nobody can speak to the brand voice as naturally. Nobody cares as much.</p>
+
+            <p>Semrush found that <strong>80% of small business owners write their own content</strong>. That number is staggering when you think about what else those people are responsible for. They're running operations, managing staff, handling client relationships, making financial decisions — and somehow they're also supposed to be the social media department?</p>
+
+            <p>Peachtree VA's research puts it in sharp relief: business owners spend roughly <strong>15 hours per week on tasks that could be delegated</strong>. Fifteen hours. That's almost two full workdays every single week burned on things someone else could handle — social media being one of the biggest culprits.</p>
+
+            <p>So the founder starts strong. Posts for a few weeks. Maybe even a month or two. And then a big project lands, or they hire someone new, or tax season hits, or a client has an issue — and social goes dark. Not because they stopped caring. Because they physically cannot keep doing everything.</p>
+
+            <h2>The Delegation Problem</h2>
+
+            <p>Okay, so the owner can't do it forever. The obvious next step is to hand it off. Give it to someone on the team. Maybe the VA. Maybe the office administrator. Maybe the junior associate who "knows how Instagram works."</p>
+
+            <p>This is where things get tricky. Research from Improve Business Processes shows that <strong>70-90% of small business owners struggle to effectively delegate</strong>. It's not that they don't want to — it's that delegation requires clear processes, training, and time that most small teams don't have built out yet.</p>
+
+            <p>And even when delegation happens, social media tends to land on the desk of someone who already has a full plate. VerticalResponse found that <strong>43% of small businesses spend about 6 hours per week on social media marketing</strong>. That's six hours being squeezed in between someone's actual job responsibilities — the work they were hired to do. Is it really surprising that the content feels inconsistent?</p>
+
+            <div class="pull-quote">
+                <p>"You can't hand social media to someone who's already drowning in their own work and expect them to build your brand. That's not delegation — that's just moving the problem to a different desk."</p>
+            </div>
+
+            <p>This is especially true in professional services. MSPs, for example — managed service providers — "struggle to publish new content consistently due to lack of time, writing expertise, or clarity on topics," according to Mojenta. And 36% of MSP executives cite client acquisition as their biggest challenge, yet marketing falls to "a generalist wearing multiple hats." It's the same story across accounting firms, law offices, HR consultancies, IT companies, and healthcare practices. The person doing social is also doing six other things, and social always comes last.</p>
+
+            <h2>Social Media Is Actually 7+ Jobs Wearing a Trench Coat</h2>
+
+            <p>Here's the part that most people don't fully appreciate until they try to do it themselves. Social media management isn't one skill. It's a stack of them:</p>
+
+            <ul>
+                <li><strong>Strategy</strong> — understanding your audience, your goals, what platforms matter, and what kind of content moves the needle</li>
+                <li><strong>Copywriting</strong> — writing in your brand voice across different formats and platforms, each with its own rules</li>
+                <li><strong>Graphic design</strong> — creating visuals that look professional, on-brand, and stop the scroll</li>
+                <li><strong>Video editing</strong> — cutting reels, adding captions, formatting for different aspect ratios</li>
+                <li><strong>Scheduling and publishing</strong> — knowing when to post, managing content calendars, keeping everything consistent</li>
+                <li><strong>Analytics</strong> — tracking what's working, what's not, and adjusting accordingly</li>
+                <li><strong>Trend awareness</strong> — staying current with platform changes, algorithm shifts, and content trends</li>
+            </ul>
+
+            <p>That's seven distinct skill sets. Minimum. And Gitnux reports that <strong>43% of small businesses struggle with consistent content creation</strong> — which makes complete sense when you realize they're trying to cover all seven of those bases with one person who has three hours a week to spare.</p>
+
+            <p>Verizon Business's 2025 data reinforces this: <strong>54% of SMBs struggle to keep content fresh and stay current with social trends</strong>. It's not a motivation problem. It's a bandwidth and expertise problem.</p>
+
+            <p>Even companies that try to build an internal social team run into this wall. Meltwater's 2025 research found that <strong>most social media teams operate with just 2-5 members regardless of company size</strong>. For a small service business? You're lucky if you have one person touching social, let alone five.</p>
+
+            <h2>The Real Fix: A Dedicated Team That Does This as Their Only Job</h2>
+
+            <p>This isn't about finding a better app or a more motivated VA or a content calendar template. The fix is structural. You need people whose entire professional existence is making social media work for businesses like yours.</p>
+
+            <p>That's why at StickyPost.Social, every client gets a full team: a strategist, a designer, a video editor, and a project manager. Not one overworked social media manager trying to be all seven of those things. A team where each person brings their specific expertise to your account.</p>
+
+            <p>Every team member independently researches each new client we onboard. They study the business, the industry, the competitors, the audience. Then they come together and build content as a group. That collaborative, specialized approach is how we create work that actually sounds like your company — not like a generic agency template.</p>
+
+            <p>Is this more expensive than asking your office manager to post something once a week? Yes. Is it dramatically more effective? Also yes. Because you're not paying for someone to check a box. You're paying for people who do this all day, every day, across every platform — and who are genuinely good at it.</p>
+
+            <h2>What It Looks Like When Someone Takes Over Properly</h2>
+
+            <p>Here's what the first month looks like when you work with us. After the onboarding call, your first month of content is ready within one week. Not a rough outline. A full content calendar, designed templates, reel templates — everything ready for your approval before anything goes live.</p>
+
+            <p>And nearly every client approves everything from the start. First batch. No weeks of revisions, no endless back-and-forth. That's something we're genuinely proud of, and it doesn't happen by accident. It happens because a full team spent time learning your business before creating a single post.</p>
+
+            <p>From there, it becomes a consistent monthly cycle. Content goes out on schedule. Your company pages look like they belong to a company that actually cares about its presence. Your audience starts seeing you regularly. The brand builds.</p>
+
+            <p>And you? You go back to running your business. The thing you're actually good at. The thing your clients are paying you for. You stop worrying about whether anyone posted this week, because you know they did — and you know it's good.</p>
+
+            <h2>It's Not About Content. It's About Ownership.</h2>
+
+            <p>The real problem was never "we don't know what to post." Service businesses have plenty to talk about. They have expertise, client wins, industry knowledge, team stories, and a point of view that their audience would genuinely benefit from hearing.</p>
+
+            <p>The problem is that nobody owns it. Nobody wakes up in the morning with "make this company's social media excellent" as their primary job. And until that changes, the results won't either.</p>
+
+            <p>If you're running an accounting firm, a law practice, an IT company, a healthcare office, or any other professional service business — and social media has been on your to-do list for months (or years) without real progress — the question isn't "what should we post?" The question is: "who is going to do this properly?"</p>
+
+            <p>Once you answer that question, everything else falls into place.</p>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Ready to Stop Wondering Who's Handling Social?</h3>
+                <p>A full team — strategist, designer, video editor, project manager — behind your company pages. Month-to-month. First month content ready in a week.</p>
+                <a href="stickypost-website-v4.html" class="cta-button">See How It Works</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <a href="stickypost-website-v4.html">StickyPost.Social</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

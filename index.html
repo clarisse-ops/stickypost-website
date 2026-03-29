@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StickyPost.Social — Organic Social Media for Professional Service Businesses</title>
+<meta name="description" content="Done-for-you organic social media marketing for professional service businesses. Full-team approach, no lock-in contracts. We handle your company pages so you don't have to.">
+<meta name="theme-color" content="#272626">
+<!-- Open Graph -->
+<meta property="og:title" content="StickyPost.Social — Organic Social Media for Professional Service Businesses">
+<meta property="og:description" content="Done-for-you organic social media marketing. Full-team approach, no lock-in contracts. We handle your company pages so you don't have to.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stickypost.social">
+<meta property="og:image" content="https://stickypost.social/og-image.jpg">
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="StickyPost.Social — Organic Social for Service Businesses">
+<meta name="twitter:description" content="Done-for-you organic social media marketing. Full-team approach, no lock-in contracts.">
+<meta name="twitter:image" content="https://stickypost.social/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #272626;
+  background: #FAF7F2;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul, ol { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   UTILITY
+   ============================================ */
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #30A5A5;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 20px;
+}
+
+.section-sub {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 640px;
+  opacity: 0.85;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #DC5A3B;
+  color: #FAF7F2;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 16px 36px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  background: #c44e32;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(220, 90, 59, 0.35);
+}
+
+.btn-ghost {
+  display: inline-block;
+  color: #FAF7F2;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px 36px;
+  border-radius: 6px;
+  border: 2px solid rgba(253, 252, 250, 0.35);
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-ghost:hover {
+  border-color: #FAF7F2;
+  background: rgba(253, 252, 250, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn-ghost--dark {
+  color: #30A5A5;
+  border-color: #30A5A5;
+}
+
+.btn-ghost--dark:hover {
+  border-color: #279090;
+  background: rgba(48, 165, 165, 0.08);
+}
+
+/* Fade-up animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: all 0.35s ease;
+  background: #272626;
+}
+
+.nav.scrolled {
+  background: rgba(39, 38, 38, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 12px 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FAF7F2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nav-logo span {
+  color: #DC5A3B;
+}
+
+.logo-i {
+  text-transform: lowercase;
+  color: inherit !important;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(253, 252, 250, 0.7);
+  transition: color 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-links a:hover {
+  color: #FAF7F2;
+}
+
+.nav-cta {
+  background: #DC5A3B !important;
+  color: #FAF7F2 !important;
+  padding: 10px 24px !important;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+  opacity: 1 !important;
+}
+
+.nav-cta:hover {
+  background: #c44e32 !important;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #FAF7F2;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  background: #FAF7F2;
+  color: #272626;
+  padding: 160px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(220, 90, 59, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(48, 165, 165, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #30A5A5;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 6.5vw, 72px);
+  line-height: 1.05;
+  margin-bottom: 28px;
+  font-weight: 700;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: #DC5A3B;
+}
+
+.hero-sub {
+  font-size: 19px;
+  line-height: 1.75;
+  color: rgba(39, 38, 38, 0.65);
+  max-width: 860px;
+  margin: 0 auto 44px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 72px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(39, 38, 38, 0.1);
+}
+
+.hero-stat {
+  text-align: left;
+}
+
+.hero-stat:nth-child(odd) .hero-stat-number { color: #DC5A3B; }
+.hero-stat:nth-child(even) .hero-stat-number { color: #30A5A5; }
+
+.hero-stat-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(39, 38, 38, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   PROBLEMS
+   ============================================ */
+.problems {
+  background: #272626;
+  color: #FAF7F2;
+  padding: 100px 0 120px;
+}
+
+.problems-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.problems-header .section-sub {
+  margin: 0 auto;
+  color: rgba(253, 252, 250, 0.65);
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.problem-card {
+  background: rgba(253, 252, 250, 0.04);
+  border: 1px solid rgba(253, 252, 250, 0.08);
+  border-radius: 12px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.problem-card:nth-child(odd)::after {
+  background: #DC5A3B;
+}
+
+.problem-card:nth-child(even)::after {
+  background: #30A5A5;
+}
+
+.problem-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-6px);
+  background: rgba(253, 252, 250, 0.07);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border-color: rgba(253, 252, 250, 0.12);
+}
+
+.problem-card:hover::after {
+  transform: scaleX(1);
+}
+
+.problem-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: rgba(220, 90, 59, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-size: 24px;
+}
+
+.problem-card h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.problem-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(253, 252, 250, 0.6);
+}
+
+/* ============================================
+   TRANSITION STRIP
+   ============================================ */
+.transition-strip {
+  background: #DC5A3B;
+  padding: 52px 0;
+  text-align: center;
+}
+
+.transition-strip p {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 600;
+  color: #FAF7F2;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+/* ============================================
+   PROCESS
+   ============================================ */
+.process {
+  background: #272626;
+  color: #FAF7F2;
+  padding: 120px 0;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.process-header .section-sub {
+  margin: 0 auto;
+  color: rgba(253, 252, 250, 0.65);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.process-step {
+  padding: 36px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(253, 252, 250, 0.1);
+  background: rgba(253, 252, 250, 0.04);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.process-step:hover {
+  transform: translateY(-4px);
+  background: rgba(253, 252, 250, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  border-color: rgba(253, 252, 250, 0.18);
+}
+
+.step-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #DC5A3B;
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.process-step h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #FAF7F2;
+}
+
+.process-step p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(253, 252, 250, 0.7);
+}
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services {
+  background: #FAF7F2;
+  padding: 120px 0;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.services-header .section-sub {
+  margin: 0 auto;
+  color: rgba(39, 38, 38, 0.65);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  background: #FAF7F2;
+  border: 1px solid rgba(39, 38, 38, 0.08);
+  border-radius: 12px;
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.service-card:nth-child(1)::before { background: #DC5A3B; }
+.service-card:nth-child(2)::before { background: #30A5A5; }
+.service-card:nth-child(3)::before { background: #DC5A3B; }
+.service-card:nth-child(4)::before { background: #30A5A5; }
+.service-card:nth-child(5)::before { background: #DC5A3B; }
+.service-card:nth-child(6)::before { background: #30A5A5; }
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(39, 38, 38, 0.08);
+  border-color: rgba(39, 38, 38, 0.14);
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(39, 38, 38, 0.6);
+}
+
+.platforms-bar {
+  margin-top: 88px;
+  text-align: center;
+  padding: 64px 0 0;
+  border-top: 1px solid rgba(39, 38, 38, 0.08);
+}
+
+.platforms-bar p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #30A5A5;
+  margin-bottom: 36px;
+}
+
+.platform-badges {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.platform-badge {
+  background: linear-gradient(135deg, #272626 0%, #3a3838 60%, var(--badge-accent, #DC5A3B) 100%);
+  border: 1px solid rgba(253, 252, 250, 0.08);
+  border-radius: 12px;
+  padding: 28px 12px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FAF7F2;
+  transition: all 0.35s ease;
+  letter-spacing: 0.01em;
+}
+
+.platform-badge:nth-child(odd) {
+  --badge-accent: #DC5A3B;
+}
+
+.platform-badge:nth-child(even) {
+  --badge-accent: #30A5A5;
+}
+
+.platform-badge .platform-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: rgba(253, 252, 250, 0.1);
+  transition: all 0.35s ease;
+}
+
+.platform-badge:hover {
+  transform: translateY(-4px);
+  border-color: rgba(253, 252, 250, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.platform-badge:hover .platform-icon {
+  background: rgba(253, 252, 250, 0.18);
+}
+
+/* ============================================
+   TEAM
+   ============================================ */
+.team {
+  background: #272626;
+  color: #FAF7F2;
+  padding: 120px 0;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.team-header .section-sub {
+  margin: 0 auto;
+  color: rgba(253, 252, 250, 0.65);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-bottom: 64px;
+}
+
+.team-card {
+  text-align: center;
+  padding: 44px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(253, 252, 250, 0.08);
+  transition: all 0.35s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  background: rgba(253, 252, 250, 0.04);
+  border-color: rgba(253, 252, 250, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.team-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.team-card:nth-child(1) .team-icon { background: rgba(220, 90, 59, 0.15); }
+.team-card:nth-child(2) .team-icon { background: rgba(48, 165, 165, 0.15); }
+.team-card:nth-child(3) .team-icon { background: rgba(252, 213, 71, 0.15); }
+.team-card:nth-child(4) .team-icon { background: rgba(178, 232, 227, 0.15); }
+
+.team-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.team-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(253, 252, 250, 0.55);
+}
+
+.team-diff {
+  background: rgba(253, 252, 250, 0.04);
+  border: 1px solid rgba(253, 252, 250, 0.08);
+  border-radius: 16px;
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.team-diff-badge {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(220, 90, 59, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.team-diff h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.team-diff p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(253, 252, 250, 0.6);
+}
+
+/* ============================================
+   RESULTS / INDUSTRIES
+   ============================================ */
+.results {
+  background: #FAF7F2;
+  padding: 120px 0;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.results-header .section-sub {
+  margin: 0 auto;
+  color: rgba(39, 38, 38, 0.65);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.result-card {
+  padding: 36px 32px;
+  border: 1px solid rgba(39, 38, 38, 0.08);
+  border-radius: 12px;
+  transition: all 0.35s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(39, 38, 38, 0.08);
+  border-color: rgba(39, 38, 38, 0.14);
+}
+
+.result-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.result-card:nth-child(odd) .result-label {
+  background: rgba(48, 165, 165, 0.1);
+  color: #30A5A5;
+}
+
+.result-card:nth-child(even) .result-label {
+  background: rgba(220, 90, 59, 0.1);
+  color: #DC5A3B;
+}
+
+.result-card h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.result-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(39, 38, 38, 0.6);
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials {
+  background: #FAF7F2;
+  color: #272626;
+  padding: 120px 0 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 20%, rgba(178, 232, 227, 0.15), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(220, 90, 59, 0.06), transparent);
+  pointer-events: none;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 72px;
+  position: relative;
+}
+
+.testimonials-header .section-sub {
+  margin: 0 auto;
+  color: rgba(39, 38, 38, 0.65);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  position: relative;
+}
+
+.testimonial-card {
+  background: #FAF7F2;
+  border: 1px solid rgba(39, 38, 38, 0.08);
+  border-radius: 16px;
+  padding: 48px 36px 40px;
+  position: relative;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 24px rgba(39, 38, 38, 0.06);
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 32px;
+  height: 3px;
+  background: linear-gradient(90deg, #DC5A3B, #30A5A5);
+  border-radius: 0 0 3px 3px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(39, 38, 38, 0.12);
+  border-color: rgba(39, 38, 38, 0.12);
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 24px;
+}
+
+.testimonial-stars svg {
+  width: 18px;
+  height: 18px;
+  fill: #30A5A5;
+}
+
+.testimonial-quote {
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(39, 38, 38, 0.72);
+  flex: 1;
+  margin-bottom: 32px;
+}
+
+.testimonial-highlight {
+  color: #272626;
+  font-weight: 600;
+}
+
+.testimonial-author {
+  padding-top: 24px;
+  border-top: 1px solid rgba(39, 38, 38, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #30A5A5, #B2E8E3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FAF7F2;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #272626;
+}
+
+.testimonial-company {
+  font-size: 13px;
+  color: #30A5A5;
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing {
+  background: #FAF7F2;
+  padding: 0 0 120px;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.pricing-header .section-sub {
+  margin: 0 auto;
+  color: rgba(39, 38, 38, 0.65);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.pricing-card {
+  border: 1px solid rgba(39, 38, 38, 0.08);
+  border-radius: 16px;
+  padding: 48px 36px;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(39, 38, 38, 0.08);
+}
+
+.pricing-card.featured {
+  border: 2px solid #DC5A3B;
+  padding: 47px 35px;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #DC5A3B;
+  color: #FAF7F2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.pricing-card h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.pricing-card .price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #272626;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pricing-card .price span {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(39, 38, 38, 0.5);
+}
+
+.pricing-card .price-sub {
+  font-size: 14px;
+  color: rgba(39, 38, 38, 0.5);
+  margin-bottom: 32px;
+}
+
+.pricing-features {
+  margin-bottom: 36px;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(39, 38, 38, 0.06);
+  color: rgba(39, 38, 38, 0.75);
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: #30A5A5;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-card .btn-primary {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.pricing-card .btn-ghost--dark {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 15px 36px;
+  border: 2px solid #30A5A5;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #30A5A5;
+  transition: all 0.3s ease;
+}
+
+.pricing-card .btn-ghost--dark:hover {
+  background: rgba(48, 165, 165, 0.08);
+  border-color: #279090;
+  transform: translateY(-2px);
+}
+
+.pricing-note {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: rgba(39, 38, 38, 0.5);
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq {
+  background: #272626;
+  color: #FAF7F2;
+  padding: 120px 0;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.faq-header .section-sub {
+  margin: 0 auto;
+  color: rgba(253, 252, 250, 0.65);
+}
+
+.faq-list {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(253, 252, 250, 0.08);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #FAF7F2;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #30A5A5;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(253, 252, 250, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.35s ease;
+  margin-left: 16px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  border-color: #30A5A5;
+  color: #30A5A5;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(253, 252, 250, 0.6);
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final-cta {
+  background: #272626;
+  padding: 0 0 120px;
+}
+
+.final-cta-inner {
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 56px 40px 28px;
+  border: 1px solid rgba(253, 252, 250, 0.08);
+  border-radius: 20px;
+  background: rgba(253, 252, 250, 0.03);
+}
+
+.final-cta h2 {
+  font-size: clamp(30px, 4.5vw, 44px);
+  color: #FAF7F2;
+  margin-bottom: 20px;
+}
+
+.final-cta h2 em {
+  font-style: normal;
+  color: #DC5A3B;
+}
+
+.final-cta p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: rgba(253, 252, 250, 0.6);
+  margin-bottom: 40px;
+}
+
+.final-cta .trust-line {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(253, 252, 250, 0.4);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: #272626;
+  color: #FAF7F2;
+  padding: 48px 0;
+  border-top: 1px solid rgba(253, 252, 250, 0.06);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-row + .footer-row {
+  padding-top: 24px;
+}
+
+.footer-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-logo span {
+  color: #DC5A3B;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: rgba(253, 252, 250, 0.5);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FAF7F2;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(253, 252, 250, 0.15);
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  border-color: rgba(253, 252, 250, 0.4);
+  background: rgba(253, 252, 250, 0.08);
+  transform: translateY(-2px);
+}
+
+.footer-social a svg {
+  width: 16px;
+  height: 16px;
+  fill: rgba(253, 252, 250, 0.5);
+  transition: fill 0.3s ease;
+}
+
+.footer-social a:hover svg {
+  fill: #FAF7F2;
+}
+
+.footer-email {
+  font-size: 14px;
+  color: rgba(253, 252, 250, 0.5);
+  transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+  color: #FAF7F2;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: rgba(253, 252, 250, 0.35);
+}
+
+/* ============================================
+   RESPONSIVE — 960px
+   ============================================ */
+@media (max-width: 960px) {
+  .problems-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .platform-badges {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-diff {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 32px;
+    gap: 24px;
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    padding: 40px 32px 36px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .hero-stats {
+    gap: 32px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — 768px
+   ============================================ */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #272626;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    transition: right 0.35s ease;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    color: rgba(253, 252, 250, 0.8);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    padding: 130px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    margin-bottom: 56px;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-ghost {
+    text-align: center;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .platform-badges {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .final-cta-inner {
+    padding: 56px 28px;
+  }
+
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAV
+     ============================================ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services" onclick="closeNav()">Services</a>
+      <a href="#process" onclick="closeNav()">Process</a>
+      <a href="#team" onclick="closeNav()">Team</a>
+      <a href="#pricing" onclick="closeNav()">Pricing</a>
+      <a href="#faq" onclick="closeNav()">FAQ</a>
+      <a href="stickypost-blog.html" onclick="closeNav()">Blog</a>
+      <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="nav-cta" onclick="closeNav()">Book a Call</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content reveal">
+      <span class="hero-eyebrow">Organic Social Media Marketing</span>
+      <h1>Your company page is <em>costing you trust</em> every day it sits empty</h1>
+      <p class="hero-sub">Full-team, done-for-you organic content for professional service businesses.<br>You stay focused on your business — we make sure people find you and remember you.</p>
+      <div class="hero-buttons">
+        <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a Discovery Call</a>
+        <a href="#process" class="btn-ghost btn-ghost--dark">See How It Works</a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div class="hero-stat">
+          <div class="hero-stat-number"><span class="count-up" data-target="4" data-suffix="+">0</span></div>
+          <div class="hero-stat-label">Years Running</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number"><span class="count-up" data-target="7">0</span></div>
+          <div class="hero-stat-label">Platforms Managed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number"><span class="count-up" data-target="10000" data-suffix="+" data-comma="true">0</span></div>
+          <div class="hero-stat-label">Posts Created</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number"><span class="count-up" data-target="8" data-suffix="M+" data-comma="false">0</span></div>
+          <div class="hero-stat-label">Client Impressions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROBLEMS
+     ============================================ -->
+<section class="problems" id="problems">
+  <div class="container">
+    <div class="problems-header reveal">
+      <span class="eyebrow">Sound Familiar?</span>
+      <h2 class="section-heading" style="color: #FAF7F2;">Three things keeping your company page stuck</h2>
+      <p class="section-sub">You already know your social presence matters. You just haven't had the time, the team, or the strategy to fix it.</p>
+    </div>
+    <div class="problems-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">&#128683;</div>
+        <h3>Your last post was six months ago</h3>
+        <p>Someone checks your company page before they buy. And what they see is... nothing. A dead page with a 2023 cover photo and no proof you're still in business. That silence is doing more damage than you realize.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">&#128104;&#8205;&#128187;</div>
+        <h3>Your VA is not a social media team</h3>
+        <p>You've tried handing social to someone on your team. Maybe a VA, maybe an intern. The posts look generic, the strategy is nonexistent, and you're embarrassed every time someone mentions your LinkedIn. It's not their fault — this isn't their job.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">&#128566;</div>
+        <h3>You don't want to be the face of the company</h3>
+        <p>Every social media "expert" says you need to get on camera. Post selfies. Dance on TikTok. You built a company so the brand could speak for itself — not so you could become an influencer. Your company page should do the heavy lifting, not your face.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TRANSITION STRIP
+     ============================================ -->
+<div class="transition-strip reveal">
+  <div class="container">
+    <p>Your company page is the first impression you didn't know you were making. We make it count.</p>
+  </div>
+</div>
+
+<!-- ============================================
+     TESTIMONIALS
+     ============================================ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="eyebrow">What Our Clients Say</span>
+      <h2 class="section-heading">Don't take our word for it</h2>
+      <p class="section-sub">Here's what it's actually like working with us — straight from the people whose company pages we manage every day.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote"><span class="testimonial-highlight">Beautifully designed, on-brand content</span> with thoughtful, well-structured copy — and always delivered on time with a clear plan in place. Organized, communicative, and consistently responsive.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Annie D.</div>
+            <div class="testimonial-company">Collaborating Docs</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote"><span class="testimonial-highlight">Their entire team has taken the time to learn about our service</span> and our marketing demographics. Extremely pleased with the content, consistency, and insight they've used to promote our message.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">T</div>
+          <div>
+            <div class="testimonial-name">Travis F.</div>
+            <div class="testimonial-company">The Party Team</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote"><span class="testimonial-highlight">So well prepared for our first call</span> that we were able to jump right in without my having to spend time explaining how we do things. She already knew from her own research. I highly recommend them.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">Jeff C.</div>
+            <div class="testimonial-company">CraftOptics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROCESS
+     ============================================ -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-header reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="section-heading" style="color: #FAF7F2;">From zero to fully managed in one week</h2>
+      <p class="section-sub">We do the heavy lifting. You just show up for one call, approve your content, and get back to running your business.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-number">01</div>
+        <h3>Sign up — no strings attached</h3>
+        <p>Pick your plan, sign the contract, and your first payment kicks things off. No long-term commitment. You stay because you want to, not because you're locked in.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">02</div>
+        <h3>Onboarding call</h3>
+        <p>One call. We ask everything we need to understand your business, your audience, and your voice. This is where the strategy starts taking shape.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">03</div>
+        <h3>We build your content engine</h3>
+        <p>Content calendar, design templates, reel templates — we build the whole system from scratch, tailored to your brand. You approve the direction before anything goes live.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">04</div>
+        <h3>First month content in one week</h3>
+        <p>Within one week of your onboarding call, your first month of content is ready for review. Most clients approve everything on the first round — something we're really proud of.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">05</div>
+        <h3>Walkthrough + approval flow</h3>
+        <p>We walk you through how everything works — how to review content, how to approve, where to find your calendar. It's simple and built around your schedule.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">06</div>
+        <h3>We take it from here</h3>
+        <p>Once we're live, it becomes a smooth monthly cycle. We create, you approve, we post. You stop thinking about social and start reaping the benefits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICES
+     ============================================ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="eyebrow">What You Get</span>
+      <h2 class="section-heading">Everything your company page needs. Nothing it doesn't.</h2>
+      <p class="section-sub">This isn't a template dump or a content calendar you have to execute yourself. We handle the whole thing, start to finish.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <h3>Social Media Strategy</h3>
+        <p>We research your industry, your competitors, and your audience — then build a custom strategy for your company page. Not a copy-paste from the last client. Yours.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Content Creation</h3>
+        <p>Graphics, carousels, reels, captions — all designed and written by our team. Everything matches your brand and speaks directly to the people you want to reach.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Scheduling &amp; Publishing</h3>
+        <p>We schedule and publish your content on your behalf. No third-party apps cluttering your workflow — we use native tools to keep it clean and consistent.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Multi-Platform Management</h3>
+        <p>Instagram, Facebook, LinkedIn, X, YouTube, TikTok, Pinterest — we manage wherever your audience already is. One team, all platforms, zero gaps.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Brand-Matched Design</h3>
+        <p>Every asset we create looks like it belongs to your brand. Custom templates, your colors, your voice. No one would ever guess it was built by an outside team.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Content Calendar &amp; Reporting</h3>
+        <p>Full visibility into what's going out and when. You always know what's coming and always have the chance to weigh in before anything goes live.</p>
+      </div>
+    </div>
+    <div class="platforms-bar reveal">
+      <p>Platforms We Manage</p>
+      <div class="platform-badges">
+        <div class="platform-badge">
+          <span class="platform-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FAF7F2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+          LinkedIn
+        </div>
+        <div class="platform-badge">
+          <span class="platform-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FAF7F2"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span>
+          Instagram
+        </div>
+        <div class="platform-badge">
+          <span class="platform-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FAF7F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></span>
+          Facebook
+        </div>
+        <div class="platform-badge">
+          <span class="platform-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FAF7F2"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span>
+          TikTok
+        </div>
+        <div class="platform-badge">
+          <span class="platform-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FAF7F2"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span>
+          YouTube
+        </div>
+        <div class="platform-badge">
+          <span class="platform-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FAF7F2"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg></span>
+          Pinterest
+        </div>
+        <div class="platform-badge">
+          <span class="platform-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FAF7F2"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
+          X
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TEAM
+     ============================================ -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="team-header reveal">
+      <span class="eyebrow">Your Team</span>
+      <h2 class="section-heading" style="color: #FAF7F2;">Four people working on your account. Not one.</h2>
+      <p class="section-sub">Most agencies assign one social media manager to your account and call it done. We don't work that way.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-icon">&#128161;</div>
+        <h3>Strategist</h3>
+        <p>Builds the content plan, researches your audience and competitors, and makes sure every post has a reason behind it.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-icon">&#127912;</div>
+        <h3>Designer</h3>
+        <p>Creates every visual asset from scratch — graphics, carousels, templates — all built to match your brand down to the last detail.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-icon">&#127909;</div>
+        <h3>Video Editor</h3>
+        <p>Handles reels, shorts, and any video content your platforms need. Takes raw material and turns it into scroll-stopping content.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-icon">&#128203;</div>
+        <h3>Project Manager</h3>
+        <p>Keeps everything running on time, coordinates the team, and makes sure nothing slips through the cracks on your account.</p>
+      </div>
+    </div>
+    <div class="team-diff reveal">
+      <div class="team-diff-badge">&#9733;</div>
+      <div>
+        <h3>Every person on the team independently researches your business before we create a single post</h3>
+        <p>When you onboard with us, each team member digs into your company, your industry, and your audience on their own. Then we come together and brainstorm. That means four perspectives, not one. Four brains working on your content, not a single overworked manager guessing at what might work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     RESULTS / INDUSTRIES
+     ============================================ -->
+<section class="results" id="results">
+  <div class="container">
+    <div class="results-header reveal">
+      <span class="eyebrow">Industries We Work With</span>
+      <h2 class="section-heading">We love the "boring" industries. Seriously.</h2>
+      <p class="section-sub">The businesses everyone else overlooks are the ones that benefit most from a real social presence. That's exactly where we thrive.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card reveal">
+        <span class="result-label">Healthcare</span>
+        <h3>From dental offices to mental health practices</h3>
+        <p>Medical practices, PT clinics, therapists, medical billing — we build content that connects with patients while respecting the sensitivity of the space.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-label">IT &amp; SaaS</span>
+        <h3>Translating tech into trust</h3>
+        <p>Managed services and B2B SaaS companies need social proof that speaks human, not jargon. We create content that makes complex services feel approachable.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-label">Commercial Services</span>
+        <h3>Cleaning, logistics, and beyond</h3>
+        <p>B2B service companies that keep businesses running deserve a social presence that reflects how essential they are. We build that presence for you.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-label">Accounting</span>
+        <h3>Making numbers interesting (really)</h3>
+        <p>Tax tips, firm culture, financial insights — turned into content that actually makes people stop scrolling and start paying attention to your practice.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-label">HR Consulting</span>
+        <h3>Thought leadership that feels real</h3>
+        <p>Positioning your consulting firm as the go-to resource for companies that need HR expertise — through content that actually sounds like people, not policies.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-label">Real Estate</span>
+        <h3>Listings fade — your brand doesn't have to</h3>
+        <p>Brokerages, property managers, and agents who want their company page doing the heavy lifting. We build a social presence that keeps you top of mind between transactions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PRICING
+     ============================================ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-heading">Pick the plan that fits. Change it whenever.</h2>
+      <p class="section-sub">Month-to-month. No contracts. No setup fees. Cancel anytime — though most people don't.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="pricing-card reveal">
+        <h3>Starter</h3>
+        <div class="price">$997<span>/mo</span></div>
+        <p class="price-sub">Perfect for getting started on two platforms</p>
+        <ul class="pricing-features">
+          <li>2 platforms managed</li>
+          <li>8 posts per month</li>
+          <li>Custom content strategy</li>
+          <li>Branded design templates</li>
+          <li>Content calendar + approval flow</li>
+          <li>Full team on your account</li>
+        </ul>
+        <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="btn-ghost--dark">Book a Discovery Call</a>
+      </div>
+      <!-- Growth -->
+      <div class="pricing-card featured reveal">
+        <span class="pricing-badge">Most Popular</span>
+        <h3>Growth</h3>
+        <div class="price">$1,997<span>/mo</span></div>
+        <p class="price-sub">The sweet spot for serious brand building</p>
+        <ul class="pricing-features">
+          <li>3 platforms managed</li>
+          <li>20 posts per month</li>
+          <li>Custom content strategy</li>
+          <li>Branded design + reel templates</li>
+          <li>Content calendar + approval flow</li>
+          <li>Full team on your account</li>
+          <li>Multi-platform scheduling</li>
+          <li>Performance reporting</li>
+        </ul>
+        <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a Discovery Call</a>
+      </div>
+      <!-- Premium -->
+      <div class="pricing-card reveal">
+        <h3>Premium</h3>
+        <div class="price">$3,497<span>/mo</span></div>
+        <p class="price-sub">Full coverage across every platform</p>
+        <ul class="pricing-features">
+          <li>ALL relevant platforms managed</li>
+          <li>30 posts per month per platform</li>
+          <li>Custom content strategy</li>
+          <li>Branded design + reel templates</li>
+          <li>Content calendar + approval flow</li>
+          <li>Full team on your account</li>
+          <li>Multi-platform scheduling</li>
+          <li>Monthly strategy review call</li>
+          <li>Performance reporting</li>
+
+        </ul>
+        <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="btn-ghost--dark">Book a Discovery Call</a>
+      </div>
+    </div>
+    <p class="pricing-note reveal">All plans are month-to-month. No lock-in contracts. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+     ============================================ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-heading" style="color: #FAF7F2;">Questions we get all the time</h2>
+      <p class="section-sub">If yours isn't here, just ask on the discovery call. No pressure, no pitch — just answers.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What if I don't have any existing content?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">That's totally fine — most of our clients start from scratch. We create everything from the ground up: strategy, design templates, content calendar, captions, all of it. You don't need to bring us anything except access to your accounts and a little time for one onboarding call.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do I need to be on camera?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Nope. That's kind of our whole thing. We specialize in company pages — not personal brands. Your business is the star, not your face. We build content around your brand, your expertise, and your services without you ever needing to step in front of a camera.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How fast will I see results?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Organic social is a long game — anyone who tells you otherwise is selling something. That said, most clients notice a shift within the first 60-90 days: more profile visits, more engagement, people mentioning they "saw you on LinkedIn." The real compounding happens around month 4-6, and it keeps building from there.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What if I want to cancel?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Then you cancel. No guilt trips, no penalty fees, no contract buyout. All our plans are month-to-month with automatic recurring payments. If you want to pause or stop, just let us know. We'd rather earn your business every month than trap you into staying.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you write the captions too?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes — everything. Captions, hashtags, calls to action, the works. We write in your brand's voice so it sounds like your company, not ours. You see everything before it goes live and can request changes, but honestly, most clients approve content as-is from the very first month.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What industries do you work with?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Professional service businesses — the kind most agencies call "boring." Accounting firms, real estate brokerages, HR consultants, IT managed services, B2B SaaS, healthcare (dental, PT, mental health, medical billing), commercial cleaning, logistics, and more. If you sell a service and don't need product photography, we're probably a great fit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FINAL CTA
+     ============================================ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner reveal">
+      <h2>Stop letting an empty page <em>speak for your business</em></h2>
+      <p>One discovery call. No commitment, no pressure. Just a real conversation about what your company page could actually do for you — and whether we're the right team to make it happen.</p>
+      <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a Discovery Call</a>
+      <p class="trust-line">Month-to-month. No lock-in. Full team on your account from day one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-row">
+      <a href="#" class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/stickypost-social/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://www.instagram.com/stickypost.social/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.facebook.com/StickyPost.Social/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.tiktok.com/@stickypost.social" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        <a href="mailto:howdy@essiralc.com" title="howdy@essiralc.com"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-row">
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#team">Team</a>
+        <a href="#pricing">Pricing</a>
+        <a href="stickypost-blog.html">Blog</a>
+        <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 StickyPost.Social. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================
+   NAV SCROLL EFFECT
+   ============================================ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+/* ============================================
+   MOBILE NAV
+   ============================================ */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+function toggleNav() {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+}
+
+function closeNav() {
+  hamburger.classList.remove('active');
+  navLinks.classList.remove('open');
+}
+
+/* ============================================
+   FAQ ACCORDION
+   ============================================ */
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-answer');
+  const isActive = item.classList.contains('active');
+
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('active');
+    i.querySelector('.faq-answer').style.maxHeight = null;
+  });
+
+  // Open clicked (if it wasn't already open)
+  if (!isActive) {
+    item.classList.add('active');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+/* ============================================
+   SCROLL REVEAL (IntersectionObserver)
+   ============================================ */
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      // Stagger animations slightly
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+/* ============================================
+   COUNT-UP ANIMATION
+   ============================================ */
+function animateCountUp(el) {
+  const target = parseInt(el.getAttribute('data-target'));
+  const suffix = el.getAttribute('data-suffix') || '';
+  const useComma = el.getAttribute('data-comma') === 'true';
+  const duration = 2000;
+  const start = 0;
+  const startTime = performance.now();
+
+  function format(n) {
+    return useComma ? n.toLocaleString() : n.toString();
+  }
+
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out curve for a smooth deceleration
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(start + (target - start) * eased);
+    el.textContent = format(current) + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+const statsSection = document.getElementById('heroStats');
+let statsCounted = false;
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !statsCounted) {
+      statsCounted = true;
+      document.querySelectorAll('.count-up').forEach((el, i) => {
+        setTimeout(() => animateCountUp(el), i * 150);
+      });
+      statsObserver.unobserve(statsSection);
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+statsObserver.observe(statsSection);
+</script>
+
+</body>
+</html>

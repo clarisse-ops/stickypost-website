@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Real insights on organic social media for professional service businesses. Practical insights on what actually works, from the team at StickyPost.Social.">
+  <meta name="keywords" content="social media marketing, organic social, company pages, service businesses, B2B social media, agency blog">
+  <meta name="author" content="StickyPost.Social">
+  <meta property="og:title" content="Blog — StickyPost.Social">
+  <meta property="og:description" content="Straight talk about social media for service businesses. Real insights from running social every single day — nothing recycled, nothing generic.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Blog — StickyPost.Social</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --charcoal: #272626;
+      --cream: #FDFCFA;
+      --terracotta: #DC5A3B;
+      --teal: #30A5A5;
+      --pale-teal: #B2E8E3;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Oswald', sans-serif;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--charcoal);
+      transition: box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--cream);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span {
+      color: var(--terracotta);
+    }
+
+    .logo-i {
+      text-transform: lowercase;
+      color: inherit !important;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(253, 252, 250, 0.75);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--cream);
+    }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: var(--cream) !important;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #c44e32;
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--cream);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile nav */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      background: var(--charcoal);
+      padding: 24px;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 999;
+      border-top: 1px solid rgba(253, 252, 250, 0.1);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: rgba(253, 252, 250, 0.75);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu a.active {
+      color: var(--cream);
+    }
+
+    .mobile-menu .nav-cta {
+      display: inline-block;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: var(--charcoal);
+      padding: 140px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(220, 90, 59, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(48, 165, 165, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #30A5A5;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--terracotta);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(253, 252, 250, 0.7);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ========== BLOG GRID ========== */
+    .blog-section {
+      background: var(--cream);
+      padding: 100px 24px;
+    }
+
+    .blog-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    /* ========== BLOG CARD ========== */
+    .blog-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(39, 38, 38, 0.08);
+      box-shadow: 0 2px 12px rgba(39, 38, 38, 0.04);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .blog-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(39, 38, 38, 0.12);
+      border-color: rgba(39, 38, 38, 0.14);
+    }
+
+    .blog-card.visible:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-image {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .card-image-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .card-body {
+      padding: 28px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+
+    .card-excerpt {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    .card-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--terracotta);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s ease;
+    }
+
+    .card-link:hover {
+      gap: 12px;
+    }
+
+    .card-link span {
+      transition: transform 0.2s ease;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: var(--charcoal);
+      padding: 80px 24px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .cta-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      color: var(--cream);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--terracotta);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 40px;
+      border-radius: 6px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background: #c44e32;
+      transform: translateY(-2px);
+    }
+
+    .cta-trust {
+      font-size: 0.85rem;
+      color: rgba(253, 252, 250, 0.5);
+      margin-top: 20px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(253, 252, 250, 0.06);
+      padding: 48px 24px;
+      color: var(--cream);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-row + .footer-row {
+      padding-top: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--cream);
+      text-transform: uppercase;
+    }
+
+    .footer-logo span {
+      color: var(--terracotta);
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(253, 252, 250, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      border-color: rgba(253, 252, 250, 0.4);
+      background: rgba(253, 252, 250, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .footer-social a svg {
+      width: 16px;
+      height: 16px;
+      fill: rgba(253, 252, 250, 0.5);
+      transition: fill 0.3s ease;
+    }
+
+    .footer-social a:hover svg {
+      fill: var(--cream);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(253, 252, 250, 0.5);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cream);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(253, 252, 250, 0.35);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 960px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+
+      .card-title {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        padding: 140px 20px 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .blog-section {
+        padding: 60px 20px;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .card-image {
+        height: 180px;
+      }
+
+      .card-image-text {
+        font-size: 1.3rem;
+      }
+
+      .card-body {
+        padding: 24px 24px 28px;
+      }
+
+      .card-title {
+        font-size: 1.25rem;
+      }
+
+      .cta-section {
+        padding: 60px 20px;
+      }
+
+      .cta-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .footer-links {
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+      <ul class="nav-links">
+        <li><a href="stickypost-website-v4.html#services">Services</a></li>
+        <li><a href="stickypost-portfolio.html">Portfolio</a></li>
+        <li><a href="stickypost-website-v4.html#process">Process</a></li>
+        <li><a href="stickypost-website-v4.html#team">Team</a></li>
+        <li><a href="stickypost-website-v4.html#pricing">Pricing</a></li>
+        <li><a href="stickypost-website-v4.html#faq">FAQ</a></li>
+        <li><a href="stickypost-blog.html" class="active">Blog</a></li>
+        <li><a href="stickypost-contact.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="stickypost-website-v4.html#services">Services</a>
+      <a href="stickypost-portfolio.html">Portfolio</a>
+      <a href="stickypost-website-v4.html#process">Process</a>
+      <a href="stickypost-website-v4.html#team">Team</a>
+      <a href="stickypost-website-v4.html#pricing">Pricing</a>
+      <a href="stickypost-website-v4.html#faq">FAQ</a>
+      <a href="stickypost-blog.html" class="active">Blog</a>
+      <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">The Blog</p>
+      <h1>Straight Talk About <em>Social Media</em> for Service Businesses</h1>
+      <p>Skip the "10 hacks to go viral" posts. This is real insight from running social for professional service companies every single day.</p>
+    </div>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section class="blog-section">
+    <div class="blog-grid">
+
+      <!-- Card 1 -->
+      <a href="stickypost-blog-post-1.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #DC5A3B 100%);">
+          <div class="card-image-text">Company Pages &gt; Personal Brand</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Company Pages</span>
+          <h3 class="card-title">Why Your Company Page Matters More Than Your Personal Brand</h3>
+          <p class="card-excerpt">Everyone's telling you to get on camera. Post selfies. Dance on TikTok. But for most professional service businesses, your company page is doing the actual heavy lifting — or it should be.</p>
+          <p class="card-meta">By Clarisse · March 26, 2026 · 6 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="stickypost-blog-post-2.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #30A5A5 100%);">
+          <div class="card-image-text">Your VA Deserves Better</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Agency Life</span>
+          <h3 class="card-title">What Happens When You Hand Social Media to Your VA (And Why It's Not Their Fault)</h3>
+          <p class="card-excerpt">You tried giving social to your VA. The posts look generic, the strategy is nonexistent, and it always falls to the bottom of the priority list. Here's why the system is broken — not the person.</p>
+          <p class="card-meta">By Clarisse · March 26, 2026 · 6 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="stickypost-blog-post-3.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #DC5A3B 100%);">
+          <div class="card-image-text">"Boring" Is a Superpower</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Strategy</span>
+          <h3 class="card-title">Why "Boring" Industries Actually Win at Social Media</h3>
+          <p class="card-excerpt">Everyone thinks social media only works for flashy brands. That's wrong. When every accounting firm in your city has a dead LinkedIn page, even a decent one stands out like crazy.</p>
+          <p class="card-meta">By Clarisse · March 20, 2026 · 6 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="stickypost-blog-post-4.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #30A5A5 100%);">
+          <div class="card-image-text">Consistency Beats Everything</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Consistency</span>
+          <h3 class="card-title">The Real Cost of an Inconsistent Social Media Presence</h3>
+          <p class="card-excerpt">Most service businesses don't have zero social media. They have worse — a half-assed, inconsistent one. And that's actually a bigger trust killer than having no page at all.</p>
+          <p class="card-meta">By Clarisse · March 14, 2026 · 6 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="stickypost-blog-post-5.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #DC5A3B 100%);">
+          <div class="card-image-text">4 Brains > 1</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Team</span>
+          <h3 class="card-title">One Social Media Manager vs. a Full Team — What Actually Changes</h3>
+          <p class="card-excerpt">Most agencies run social through one person doing 7 jobs. Here's what happens when you replace that with a designer, video editor, strategist, and project manager all working on your account.</p>
+          <p class="card-meta">By Clarisse · March 8, 2026 · 6 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="stickypost-blog-post-6.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #30A5A5 100%);">
+          <div class="card-image-text">No Contracts. Ever.</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Philosophy</span>
+          <h3 class="card-title">Why We Don't Do Lock-In Contracts (And Never Will)</h3>
+          <p class="card-excerpt">Most agencies lock you in for 6-12 months. We don't. Every client stays because the work speaks for itself — not because a contract forces them to. Here's why that matters.</p>
+          <p class="card-meta">By Clarisse · March 2, 2026 · 6 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 7 -->
+      <a href="stickypost-blog-post-7.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #DC5A3B 100%);">
+          <div class="card-image-text">They're Checking. Are You Ready?</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Buyer Behavior</span>
+          <h3 class="card-title">84% of Executives Check Your Social Before They Call You. What Are They Finding?</h3>
+          <p class="card-excerpt">Your prospects are researching you on social before they ever reach out. Most service businesses have no idea how much business they're losing because of what those prospects find — or don't.</p>
+          <p class="card-meta">By Clarisse · February 24, 2026 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 8 -->
+      <a href="stickypost-blog-post-8.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #30A5A5 100%);">
+          <div class="card-image-text">The Real Problem Isn't Content</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Operations</span>
+          <h3 class="card-title">You Don't Have a Content Problem. You Have a "Who's Doing This?" Problem.</h3>
+          <p class="card-excerpt">You know you need social media. The real issue is that nobody on your team is actually equipped or allocated to do it properly — and it always falls to whoever has a free minute.</p>
+          <p class="card-meta">By Clarisse · February 16, 2026 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 9 -->
+      <a href="stickypost-blog-post-9.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #DC5A3B 100%);">
+          <div class="card-image-text">Post Smarter, Not More</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Platform Strategy</span>
+          <h3 class="card-title">LinkedIn Carousels Get 6x More Engagement Than Images. Are You Using Them?</h3>
+          <p class="card-excerpt">Most service businesses are posting the wrong things on the wrong platforms. The data shows exactly what works — and most of you are leaving engagement on the table.</p>
+          <p class="card-meta">By Clarisse · February 8, 2026 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 10 -->
+      <a href="stickypost-blog-post-10.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #1a3a5c 40%, #30A5A5 100%);">
+          <div class="card-image-text">The LinkedIn Playbook</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">LinkedIn</span>
+          <h3 class="card-title">The LinkedIn Playbook for Professional Service Company Pages (What Actually Works in 2026)</h3>
+          <p class="card-excerpt">LinkedIn generates 75-85% of all B2B social leads. But most company pages are doing it wrong. Here's the real playbook — content formats, algorithm shifts, and the numbers behind what works.</p>
+          <p class="card-meta">By Clarisse · January 28, 2026 · 8 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 11 -->
+      <a href="stickypost-blog-post-11.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #5c1a3a 40%, #DC5A3B 100%);">
+          <div class="card-image-text">Instagram Without the Photoshoot</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Instagram</span>
+          <h3 class="card-title">Instagram for Service Businesses: How to Win Without Product Photos or Dance Reels</h3>
+          <p class="card-excerpt">"We don't have anything to photograph." You don't need to. Carousels get 10% engagement. Reels drive discovery. And Instagram SEO is real now. Here's how service businesses actually win.</p>
+          <p class="card-meta">By Clarisse · January 18, 2026 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 12 -->
+      <a href="stickypost-blog-post-12.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #30A5A5 100%);">
+          <div class="card-image-text">The Platforms You're Ignoring</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Platform Strategy</span>
+          <h3 class="card-title">Facebook, TikTok, and the Platforms Nobody Told You Still Matter</h3>
+          <p class="card-excerpt">Everyone obsesses over LinkedIn and grudgingly does Instagram. Meanwhile, Facebook is showing your posts to people who've never followed you, and 49% of consumers use TikTok as a search engine.</p>
+          <p class="card-meta">By Clarisse · January 8, 2026 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 13 -->
+      <a href="stickypost-blog-post-13.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #DC5A3B 100%);">
+          <div class="card-image-text">They Failed You. Not Social.</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Agency Life</span>
+          <h3 class="card-title">We Tried an Agency Before and It Didn't Work. Here's Why.</h3>
+          <p class="card-excerpt">We hear this on almost every discovery call. The story always sounds the same — and the reasons it didn't work are usually the same five things.</p>
+          <p class="card-meta">By Clarisse · December 28, 2025 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 14 -->
+      <a href="stickypost-blog-post-14.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #30A5A5 100%);">
+          <div class="card-image-text">We Already Know Your Business</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Process</span>
+          <h3 class="card-title">How We Research a New Client Before We Create a Single Post</h3>
+          <p class="card-excerpt">Every person on the team independently researches your business before we sit down together. By the time we get on the onboarding call, we've already done the homework.</p>
+          <p class="card-meta">By Clarisse · December 21, 2025 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 15 -->
+      <a href="stickypost-blog-post-15.html" class="blog-card" data-reveal>
+        <div class="card-image" style="background: linear-gradient(135deg, #272626 0%, #3a3838 60%, #DC5A3B 100%);">
+          <div class="card-image-text">Sign Up to Go Live in 2 Weeks</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Process</span>
+          <h3 class="card-title">What Happens After You Sign Up: Our Onboarding Process Start to Finish</h3>
+          <p class="card-excerpt">From the moment you sign up to the moment your first posts go live — here's exactly what our onboarding looks like and why it only takes two weeks.</p>
+          <p class="card-meta">By Clarisse · December 14, 2025 · 7 min read</p>
+          <span class="card-link">Read the full post <span>&rarr;</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" data-reveal>
+    <div class="cta-inner">
+      <h2>Want us to handle your social so you can stop thinking about it?</h2>
+      <a href="stickypost-contact.html" class="cta-btn">Book a Discovery Call</a>
+      <p class="cta-trust">Month-to-month. No lock-in. Full team on your account from day one.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-row">
+        <a href="stickypost-website-v4.html" class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/stickypost-social/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.instagram.com/stickypost.social/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://www.facebook.com/StickyPost.Social/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.tiktok.com/@stickypost.social" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a href="mailto:howdy@essiralc.com" title="howdy@essiralc.com"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-row">
+        <div class="footer-links">
+          <a href="stickypost-website-v4.html#services">Services</a>
+          <a href="stickypost-portfolio.html">Portfolio</a>
+          <a href="stickypost-website-v4.html#process">Process</a>
+          <a href="stickypost-website-v4.html#team">Team</a>
+          <a href="stickypost-website-v4.html#pricing">Pricing</a>
+          <a href="stickypost-website-v4.html#faq">FAQ</a>
+          <a href="stickypost-blog.html">Blog</a>
+          <a href="stickypost-contact.html">Contact</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 StickyPost.Social. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Fade-up reveal with IntersectionObserver
+    const revealElements = document.querySelectorAll('[data-reveal]');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger cards slightly
+          const delay = entry.target.classList.contains('blog-card')
+            ? Array.from(document.querySelectorAll('.blog-card')).indexOf(entry.target) * 150
+            : 0;
+
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

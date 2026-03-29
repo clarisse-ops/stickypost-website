@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Real Cost of an Inconsistent Social Media Presence | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFCFA;
+            color: #272626;
+            line-height: 1.7;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #272626;
+            z-index: 1000;
+            padding: 0 32px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #FDFCFA;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: #DC5A3B;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #B2E8E3;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #FDFCFA;
+        }
+
+        .nav-links .nav-cta {
+            background: #DC5A3B;
+            color: #FDFCFA;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .nav-links .nav-cta:hover {
+            background: #c44e32;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 64px;
+            background: #272626;
+            padding: 80px 32px 72px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #30A5A5;
+            border: 1.5px solid #30A5A5;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #FDFCFA;
+            line-height: 1.15;
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-size: 0.9rem;
+            color: #B2E8E3;
+        }
+
+        .hero-meta span {
+            margin: 0 8px;
+            opacity: 0.5;
+        }
+
+        /* ARTICLE */
+        .article-wrapper {
+            background: #FDFCFA;
+            padding: 64px 32px 80px;
+        }
+
+        .article-content {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .article-content p {
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+            color: #272626;
+        }
+
+        .article-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #272626;
+            margin: 48px 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-content strong {
+            font-weight: 600;
+        }
+
+        .pull-quote {
+            border-left: 4px solid #30A5A5;
+            padding: 24px 28px;
+            margin: 40px 0;
+            background: transparent;
+        }
+
+        .pull-quote p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            line-height: 1.45;
+            color: #272626;
+            margin-bottom: 0 !important;
+        }
+
+        .article-content ul {
+            margin: 0 0 24px 20px;
+            font-size: 1.05rem;
+        }
+
+        .article-content ul li {
+            margin-bottom: 10px;
+        }
+
+        /* CTA CARD */
+        .cta-section {
+            background: #272626;
+            padding: 80px 32px;
+        }
+
+        .cta-card {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-card h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FDFCFA;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .cta-card p {
+            font-size: 1.05rem;
+            color: #B2E8E3;
+            margin-bottom: 32px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #DC5A3B;
+            color: #FDFCFA;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: #c44e32;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #272626;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+            padding: 32px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: rgba(178, 232, 227, 0.5);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                font-size: 0.8rem;
+            }
+
+            .nav-cta {
+                padding: 7px 14px !important;
+                font-size: 0.8rem !important;
+            }
+
+            .hero {
+                padding: 60px 20px 52px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .article-wrapper {
+                padding: 48px 20px 60px;
+            }
+
+            .article-content h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+                margin: 32px 0;
+            }
+
+            .pull-quote p {
+                font-size: 1.15rem;
+            }
+
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            .cta-card h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-links">
+            <a href="stickypost-blog.html">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-tag">Consistency</div>
+        <h1>The Real Cost of an Inconsistent Social Media Presence</h1>
+        <div class="hero-meta">
+            Clarisse &mdash; StickyPost.Social <span>|</span> March 14, 2026
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <section class="article-wrapper">
+        <div class="article-content">
+
+            <p>Here's a conversation I've had more times than I can count. A business owner tells me, "We're on social media." I go check their LinkedIn or Instagram. Five posts in January. Nothing in February. A random Canva graphic for St. Patrick's Day in March. Then silence until summer.</p>
+
+            <p>That's not a social media presence. That's a ghost town with the lights flickering on and off.</p>
+
+            <p>And honestly? It might be doing more damage than having no page at all.</p>
+
+            <h2>A Dead Page vs. A Half-Assed Page</h2>
+
+            <p>Most professional service businesses don't have zero social media. They have something worse — an inconsistent one. A burst of energy here, a dry spell there, maybe a holiday post when someone on the team remembers.</p>
+
+            <p>Here's what people don't realize: the message that sends is completely different from having no page at all.</p>
+
+            <p>A blank page says, "They don't do social media." That's neutral. Nobody holds it against you. But an inconsistent page? That tells people something much more specific: <strong>they start things and don't follow through.</strong></p>
+
+            <p>For a service business — whether you're an accounting firm, a law practice, an IT company, a healthcare provider — that's a trust killer. Your entire business model is built on people trusting you to deliver consistently. If your social media looks like you can't commit to posting once a week, why would someone trust you with their books, their legal case, or their IT infrastructure?</p>
+
+            <div class="pull-quote">
+                <p>An inconsistent social media page doesn't say "we're too busy." It says "we start things and don't finish them." And that's a terrible message for a service business.</p>
+            </div>
+
+            <h2>Your Prospects Are Already Looking</h2>
+
+            <p>This one should concern you more than it probably does right now.</p>
+
+            <p>Before someone picks up the phone or fills out a contact form, they're checking you out. They Google your company name. They look at your LinkedIn. They scroll your Instagram or Facebook. This isn't a maybe — it's standard behavior. It's what all of us do before we hire anyone for anything.</p>
+
+            <p>Now imagine what they see. Your last LinkedIn post is from October. Your Instagram has nine posts total, three of which are blurry team photos from 2023. Your Facebook page still has your old logo.</p>
+
+            <p>They're not going to message you and ask, "Hey, are you guys still in business?" They're just going to move on. They'll find a competitor whose page looks alive, current, and professional — and they'll reach out to them instead.</p>
+
+            <p>That's the real cost here. It's not the leads you lost. <strong>It's the leads you'll never even know about.</strong> People who checked, decided against you, and never told you why. You can't measure what you can't see. But it's happening.</p>
+
+            <h2>Why "We'll Get To It Eventually" Never Works</h2>
+
+            <p>I get it. You're running a business. Social media feels like one more thing on a list that's already too long. So it gets pushed to "when we have time," which really means "never consistently."</p>
+
+            <p>The problem is, social media doesn't work in bursts. It works in rhythm.</p>
+
+            <p>The algorithms on every platform — LinkedIn, Instagram, Facebook, all of them — reward consistency. When you post regularly, the platform shows your content to more people. When you disappear for six weeks and come back with one post, the algorithm essentially forgets you exist. You're starting from scratch every time.</p>
+
+            <p>But it's not just the algorithm. It's your audience too. People follow patterns. If you show up every Tuesday with something useful or interesting, people start to expect it. They look for it. That rhythm builds familiarity, and familiarity builds trust. When you only show up sporadically, there's no pattern to latch onto. You're always re-introducing yourself to the same people.</p>
+
+            <div class="pull-quote">
+                <p>Consistency beats creativity on social media, every time. A good post every week beats a brilliant post once every six weeks.</p>
+            </div>
+
+            <h2>The Compound Effect of Showing Up</h2>
+
+            <p>There's something that happens when a company page posts consistently for three months, six months, a year. It compounds. Not in a dramatic, overnight way — but in the way that actually matters for service businesses.</p>
+
+            <p>People start recognizing you. They see your name in their feed regularly. When they need what you offer — or when someone asks them for a recommendation — you're the name that comes to mind. Not because you ran a flashy campaign, but because you were just <em>there</em>, showing up, being useful, staying visible.</p>
+
+            <p>That's brand awareness working the way it's supposed to. Slow, steady, and effective. The kind of thing you can't buy with a single ad campaign but can absolutely build with consistent organic content.</p>
+
+            <p>And here's the part most businesses miss: your competitors who are posting consistently aren't necessarily doing anything more creative than you could. They're just doing it. Regularly. That's the entire advantage.</p>
+
+            <h2>What It Actually Takes To Fix This</h2>
+
+            <p>If you've read this far, you probably already know the answer isn't "try harder" or "remind the intern to post something." You've tried that. It didn't stick.</p>
+
+            <p>The real fix is handing it to a team that does this every single day — not as a side task, but as the actual job.</p>
+
+            <p>That's what we do at StickyPost.Social. We take over your company's social media completely. Strategy, content creation, scheduling, posting — all of it. Our team includes a designer, a video editor, a strategist, and a project manager, and every one of them touches your account. It's not one junior social media manager winging it. It's a full team that studies your business like it's our own before we create a single post.</p>
+
+            <p>Here's how it actually works when you come on board:</p>
+
+            <ul>
+                <li>We start with an onboarding call to understand your business, your audience, and your voice.</li>
+                <li>Your first month of content is ready within one week of that call.</li>
+                <li>Everything goes to you for approval before anything goes live — and honestly, most of our clients approve everything on the first round. That's something we're really proud of.</li>
+                <li>From there, it's a smooth monthly cycle. New content, reviewed and approved, posted consistently. No gaps. No dead periods. No scrambling.</li>
+            </ul>
+
+            <p>We work with professional service businesses — accounting firms, law practices, healthcare providers, IT companies, HR consultants, commercial cleaning companies, and more. The "boring" industries that most social media agencies don't want to touch. We actually love them, because these are the businesses that benefit the most from a consistent, professional social presence. Their competitors aren't doing it well (or at all), which means the bar is right there, waiting to be cleared.</p>
+
+            <h2>The Question Isn't Whether You Need This</h2>
+
+            <p>If you're a service business with a company page that's been collecting dust — or worse, sending mixed signals with random posts every few months — you already know it's a problem. You've probably thought about it more than once.</p>
+
+            <p>The question is whether you're going to keep letting it sit there, quietly costing you credibility and leads you'll never know about. Or whether you're going to hand it to someone who'll actually make it work.</p>
+
+            <p>We're not going to hard-sell you. That's not how we operate. But if you want to see what consistent, professional social media looks like for a business like yours, we should talk.</p>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-card">
+            <h2>Ready to Fix Your Social Media?</h2>
+            <p>Stop letting an inconsistent page cost you leads you'll never know about. Let's talk about what consistent, done-for-you social media looks like for your business.</p>
+            <a href="stickypost-website-v4.html" class="cta-btn">See How We Work</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 StickyPost.Social. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

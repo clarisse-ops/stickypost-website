@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook, TikTok, and the Platforms Nobody Told You Still Matter — StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── ARTICLE ── */
+        .article-wrapper {
+            background: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 1.5em;
+        }
+
+        article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        article h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        article a:hover {
+            color: #c44e32;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.4em;
+        }
+
+        article li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 0.5em;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            background: rgba(178, 232, 227, 0.15);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ── CTA BOX ── */
+        .cta-box {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--pale-teal);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .cta-button:hover {
+            background: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--charcoal);
+            padding: 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+        }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(253, 252, 250, 0.45);
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pale-teal);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 110px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            article p,
+            article li {
+                font-size: 1.05rem;
+            }
+
+            article h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-blog.html" class="nav-link">Back to Blog</a>
+            <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-tag">Platform Strategy</span>
+        <h1>Facebook, TikTok, and the Platforms Nobody Told You Still Matter</h1>
+        <div class="hero-meta">
+            By <strong>Clarisse</strong>, Founder of StickyPost.Social &nbsp;&middot;&nbsp; January 8, 2026
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article>
+
+            <h2>You Have a Platform Blind Spot. Most Service Businesses Do.</h2>
+
+            <p>If you run a professional service business, I already know your social media priorities. LinkedIn is at the top — and it should be. Instagram is somewhere on the list, probably with a side of mild guilt about how inconsistent you've been. And everything else? Facebook is "dead," TikTok is "for teenagers," and you've never seriously considered either one.</p>
+
+            <p>Here's the problem with that thinking: it's wrong. Not about LinkedIn — that platform is absolutely essential, generating <strong>75-85% of B2B leads from social media</strong>. You should be there, doing it well. But when you write off every other platform based on assumptions from 2021, you're leaving real opportunities on the table. Opportunities your competitors aren't even thinking about yet.</p>
+
+            <p>Let me walk you through what's actually happening on the platforms you've been ignoring — because the data tells a very different story than the narrative you've been sold.</p>
+
+            <h2>Facebook Isn't Dead. You Just Stopped Paying Attention.</h2>
+
+            <p>I get it. Facebook feels old. Your cousin's vacation photos, your aunt sharing political memes, marketplace listings for used furniture. Not exactly where a law firm or IT managed services company wants to hang out, right?</p>
+
+            <p>Except Facebook has <strong>3 billion monthly active users and 2 billion daily users</strong>. That's not a dying platform. That's the largest social media platform on the planet, and it's not shrinking.</p>
+
+            <p>But here's what most people don't realize about how Facebook works now: up to <strong>50% of a user's feed is "recommended" content from pages they don't follow</strong>. Read that again. Half the content people see on Facebook is from accounts they've never interacted with before. For service businesses, that's a discovery engine hiding in plain sight. Your posts can reach entirely new audiences without spending a dollar on ads — if the content is good enough for the algorithm to push it.</p>
+
+            <p>And then there's Facebook Groups. <strong>1.8 billion people use Facebook Groups every month</strong>, and Groups consistently deliver significantly higher organic reach than regular Pages. If you're an accounting firm and you're not participating in local business owner groups, you're missing one of the easiest organic visibility plays available anywhere on social media right now.</p>
+
+            <p>The algorithm has changed too. Facebook now prioritizes meaningful interactions — real comments, shares, discussions. Not passive likes. If your content sparks a genuine conversation, the platform rewards you for it. That's actually great news for service businesses that have real expertise to share.</p>
+
+            <p>Oh, and short-form video on Facebook? Reels are getting <strong>22% higher engagement than regular video, 67% more reach, and 30% more shares</strong>. Facebook is even surfacing 25% more same-day Reels, meaning freshness matters. If you post a Reel in the morning, it has a better shot at getting pushed that same day than a video you posted last week. The sweet spot? 15-30 seconds if you want people to watch the whole thing, 90-120 seconds if you're optimizing for raw engagement.</p>
+
+            <h2>The Local Angle Everyone Forgets</h2>
+
+            <p>Here's where Facebook gets really interesting for certain service businesses — and where most people completely miss the point.</p>
+
+            <p>If you have a geographic footprint — dental offices, law firms, commercial cleaning companies, physical therapy practices, accounting firms — Facebook's local features still drive discovery in a way no other platform matches. Local search, community groups, neighborhood recommendations, check-ins, reviews. LinkedIn doesn't do this. Instagram doesn't do this. TikTok definitely doesn't do this.</p>
+
+            <p>When someone in your city asks their Facebook friends "Anyone know a good accountant?" — that post gets engagement, gets shared, and your name comes up if you've been showing up consistently in local groups and on your page. That's not a hypothetical. It happens thousands of times a day in every market in the country.</p>
+
+            <p>Facebook isn't sexy. It's not the platform people brag about at marketing conferences. But for local service businesses, it's still king. And the businesses that figured that out quietly kept showing up while everyone else declared it dead.</p>
+
+            <div class="pull-quote">
+                <p>"Everyone declared Facebook dead five years ago. The businesses that ignored that noise and kept showing up? They're the ones getting found by local customers every single day — while their competitors are nowhere to be seen."</p>
+            </div>
+
+            <h2>"We're an Accounting Firm. We Can't Do TikTok." Yes, You Can.</h2>
+
+            <p>This might be the single biggest misconception in the service business world right now. And I hear it constantly. "TikTok isn't for serious businesses." "Our clients aren't on TikTok." "We'd look ridiculous trying to do trends."</p>
+
+            <p>Let's start with the most important stat: <strong>49% of U.S. consumers now use TikTok as a search engine</strong>. That's up from 41% just in 2024. Among Gen Z, that number jumps to 64%. Among Millennials — your future decision-makers — it's 49%. People aren't just scrolling for entertainment anymore. They're searching for answers, recommendations, and expertise.</p>
+
+            <p>Now think about what that means for a "boring" industry. When someone searches "how to choose a good accountant" or "signs you need an IT audit" on TikTok, what do they find? Almost nothing. Because the accounting firms and IT companies convinced themselves they don't belong there. The platform is <strong>wide open</strong> for professional service businesses. Almost zero competition.</p>
+
+            <p>And TikTok's algorithm is fundamentally different from every other platform. <strong>Every single video gets tested independently regardless of how many followers you have.</strong> Your very first TikTok has the same shot at reaching people as a video from an account with 500,000 followers. That's a true level playing field — something you absolutely cannot say about LinkedIn or Instagram.</p>
+
+            <p>The engagement signals matter too. Watch time is the number one ranking factor, not views. Saves and shares carry more weight than likes. That rewards substantive, educational content — exactly the kind of content service businesses should be creating. We're seeing <strong>60-180 second educational videos</strong> performing extremely well. No dancing. No pointing at text. Just a knowledgeable person explaining something useful.</p>
+
+            <p>Here's the kicker for the ROI-minded: <strong>B2B TikTok leads cost 60-70% less than LinkedIn leads</strong>. And the decision-makers you're trying to reach — CTOs, agency owners, procurement managers — are spending more time watching short-form video than reading industry blogs. The audience is there. The competition isn't. That's about as good as it gets for an organic opportunity.</p>
+
+            <div class="pull-quote">
+                <p>"The 'boring' industries that think they can't do TikTok are sitting on the biggest untapped organic opportunity in social media. Almost zero competition, a search engine half the country uses, and leads that cost a fraction of what you'd pay on LinkedIn."</p>
+            </div>
+
+            <h2>The "Post It Everywhere" Trap</h2>
+
+            <p>So now you're thinking: okay, maybe we should be on more platforms. Great. But here's where a lot of businesses make their next mistake — they take the same piece of content and copy-paste it across LinkedIn, Instagram, Facebook, and TikTok.</p>
+
+            <p>That doesn't work. And I don't mean it works "a little less." It <strong>underperforms native content every single time</strong>. Every platform's algorithm is tuned to reward content that feels built for that platform. A LinkedIn carousel is not a TikTok video. An Instagram Reel is not a Facebook Group post. The audiences behave differently, the formats perform differently, and the algorithms prioritize completely different things.</p>
+
+            <p>Here's a perfect example: <strong>every major platform's algorithm pushes video above static content — except LinkedIn, where carousels outperform video by 3x</strong>. If you're creating one video and blasting it everywhere, you're optimized for some platforms and actively fighting the algorithm on others.</p>
+
+            <p>Repurposing is smart. Copy-pasting is lazy. The difference is adapting your core message to what actually works on each platform — the format, the length, the tone, the hook. Same insight, completely different execution. That's what platform-native content means, and it's the only approach that actually moves numbers.</p>
+
+            <h2>Which Platforms Do What (And Why That Matters for Your Funnel)</h2>
+
+            <p>Not every platform serves the same purpose. And when you understand what each one is actually good at, the strategy gets a lot clearer:</p>
+
+            <ul>
+                <li><strong>LinkedIn:</strong> Generates 75-85% of B2B leads. Your authority-building, trust-earning, lead-generating powerhouse. If you're B2B, this is non-negotiable.</li>
+                <li><strong>Facebook:</strong> Best for local discovery and community building. Groups, local search, meaningful conversations. Essential for any service business with a geographic footprint.</li>
+                <li><strong>Instagram:</strong> Brand awareness and trust. People check your Instagram to see if your business looks legit and current. It's your digital storefront.</li>
+                <li><strong>TikTok:</strong> Top-of-funnel awareness at a fraction of the cost. Wide open for service businesses. A search engine that half of consumers use and almost no B2B companies have figured out yet.</li>
+            </ul>
+
+            <p>Video drives awareness and reach across platforms. Carousels and static content drive engagement and conversions. The businesses winning at organic social right now understand this distinction and create content accordingly — not just content they feel like posting, but content designed for a specific purpose on a specific platform.</p>
+
+            <h2>You Don't Need to Be Everywhere. But You Do Need to Be Intentional.</h2>
+
+            <p>I'm not telling you to go spin up accounts on seven platforms tomorrow. That's a fast track to burnout and mediocre content across the board. What I am telling you is this: the assumptions most service businesses are operating on — Facebook is dead, TikTok is irrelevant, LinkedIn is the only thing that matters — are costing you real visibility and real leads.</p>
+
+            <p>The right answer is two or three platforms, done exceptionally well, with content built specifically for each one. For most of our clients in professional services, that means LinkedIn as the foundation, plus one or two others based on their industry, audience, and goals. A dental practice needs Facebook. A B2B SaaS company should be testing TikTok. An HR consulting firm might get the most from LinkedIn and Instagram together.</p>
+
+            <p>The point isn't to be everywhere. The point is to stop making decisions based on outdated assumptions and start making them based on where the opportunity actually is. Because right now, some of the best organic opportunities in social media are sitting on the platforms you dismissed years ago.</p>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Not Sure Which Platforms Actually Make Sense for Your Business?</h3>
+                <p>We build platform strategies for professional service businesses based on what's working right now — not what worked two years ago. No lock-in contracts. Full team on your account from day one.</p>
+                <a href="stickypost-contact.html" class="cta-button">Book a Discovery Call</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <a href="stickypost-website-v4.html">StickyPost.Social</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

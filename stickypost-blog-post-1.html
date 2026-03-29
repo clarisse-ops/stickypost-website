@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Your Company Page Matters More Than Your Personal Brand | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background-color: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+        .hero {
+            background-color: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background-color: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 28px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta .author {
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        .hero-meta .separator {
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+
+        /* ARTICLE */
+        .article-wrapper {
+            background-color: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        .article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.5em;
+        }
+
+        .article p.intro {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .article h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.35rem;
+            color: var(--charcoal);
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+        }
+
+        .article strong {
+            font-weight: 600;
+        }
+
+        .article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .article a:hover {
+            color: #c44e32;
+        }
+
+        .article ul, .article ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            padding-left: 1.5em;
+        }
+
+        .article li {
+            margin-bottom: 0.5em;
+        }
+
+        /* PULL QUOTE */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            padding: 24px 28px;
+            margin: 2.5em 0;
+            background-color: #f3fafa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 0;
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            background-color: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .cta-box p {
+            font-size: 1.05rem;
+            color: var(--pale-teal);
+            margin-bottom: 28px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-box .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .cta-box .cta-button:hover {
+            background-color: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--charcoal);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pale-teal);
+            opacity: 0.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 120px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .hero-meta .separator {
+                display: none;
+            }
+
+            .hero-meta span {
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            .article p,
+            .article ul,
+            .article ol {
+                font-size: 1rem;
+            }
+
+            .article p.intro {
+                font-size: 1.1rem;
+            }
+
+            .article h2 {
+                font-size: 1.5rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+                margin: 2em 0;
+            }
+
+            .pull-quote p {
+                font-size: 1.05rem;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="stickypost-website-v4.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="stickypost-website-v4.html" class="nav-link">Back to Home</a>
+            <a href="stickypost-website-v4.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-tag">Company Pages</div>
+        <h1>Why Your Company Page Matters More Than Your Personal Brand</h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>March 26, 2026</span>
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">Go on LinkedIn right now and scroll for about thirty seconds. You'll see the same advice repeated on a loop: build your personal brand, get on camera, be the face of your company, show up every single day with your face attached to everything. And for coaches, creators, and solo consultants — sure, that works. But if you run an accounting firm, a law practice, a commercial cleaning company, or an IT managed services business? That advice is going to steer you in the wrong direction.</p>
+
+            <p>I've been running StickyPost.Social for four years, and the pattern I see over and over is the same: founders of professional service businesses know they need a social media presence, but they've been told the only way to do it is to become a content creator themselves. So they either force it — awkward selfie videos, reluctant on-camera appearances — or they just give up entirely and let their company page collect dust.</p>
+
+            <p>Both of those options are a waste. Here's what actually matters.</p>
+
+            <h2>Your Company Page Is Your Digital Storefront</h2>
+
+            <p>When a potential client is deciding whether to hire your firm, they're going to look you up. That's just how it works now. They'll check your website first, and then — almost every time — they'll look at your social media. Your LinkedIn page, your Instagram, your Facebook. They want to see if you're active, if you look legit, and if you seem like the kind of company they'd trust with their money.</p>
+
+            <p>If they land on a company page with a blurry logo, a generic stock photo cover image, and the last post from eight months ago? That tells them something. It tells them you're either not serious, not active, or not paying attention. And they'll move on to the next option on their list.</p>
+
+            <p>Your company page is the first impression most prospects will have of your brand online. Not your personal LinkedIn. Not your founder's Twitter. Your <strong>company page</strong>. And right now, for most professional service businesses, that first impression is terrible.</p>
+
+            <h2>Brand Equity That Doesn't Walk Out the Door</h2>
+
+            <p>Here's the thing nobody talks about when they push the "personal brand" narrative: what happens when you step back?</p>
+
+            <p>If every piece of content, every relationship, every ounce of trust lives on the founder's personal profile — the business has a problem. The moment that founder takes a step back, burns out, hires a CEO, or sells the company, all of that brand recognition goes with them. It's tied to a person, not the business.</p>
+
+            <p>When you build your company page, you're building equity in the brand itself. The trust, the recognition, the audience — it all belongs to the business. Your team can grow, leadership can change, and the brand keeps compounding. That's not just smarter marketing. That's smarter business.</p>
+
+            <div class="pull-quote">
+                <p>Every post on your company page is a trust signal that stacks. Six months of consistent, quality content creates a digital presence that works for you 24/7 — even when you're not online, not posting, not thinking about it.</p>
+            </div>
+
+            <h2>Personal Brand Content Wasn't Built for Your Industry</h2>
+
+            <p>Let me be real: the "get on camera and share your story" playbook was built by and for coaches, consultants, and content creators. People whose entire business model is built on their personality and their face.</p>
+
+            <p>But your accounting firm? Your HR consulting company? Your dental practice? Your logistics operation? These businesses don't need the founding partner doing trending audio reels or sharing their morning routine. Their clients don't care about that. Their clients care about credibility, expertise, and trust — and those things can absolutely be communicated through a well-run company page without anyone getting on camera.</p>
+
+            <p>The industries we work with at StickyPost.Social — accounting, law, HR consulting, IT managed services, healthcare, commercial cleaning, B2B SaaS — these are what most people would call "boring" industries. I love them. Because the founders in these spaces are smart, capable people who've built real businesses. They just don't want to be influencers. And they shouldn't have to be.</p>
+
+            <h2>The Company Page Gap Is a Massive Opportunity</h2>
+
+            <p>Here's what most people don't realize: the company page space is wide open. Almost nobody is doing it well.</p>
+
+            <p>Go look at your competitors' company pages right now. Most of them fall into one of these categories:</p>
+
+            <ul>
+                <li>Completely dead — no posts in months, maybe years</li>
+                <li>Sporadic and inconsistent — a random post here and there with no strategy</li>
+                <li>Generic corporate content — stock photos, bland captions, zero personality</li>
+                <li>Just job postings — the page is basically an extension of their careers section</li>
+            </ul>
+
+            <p>That's your competition. The bar is on the floor. Which means any business that actually invests in making their company page good — strategic, consistent, well-designed, with content that speaks to their actual audience — immediately stands out. You don't have to be amazing. You just have to be present and intentional, and you're already ahead of 90% of your industry.</p>
+
+            <h2>Compounding Returns Are Real</h2>
+
+            <p>Social media content compounds. Not in the viral, overnight way that people fantasize about — in the slow, steady, this-actually-works way.</p>
+
+            <p>When you post consistently on your company page for three months, six months, a year — something shifts. Your page starts showing up more. Your posts get more engagement. People start recognizing your brand. Prospects who've seen your content for weeks or months before reaching out already trust you before the first conversation. They've been watching. They've seen your expertise, your team, your work.</p>
+
+            <p>That's the compounding effect. Every single post is a small deposit into your brand's credibility account. And over time, those deposits stack into something that gives you a real, measurable advantage over every competitor who let their page sit empty.</p>
+
+            <p>The businesses that start now are the ones that will own their space a year from now. The ones who keep waiting will keep wondering why their competitors seem to be everywhere.</p>
+
+            <h2>You Don't Have to Do It Yourself</h2>
+
+            <p>The biggest reason most company pages are dead isn't that the founders don't care. It's that nobody on their team can do it well. Maybe they tried handing it to their VA or office manager. Maybe they posted for a few weeks and ran out of ideas. Maybe they hired a freelancer who didn't understand their industry and the content felt generic.</p>
+
+            <p>That's the exact problem we solve at StickyPost.Social. We're a done-for-you organic social media agency that specializes in company pages for professional service businesses. We don't do coaching. We don't hand you templates and wish you luck. We do the work.</p>
+
+            <p>Every client gets a full team — a designer, a video editor, a strategist, and a project manager. Not one overworked social media manager trying to do everything. A team that independently researches your business, your audience, and your industry before we create a single piece of content. We study our clients like they're our own company, and it shows in the work.</p>
+
+            <p>We handle everything — content creation, scheduling, strategy, all of it — across every platform that matters for your business. Instagram, LinkedIn, Facebook, X, YouTube, TikTok, Pinterest. Your first month of content is ready within a week of onboarding, and we send it for approval before anything goes live. Most of our clients approve everything right out of the gate, which is something we're genuinely proud of.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>If you're a founder who doesn't want to be an influencer — good. You don't have to be. What you do need is a company page that actually represents your brand, builds trust with the people you want to work with, and shows up consistently in the spaces where your prospects are already looking.</p>
+
+            <p>Stop trying to force the personal brand playbook onto a business model it wasn't built for. Invest in your company page. Build brand equity that belongs to the business. And if you don't have the team to do it right, find one that does.</p>
+
+            <!-- CTA BOX -->
+            <div class="cta-box">
+                <h3>Ready to Fix Your Company Page?</h3>
+                <p>We build and manage company pages for professional service businesses — done-for-you, with a full creative team behind every account.</p>
+                <a href="stickypost-website-v4.html" class="cta-button">See How It Works</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
