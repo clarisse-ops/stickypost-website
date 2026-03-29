@@ -1,0 +1,37 @@
+name: Publish Scheduled Blog Posts
+
+on:
+  schedule:
+    # 9:00 AM Eastern (13:00 UTC) on Tuesdays and Fridays
+    - cron: '0 13 * * 2,5'
+
+  # Manual trigger from GitHub Actions UI
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run publish script
+        id: publish
+        run: |
+          chmod +x scripts/publish-scheduled-posts.sh
+          bash scripts/publish-scheduled-posts.sh
+
+      - name: Commit and push
+        if: steps.publish.outputs.nothing_to_publish == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish scheduled blog post(s) — $(date -u +%Y-%m-%d)"
+          git push
