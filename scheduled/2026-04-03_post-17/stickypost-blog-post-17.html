@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Only Social Media Metrics That Actually Matter for Service Businesses | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background-color: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+        .hero {
+            background-color: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background-color: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 28px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta .author {
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        .hero-meta .separator {
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+
+        /* ARTICLE */
+        .article-wrapper {
+            background-color: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        .article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.5em;
+        }
+
+        .article p.intro {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .article h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.35rem;
+            color: var(--charcoal);
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+        }
+
+        .article strong {
+            font-weight: 600;
+        }
+
+        .article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .article a:hover {
+            color: #c44e32;
+        }
+
+        .article ul, .article ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            padding-left: 1.5em;
+        }
+
+        .article li {
+            margin-bottom: 0.5em;
+        }
+
+        /* PULL QUOTE */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            padding: 24px 28px;
+            margin: 2.5em 0;
+            background-color: #f3fafa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 0;
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            background-color: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .cta-box p {
+            font-size: 1.05rem;
+            color: var(--pale-teal);
+            margin-bottom: 28px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-box .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .cta-box .cta-button:hover {
+            background-color: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--charcoal);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pale-teal);
+            opacity: 0.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 120px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .hero-meta .separator {
+                display: none;
+            }
+
+            .hero-meta span {
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            .article p,
+            .article ul,
+            .article ol {
+                font-size: 1rem;
+            }
+
+            .article p.intro {
+                font-size: 1.1rem;
+            }
+
+            .article h2 {
+                font-size: 1.5rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+                margin: 2em 0;
+            }
+
+            .pull-quote p {
+                font-size: 1.05rem;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Back to Home</a>
+            <a href="index.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-tag">Strategy</div>
+        <h1>The Only Social Media Metrics That Actually Matter for Service Businesses</h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>April 3, 2026</span>
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">Most social media reporting is designed to make you feel good without telling you anything useful. You get a PDF with follower counts, reach numbers, and impressions — big numbers that look impressive but don't answer the only question that matters: is this actually working? If you're a service business spending money on organic social, you deserve to know what to pay attention to and what to ignore. Because most of what gets reported is noise.</p>
+
+            <p>We send performance reports to every client on our Growth and Premium plans, and the conversations around those reports have taught us a lot about what business owners actually need to see. Not vanity metrics. Not every data point the platform spits out. Just the numbers that tell you whether your social presence is building something real or spinning its wheels.</p>
+
+            <h2>Follower Count Is the Least Important Number on Your Page</h2>
+
+            <p>Let's start with the one everyone looks at first. Follower count feels important because it's the most visible number. It's right there on your profile. And there's a natural instinct to think more followers = better results.</p>
+
+            <p>For service businesses, that's almost never true. A commercial cleaning company with 400 followers in their metro area is in a better position than a cleaning company with 4,000 followers scattered across three countries. An accounting firm with 200 followers who are local business owners and CFOs has more potential revenue in that audience than a firm with 2,000 followers who are mostly other accountants and marketing people.</p>
+
+            <p>Follower count tells you how many people clicked a button. It doesn't tell you whether those people are potential clients, whether they're in your service area, or whether they'll ever buy from you. It's a number that goes up, which feels good. But it's not a metric you should be making decisions on.</p>
+
+            <div class="pull-quote">
+                <p>The question isn't "how many people follow us?" It's "are the right people seeing our content?" A hundred engaged followers who match your client profile are worth more than ten thousand who don't.</p>
+            </div>
+
+            <h2>What to Actually Watch: The Metrics That Signal Real Progress</h2>
+
+            <p>Here's what we track and report on for our clients, and why each one matters for a service business specifically.</p>
+
+            <h3>Engagement rate (not total engagement)</h3>
+            <p>Raw engagement numbers — 47 likes, 12 comments — don't mean much on their own. Engagement <strong>rate</strong> tells you what percentage of the people who saw your content actually interacted with it. That's a much better signal of whether your content is connecting with your audience.</p>
+
+            <p>For company pages, a healthy engagement rate on LinkedIn is around 2-4%. On Instagram, 1-3% is solid for service businesses. If your rate is consistently below 1% across platforms, the content isn't connecting — either it's not reaching the right people or it's not saying the right things. If it's above 3-4%, something is really working and you should do more of it.</p>
+
+            <h3>Reach and impressions (with context)</h3>
+            <p>Reach tells you how many unique accounts saw your content. Impressions tell you how many times it was seen total (including repeat views). Both matter, but only in context.</p>
+
+            <p>What you want to see is a trend. Is your reach growing month over month? That means the platform is showing your content to more people, which means the algorithm thinks your content is worth distributing. If reach is flat or declining, something needs to change — either the content format, the posting time, or the topics.</p>
+
+            <p>A single month's reach number in isolation tells you almost nothing. The trend over three to six months tells you everything.</p>
+
+            <h3>Profile visits</h3>
+            <p>This is an underrated metric that most people skip right past. Profile visits tell you how many people saw your content and were interested enough to click through and look at your actual page. That's intent. Someone who visits your profile is evaluating your brand — looking at your bio, scrolling your recent posts, deciding whether you're worth following or reaching out to.</p>
+
+            <p>A spike in profile visits usually means a piece of content caught attention. A steady increase in profile visits over time means your content is consistently generating curiosity. Both are good signs.</p>
+
+            <h3>Website clicks</h3>
+            <p>How many people clicked the link in your bio or on a specific post to get to your website. This is as close to direct attribution as organic social gets. Someone saw your content, was interested enough to want to learn more, and took the action of leaving the platform to visit your site.</p>
+
+            <p>For service businesses, even a handful of website clicks per week from social is meaningful. These are warm visitors — they didn't find you through a Google search. They found you through your content and chose to take the next step. Track this monthly and look for growth.</p>
+
+            <h3>Saves and shares</h3>
+            <p>On Instagram specifically, saves are one of the strongest signals that content is valuable. When someone saves a post, they're telling the algorithm "this is worth coming back to." It also means your content was useful or interesting enough that they want to reference it later. For educational content — which is most of what service businesses should be posting — saves are a better indicator of quality than likes.</p>
+
+            <p>Shares matter across every platform. When someone shares your post, they're putting their own credibility behind your content. That's the highest form of social proof you can earn organically, and it extends your reach to audiences you'd never reach on your own.</p>
+
+            <h2>The Metrics You Should Ignore (Or At Least Stop Stressing About)</h2>
+
+            <p>Not every number your social platforms show you deserves your attention. Here's what to stop worrying about:</p>
+
+            <ul>
+                <li><strong>Follower count</strong> — already covered this. Look at follower quality and growth rate instead of the raw number.</li>
+                <li><strong>Individual post performance</strong> — one post that underperforms doesn't mean your strategy is broken. One post that goes semi-viral doesn't mean you've cracked the code. Look at patterns across 10-20 posts, not individual spikes or dips.</li>
+                <li><strong>Competitor follower counts</strong> — your competitor with 5,000 followers might have bought half of them, or accumulated them over a decade of random posting. Their follower count tells you nothing about their actual business results from social.</li>
+                <li><strong>Likes as a standalone metric</strong> — a like is the lowest-effort form of engagement. It's fine as part of an engagement rate calculation, but on its own it doesn't tell you much. Comments, saves, shares, and profile visits all indicate stronger interest.</li>
+            </ul>
+
+            <h2>How Often Should You Be Looking at This Stuff?</h2>
+
+            <p>If you're checking your social media metrics daily, you're going to drive yourself crazy. Daily numbers fluctuate wildly based on time of day, algorithm changes, and random chance. A single slow day means nothing.</p>
+
+            <p>Here's what actually makes sense for a service business:</p>
+
+            <ul>
+                <li><strong>Weekly:</strong> Quick scan of any standout posts — what got significantly more engagement than usual? What format or topic seemed to resonate? This takes five minutes and helps you spot patterns.</li>
+                <li><strong>Monthly:</strong> Real review of the trends. Engagement rate, reach, profile visits, website clicks — all compared to last month and the month before. This is where you see whether the strategy is working.</li>
+                <li><strong>Quarterly:</strong> Bigger picture assessment. Are you reaching more people than three months ago? Is engagement growing? Are you getting more profile visits and website clicks? This is where you evaluate whether to stay the course or shift direction.</li>
+            </ul>
+
+            <p>If you're working with an agency (like us), the monthly reporting should be part of the deal. You shouldn't have to log into three different platforms and piece together data yourself. That's our job.</p>
+
+            <div class="pull-quote">
+                <p>Good reporting doesn't just show you what happened. It tells you what it means and what to do about it. If your monthly report is just screenshots of analytics dashboards with no interpretation, it's not actually reporting — it's data dumping.</p>
+            </div>
+
+            <h2>What These Metrics Look Like When Things Are Working</h2>
+
+            <p>When organic social is working for a service business, the metrics tell a clear story:</p>
+
+            <p>Early on, the numbers are going to look small. That's normal. You're building from scratch (or waking up a dormant page), and the platforms need time to figure out who your content is for. The first month or two can feel like nothing is happening.</p>
+
+            <p>Over time, if the content is consistent and the strategy is right, you should start seeing engagement rate stabilize, reach grow, and profile visits tick upward. How fast that happens depends on your industry, your audience, your platforms, and a dozen other factors. There's no guaranteed timeline — anyone who tells you "by month three you'll see X" is guessing.</p>
+
+            <p>What we can say from four years of doing this: the businesses that stay consistent see progress. The ones that stop after six weeks because the numbers aren't exciting yet never find out what would have happened if they'd kept going. Organic social is a slow build. The data reflects that — and that's okay.</p>
+
+            <h2>How We Handle Reporting at StickyPost.Social</h2>
+
+            <p>Our Growth and Premium clients get monthly performance reports that focus on the metrics we just talked about — engagement rate, reach trends, profile visits, website clicks, saves, and shares. No filler, no vanity numbers designed to make things look better than they are.</p>
+
+            <p>We also include what we're seeing qualitatively — what content types are resonating, what topics are getting the most traction, and what we're adjusting for the next month based on the data. The report isn't just a look backward. It's part of the strategy going forward.</p>
+
+            <p>Because at the end of the day, metrics only matter if they change what you do next. Otherwise they're just numbers on a page.</p>
+
+            <!-- CTA BOX -->
+            <div class="cta-box">
+                <h3>Want Reporting That Actually Means Something?</h3>
+                <p>Our Growth and Premium plans include monthly performance reporting — real metrics, real insights, real strategy adjustments. Not just pretty charts.</p>
+                <a href="https://calendly.com/essiralc/strategy-audit-session" class="cta-button">Book Your Strategy Session</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
