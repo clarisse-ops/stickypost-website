@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Featuring Your Team on Social Media Builds More Trust Than Company Updates — StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .logo-i {
+            text-transform: lowercase;
+            color: inherit !important;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── ARTICLE ── */
+        .article-wrapper {
+            background: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 1.5em;
+        }
+
+        article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        article h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        article a:hover {
+            color: #c44e32;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.4em;
+        }
+
+        article li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 0.5em;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            background: rgba(178, 232, 227, 0.15);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ── CTA BOX ── */
+        .cta-box {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--pale-teal);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .cta-button:hover {
+            background: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--charcoal);
+            padding: 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+        }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(253, 252, 250, 0.45);
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pale-teal);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 110px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            article p,
+            article li {
+                font-size: 1.05rem;
+            }
+
+            article h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Back to Home</a>
+            <a href="index.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-tag">Strategy</span>
+        <h1>Why Featuring Your Team on Social Media Builds More Trust Than Company Updates</h1>
+        <div class="hero-meta">
+            By <strong>Clarisse</strong>, Founder of StickyPost.Social &nbsp;&middot;&nbsp; April 17, 2026
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article>
+
+            <p>Think about the last time you scrolled through a company page on LinkedIn or Instagram. Did you stop for a corporate graphic about quarterly milestones? Or did you pause on a photo of an actual person — someone with a name, a role, and maybe a story about what they do every day?</p>
+
+            <p>If you're like most people, it was the person. That's not a coincidence. It's how humans are wired. We're drawn to faces, names, and stories. Logos? Not so much.</p>
+
+            <p>And yet, the majority of company pages are still packed with branded graphics, service announcements, and generic updates that could've come from any business in any industry. There's nothing wrong with those posts — they have their place. But if that's <em>all</em> you're posting, you're missing one of the most effective ways to build trust with the people who are actually paying attention to your page.</p>
+
+            <h2>People Connect with People, Not Logos</h2>
+
+            <p>This isn't some abstract marketing theory. It's something you can see playing out in real time on any social platform. Posts that feature real team members — their faces, their names, their expertise — consistently outperform branded company content in engagement.</p>
+
+            <p>Why? Because when a potential client or customer is checking out your company page (and they <em>are</em> checking), they're trying to answer a question: <strong>can I trust these people with my business?</strong></p>
+
+            <p>A polished logo and a tagline don't answer that question. But seeing the actual humans who would be working on their account? That starts to answer it. It puts a face to the name. It makes the company feel real and reachable, not just like a website with a contact form.</p>
+
+            <p>This is especially true for service businesses — the ones where clients are buying expertise and relationships, not a product they can hold in their hands. If you run an accounting firm, an IT managed services company, or a healthcare practice, your people <em>are</em> the product. So show them.</p>
+
+            <h2>Employee Spotlights Humanize Your Brand</h2>
+
+            <p>An employee spotlight doesn't have to be fancy. It can be a simple post introducing someone on your team — what they do, how long they've been with the company, something interesting about them. Maybe it's a behind-the-scenes look at their workday. Maybe it's a quick Q&A.</p>
+
+            <p>What matters is that it's real. It shows the people behind the business doing real work, and that's inherently more interesting and trustworthy than another branded carousel about your services.</p>
+
+            <div class="pull-quote">
+                <p>"Your company page should feel like walking into your office — people want to see who's there, what the energy is like, and whether they'd want to work with you. You can't get that from a logo and a mission statement."</p>
+            </div>
+
+            <p>When someone sees your team on social media — the designer who made their proposal look great, the project manager who kept everything on track, the strategist who understood their industry on the first call — they start to feel like they know your company before they've ever spoken to anyone. That's powerful, and it costs you nothing but a few minutes and a phone camera.</p>
+
+            <h2>It Shows Depth (You're Not a One-Person Operation)</h2>
+
+            <p>For a lot of professional service businesses, especially smaller ones, there's a perception problem. Potential clients wonder: is this a real company, or just one person with a nice website?</p>
+
+            <p>Featuring your team on social media answers that question immediately. When prospects see multiple people on your page — different roles, different skill sets, all working together — it signals that there's real infrastructure behind the brand. That you have depth. That their project isn't going to live or die based on one person's availability.</p>
+
+            <p>This matters a lot more than most business owners realize. A prospect choosing between two similar service providers will almost always go with the one that <em>feels</em> more established and capable. And "we have a team" hits differently when they can actually see the team, versus just reading it on an About page.</p>
+
+            <h2>It Helps You Attract Better Talent</h2>
+
+            <p>This is the part that doesn't get talked about enough. Your social media isn't just for clients — it's for future employees, too.</p>
+
+            <p>People who are thinking about joining your company are going to look at your social presence. It's one of the first things they check. And if all they see are service announcements and stock imagery, that tells them nothing about what it's actually like to work there.</p>
+
+            <p>But if your page is full of real team content — celebrating wins, showing behind-the-scenes moments, highlighting individual contributions — that tells a story. It says: we value our people. We're proud of the team we've built. This is a place where your work gets recognized.</p>
+
+            <p>In a tight hiring market, that stuff matters. The best candidates have options, and they're choosing companies where they can see themselves fitting in. Your social media is a window into your culture, whether you're intentional about it or not. So be intentional about it.</p>
+
+            <h2>It Shows Your Culture Without Saying a Word</h2>
+
+            <p>You can <em>tell</em> people your company has a great culture. You can put it on your website. You can mention it in interviews. But showing it? That's a completely different thing.</p>
+
+            <p>When your social media regularly features your team — working together, celebrating milestones, sharing their perspectives — it becomes a living record of your company culture. Not the aspirational version on your careers page, but the real, everyday version that people actually experience.</p>
+
+            <p>And this cuts both ways. Clients see it and think: this team is cohesive, they actually like working together, and they care about the work. Future hires see it and think: I'd want to be part of that. Even your existing team sees it and feels recognized, which reinforces the culture you're trying to build.</p>
+
+            <p>It's one of those things that creates a positive loop — the more you feature your team, the more your team feels valued, the more genuine the content becomes, and the more trust it builds with everyone watching.</p>
+
+            <h2>How We Think About This at StickyPost</h2>
+
+            <p>This is something we practice, not just preach. At StickyPost.Social, every client gets a full team on their account — a strategist, a designer, a video editor, and a project manager. It's not one person doing everything. It's four people, each with their own specialty, working together on every account.</p>
+
+            <p>When we onboard a new client, every single team member independently researches the business. The strategist, the designer, the video editor, the PM — each person goes and studies the client's industry, competitors, audience, and voice on their own before we ever sit down together. Then the team comes together to brainstorm and build the strategy as a group.</p>
+
+            <p>That means four different perspectives, four different sets of observations, all feeding into the same content plan. It's why our clients' content doesn't feel one-dimensional — because it isn't. It was built by a team, and that shows up in the work.</p>
+
+            <div class="pull-quote">
+                <p>"The difference between good social media and great social media usually isn't better graphics or cleverer captions. It's having more than one brain working on the problem."</p>
+            </div>
+
+            <p>We bring this same philosophy to the content we create for our clients' pages. When it makes sense, we work team-focused content into their calendar — spotlighting employees, showing the people behind the brand, giving followers a reason to feel connected to the company beyond just the services it offers.</p>
+
+            <h2>How to Start Featuring Your Team (Without Making It Weird)</h2>
+
+            <p>The biggest hesitation I hear from business owners is: "My team doesn't want to be on social media." And sometimes that's true — but more often, the real issue is that no one's asked them in the right way.</p>
+
+            <p>You don't need everyone to be on camera doing a dance. Team content can be simple and comfortable:</p>
+
+            <ul>
+                <li><strong>A quick intro post</strong> — photo, name, role, one fun fact. That's it.</li>
+                <li><strong>Work anniversaries</strong> — "Sarah has been with us for 3 years. Here's what she's been working on lately."</li>
+                <li><strong>Behind-the-scenes snapshots</strong> — a team meeting, someone at their desk, a whiteboard full of ideas.</li>
+                <li><strong>Quote cards</strong> — ask a team member about their favorite project or what they like about their role, then turn it into a designed post.</li>
+                <li><strong>Team wins</strong> — did someone finish a big project, earn a certification, or solve a tricky problem? Celebrate it publicly.</li>
+            </ul>
+
+            <p>The key is making it feel natural, not performative. Nobody wants to read a stiff corporate bio about "valued team member John." But a genuine post about what John actually does and why he's good at it? People respond to that.</p>
+
+            <p>Start small. One team post a month. See how it goes. You'll probably notice it gets more engagement than your usual company updates — and your team will start warming up to it once they see the positive response.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Your company page is supposed to represent your company. And your company isn't a logo or a service list — it's the people who show up every day and do the work. When your social media reflects that, it stops being background noise and starts building real, lasting trust with the people you want to reach.</p>
+
+            <p>Clients want to know who they're working with. Candidates want to know who they'd be joining. And your team wants to know their work is seen and appreciated. Featuring your people on social media does all three at once.</p>
+
+            <p>If your company page is currently all branded graphics and service announcements, this is the single biggest shift you can make. Put your people front and center. The trust follows.</p>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Want a Social Media Presence That Actually Builds Trust?</h3>
+                <p>We build and manage social media for professional service businesses — with a full team behind every account. No lock-in contracts. Content that shows who your company really is and makes people want to work with you.</p>
+                <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="cta-button">Book Your Strategy Session</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <a href="index.html">StickyPost.Social</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

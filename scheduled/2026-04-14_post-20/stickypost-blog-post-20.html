@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Flags to Watch for Before Hiring a Social Media Agency — StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .logo-i {
+            text-transform: lowercase;
+            color: inherit !important;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── ARTICLE ── */
+        .article-wrapper {
+            background: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 1.5em;
+        }
+
+        article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        article h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        article a:hover {
+            color: #c44e32;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.4em;
+        }
+
+        article li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 0.5em;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            background: rgba(178, 232, 227, 0.15);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ── CTA BOX ── */
+        .cta-box {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--pale-teal);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .cta-button:hover {
+            background: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--charcoal);
+            padding: 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(253, 252, 250, 0.08);
+        }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(253, 252, 250, 0.45);
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pale-teal);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 110px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            article p,
+            article li {
+                font-size: 1.05rem;
+            }
+
+            article h2 {
+                font-size: 1.45rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Back to Home</a>
+            <a href="index.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero-tag">Agency Life</span>
+        <h1>Red Flags to Watch for Before You Hire a Social Media Agency</h1>
+        <div class="hero-meta">
+            By <strong>Clarisse</strong>, Founder of StickyPost.Social &nbsp;&middot;&nbsp; April 14, 2026
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article>
+
+            <p>Hiring a social media agency should feel like a weight off your shoulders. You're handing over something that takes real time and real skill, and in return, you're supposed to get a consistent presence that actually represents your business well.</p>
+
+            <p>But not every agency delivers on that. Some are great at selling and terrible at doing the work. Some mean well but don't have the structure to produce anything worth posting. And some are just running a volume play — sign as many clients as possible, do the bare minimum, and hope nobody notices.</p>
+
+            <p>I've been running StickyPost.Social for four years. I've talked to hundreds of business owners during that time, and a lot of them come to us after getting burned by another agency. The stories are painfully similar. So I figured it was worth writing down the patterns — the things that should make you pause before signing anything.</p>
+
+            <p>This isn't about bashing other agencies. There are genuinely good ones out there. But there are also a lot of mediocre ones, and the difference between the two isn't always obvious until you're three months in and wondering where your money went.</p>
+
+            <h2>They Didn't Research Your Business Before the First Call</h2>
+
+            <p>This is the biggest one, and it shows up early. You get on a discovery call and the agency is asking you to explain your business from scratch. They haven't looked at your website. They haven't checked your existing social profiles. They don't know who your competitors are or what your industry looks like online.</p>
+
+            <p>If an agency can't be bothered to spend 30 minutes researching you before the first conversation, that tells you exactly how much attention your account will get once you're paying them.</p>
+
+            <div class="pull-quote">
+                <p>"How an agency shows up to the first call tells you everything about how they'll show up to your account. If they haven't done the homework before you're even a client, they're not going to start once you are."</p>
+            </div>
+
+            <p>A good agency walks into that first call already knowing what you do, who you serve, and what your current social presence looks like. They've already started forming opinions about what's working and what isn't. The call should feel like a conversation between two people who've both done their reading — not an interview where you're doing all the talking.</p>
+
+            <h2>They Use the Same Templates for Every Client</h2>
+
+            <p>Open up Instagram and scroll through three or four different accounts managed by the same agency. If every single one looks the same — same layout, same style, same vibe, just with different logos swapped in — that's a problem.</p>
+
+            <p>Your social media should look and sound like <em>your</em> company. Not like a generic template with your brand colors pasted on top. When an agency runs every client through the same design system without customizing anything, it means they're prioritizing speed over quality. They want to produce content fast, and templates let them do that. But it comes at the cost of your brand actually standing out.</p>
+
+            <p>Ask to see examples of their work across different clients. If you can't tell the difference between Client A and Client B's content, that's your answer.</p>
+
+            <h2>They Lock You into a Long-Term Contract</h2>
+
+            <p>Six-month minimums. Twelve-month contracts. Early termination fees. These are all signs that an agency is more worried about keeping your money than keeping your business happy.</p>
+
+            <p>Think about it: if the work is good, you'll stay. You won't need a contract to keep you there. The agencies that lock you in do it because they know there's a decent chance you'll want to leave — and they want to make that as painful as possible.</p>
+
+            <p>Month-to-month arrangements put the pressure where it belongs: on the agency to do good work every single month. If they're not performing, you can walk. That's how it should be. Any agency confident in what they deliver won't need a contract to hold you hostage.</p>
+
+            <div class="pull-quote">
+                <p>"If an agency needs a 12-month contract to keep you around, ask yourself why they don't trust their own work to do that instead."</p>
+            </div>
+
+            <h2>They Only Report on Vanity Metrics</h2>
+
+            <p>Follower count went up by 200. Posts got 1,500 impressions. A reel hit 3,000 views. Great — but what does any of that actually mean for your business?</p>
+
+            <p>Vanity metrics are the numbers that look good in a report but don't connect to anything real. They're easy to point to and say "look, growth!" But if those followers aren't your target audience, if those impressions didn't lead to any website visits, if those views came from people who will never buy from you — then the numbers are just noise.</p>
+
+            <p>A good agency ties their reporting back to what matters to your business. Are you getting more profile visits from your target market? Is your content generating comments and saves (which signal real interest)? Are people clicking through to your website? Are you showing up in search results on LinkedIn or Instagram when someone looks for your type of service?</p>
+
+            <p>If the monthly report is just a spreadsheet of impressions and follower counts with no context, the agency is either hiding behind surface-level data or they genuinely don't know what actually matters. Neither is good.</p>
+
+            <h2>One Person Does Everything on Your Account</h2>
+
+            <p>This is way more common than people realize. You sign with an agency, and behind the scenes, one person is writing your copy, designing your graphics, editing your videos, building your strategy, scheduling your posts, and answering your emails. They might be talented, but no single person can do all of those things well — not consistently, not at scale.</p>
+
+            <p>When one person runs your whole account, here's what happens: they get stretched thin. The copy starts sounding the same every month because they don't have time to research new angles. The designs get repetitive because there's no second set of eyes reviewing the work. The strategy stagnates because there's no one to brainstorm with. And when that person goes on vacation or gets sick, your content stops.</p>
+
+            <p>Ask the agency who specifically will be working on your account. How many people? What are their roles? If the answer is vague or it's clearly just one person, that should give you pause. Social media done well requires multiple skill sets — strategy, design, copy, video — and expecting one person to carry all of that is a recipe for average work.</p>
+
+            <h2>They Can't Explain Their Process</h2>
+
+            <p>If you ask an agency "what does the first month look like after we sign?" and you get a vague, hand-wavy answer — that's a red flag. A good agency has a clear, repeatable process. They can tell you exactly what happens in week one, week two, when you'll see first drafts, how approvals work, and when content goes live.</p>
+
+            <p>Agencies without a defined process are winging it. And when you're paying $1,000 to $3,000+ a month, you don't want anyone winging it with your brand.</p>
+
+            <p>The process doesn't have to be complicated. But it should exist, it should be documented, and they should be able to walk you through it clearly. If they can't, it usually means they haven't thought it through — which means your experience as a client will feel chaotic.</p>
+
+            <h2>They Promise Specific Results They Can't Control</h2>
+
+            <p>"We'll get you 10,000 followers in 90 days." "We guarantee a 300% increase in engagement." "You'll see leads within the first month."</p>
+
+            <p>Any agency making specific promises about outcomes they can't fully control is either lying or doesn't understand how social media actually works. Organic social is a long game. Results depend on your industry, your audience, the platforms, algorithm changes, and a dozen other factors no one can predict with precision.</p>
+
+            <p>What a good agency <em>can</em> promise: consistent, quality content. A clear strategy. A defined posting schedule. Transparent reporting. A team that actually understands your business. Those are the things within their control, and those are the things that lead to results over time.</p>
+
+            <p>If someone is guaranteeing specific numbers, be skeptical. If it sounds too good to be true, it almost always is.</p>
+
+            <h2>They Don't Ask You Many Questions</h2>
+
+            <p>An agency that barely asks about your business before starting work is an agency that's going to produce generic content. Good social media comes from deeply understanding the client — their voice, their audience, their differentiators, the things that make them different from the twelve other companies in their space.</p>
+
+            <p>During onboarding, you should be asked about your ideal customer, how you talk about your services, what your competitors are doing, what kind of content has worked in the past (if any), and what your goals actually are beyond "more followers." If the agency jumps straight to posting without doing any of that groundwork, the content will feel hollow — because it is.</p>
+
+            <h2>How to Protect Yourself</h2>
+
+            <p>Before you sign with any agency, here are a few things worth doing:</p>
+
+            <ul>
+                <li><strong>Ask to see work across multiple clients.</strong> Not just the highlight reel — actual content calendars and real posts. Look for variety and customization.</li>
+                <li><strong>Ask who will be on your account.</strong> Get names and roles. If it's just one person, ask how they handle the full range of work.</li>
+                <li><strong>Ask about their onboarding process.</strong> A good agency will have a clear answer. If it's vague, push for details.</li>
+                <li><strong>Ask about contracts.</strong> Are you locked in? What happens if you want to leave? How much notice do you need to give?</li>
+                <li><strong>Ask what they report on and why.</strong> If they can't explain how their metrics connect to your business goals, that's a problem.</li>
+                <li><strong>Pay attention to the first call.</strong> Did they do their homework? Do they understand your industry? Or are they reading from a script?</li>
+            </ul>
+
+            <p>You don't need to grill anyone. Just ask normal, reasonable questions and pay attention to how they respond. The good agencies will have clear, confident answers. The bad ones will tap dance around them.</p>
+
+            <h2>Why We Do Things Differently</h2>
+
+            <p>I built StickyPost.Social because I kept seeing the same problems over and over — and I wanted to build something that actually solved them.</p>
+
+            <p>Every client gets a full team: a strategist, a designer, a video editor, and a project manager. Each person independently researches the client's business before we even start brainstorming. We don't do long-term contracts — every plan is month-to-month, because we'd rather earn your business every month than trap you into staying. And we're honest about what organic social can and can't do. We won't promise 10,000 followers. We will promise that your company page will finally look like it belongs to a real, professional business that people can trust.</p>
+
+            <p>We specialize in company pages for professional service businesses — the kind of accounts that most agencies overlook because they're not flashy. Healthcare practices, IT firms, accounting offices, law firms, HR consultancies. These are real businesses doing important work, and they deserve a social presence that reflects that.</p>
+
+            <p>If you've been burned before, or if you're just being careful before hiring someone for the first time — good. You should be careful. Ask the hard questions. Look for the red flags. And when you find an agency that checks all the right boxes, you'll know.</p>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Want to See What a Real Agency Process Looks Like?</h3>
+                <p>Book a free 45-minute strategy session. We'll walk through your current social presence, talk about what's working and what isn't, and show you exactly how we'd approach your account — no pressure, no pitch.</p>
+                <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="cta-button">Book Your Strategy Session</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <a href="index.html">StickyPost.Social</a>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
