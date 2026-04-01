@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nobody Follows Your Company Page — And That's Not the Problem You Think It Is | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .logo-i {
+            text-transform: lowercase;
+            color: inherit !important;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background-color: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+        .hero {
+            background-color: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background-color: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 28px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--terracotta);
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta .author {
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        .hero-meta .separator {
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+
+        /* ARTICLE */
+        .article-wrapper {
+            background-color: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        .article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.5em;
+        }
+
+        .article p.intro {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .article h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.35rem;
+            color: var(--charcoal);
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+        }
+
+        .article strong {
+            font-weight: 600;
+        }
+
+        .article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .article a:hover {
+            color: #c44e32;
+        }
+
+        .article ul, .article ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            padding-left: 1.5em;
+        }
+
+        .article li {
+            margin-bottom: 0.5em;
+        }
+
+        /* PULL QUOTE */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            padding: 24px 28px;
+            margin: 2.5em 0;
+            background-color: #f3fafa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 0;
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            background-color: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .cta-box p {
+            font-size: 1.05rem;
+            color: var(--pale-teal);
+            margin-bottom: 28px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-box .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .cta-box .cta-button:hover {
+            background-color: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--charcoal);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pale-teal);
+            opacity: 0.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 120px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .hero-meta .separator {
+                display: none;
+            }
+
+            .hero-meta span {
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            .article p,
+            .article ul,
+            .article ol {
+                font-size: 1rem;
+            }
+
+            .article p.intro {
+                font-size: 1.1rem;
+            }
+
+            .article h2 {
+                font-size: 1.5rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+                margin: 2em 0;
+            }
+
+            .pull-quote p {
+                font-size: 1.05rem;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Back to Home</a>
+            <a href="index.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-tag">Company Pages</div>
+        <h1>Nobody Follows Your Company Page — And That's <em>Not the Problem</em> You Think It Is</h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>April 21, 2026</span>
+            <span class="separator">|</span>
+            <span>7 min read</span>
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">You open your LinkedIn company page, glance at the follower count, and immediately feel like the whole thing is pointless. 247 followers. Your competitor down the street has 3,000. Your gut reaction is: we need more followers. But that instinct? It's steering you in completely the wrong direction.</p>
+
+            <p>We've managed social media for service businesses across healthcare, IT, commercial cleaning, logistics, and a bunch of industries most people have never heard of. And one of the most common conversations we have with business owners sounds almost identical every time: "Our follower count is so low. Is this even worth doing?"</p>
+
+            <p>Yes. Absolutely yes. And the follower count is the last thing you should be worried about.</p>
+
+            <h2>Followers Are a Vanity Metric for Company Pages</h2>
+
+            <p>We know that's a strong statement. But hear us out.</p>
+
+            <p>For personal accounts — influencers, creators, people selling courses — followers matter. Their entire model is built on audience size. The bigger the audience, the bigger the reach, the more they can charge for sponsorships or sell in a launch.</p>
+
+            <p>Your accounting firm doesn't work that way. Neither does your medical billing company, your IT managed services business, or your commercial cleaning operation. You don't need 50,000 followers to land a new client. You need the <strong>right 12 people</strong> to see your content at the right time.</p>
+
+            <p>And that's exactly what's already happening — even with a small follower count — if your content is actually good.</p>
+
+            <h2>The Numbers That Actually Tell You Something</h2>
+
+            <p>Instead of checking your follower count every morning, look at these:</p>
+
+            <ul>
+                <li><strong>Impressions</strong> — How many times your content is being shown to people, including people who don't follow you. On LinkedIn, a solid company page post can reach 5-10x your follower count depending on engagement.</li>
+                <li><strong>Profile visits</strong> — How many people are clicking through to actually look at your page. This is someone raising their hand and saying "I want to know more about this company."</li>
+                <li><strong>Engagement rate</strong> — Not total likes. The percentage of people who saw your post and did something with it — liked it, commented, shared it, saved it. A post with 15 likes on 400 impressions is outperforming a post with 50 likes on 10,000 impressions.</li>
+                <li><strong>Website clicks</strong> — If your social content is driving people to your site, that's a direct pipeline from content to potential lead. This is the metric that connects social to actual business results.</li>
+            </ul>
+
+            <p>These metrics tell you whether your content is working. Follower count tells you almost nothing — especially for B2B service businesses where one client contract can be worth $20K, $50K, or more per year.</p>
+
+            <div class="pull-quote">
+                <p>A company page with 200 followers and strong content will drive more real business than a page with 5,000 followers and nothing worth reading. Every time.</p>
+            </div>
+
+            <h2>Why Small Follower Counts Are Misleading</h2>
+
+            <p>Here's something most people don't think about: every social platform shows your content to people who <strong>don't</strong> follow you. That's how the algorithms work now. LinkedIn, Instagram, Facebook, TikTok — all of them are pushing content into feeds based on relevance and engagement signals, not just who follows who.</p>
+
+            <p>So when you post on your company page, you're not just talking to your 247 followers. You're potentially reaching their networks, people searching for your services, and anyone the algorithm decides your content is relevant to.</p>
+
+            <p>We've seen this firsthand with our clients. A company page with under 300 followers generates thousands of impressions per month because the content is specific, relevant, and speaks directly to their audience. The algorithm rewards that. It doesn't care about your follower count — it cares about whether people stop scrolling when they see your post.</p>
+
+            <h3>The local factor matters too</h3>
+
+            <p>Most professional service businesses operate locally or within a specific niche. You're not trying to reach everyone on the platform. You're trying to reach decision-makers in your market who need what you do.</p>
+
+            <p>If you run a therapy practice in Austin, you don't need 10,000 followers across the country. You need the people in Austin who are looking for therapy — or the physicians and counselors who might refer patients to you — to see your content. That's a much smaller number. And that smaller number is completely reachable, even with a page that "only" has a few hundred followers.</p>
+
+            <h2>What Happens When You Stop Obsessing Over Followers</h2>
+
+            <p>When our clients stop fixating on the follower number, something interesting happens: the content gets better.</p>
+
+            <p>That's not a coincidence. When you're chasing followers, you start making content decisions based on what might go viral or what might get the most attention. You start posting generic motivational quotes or jumping on trends that have nothing to do with your business. The content loses focus because it's optimized for the wrong goal.</p>
+
+            <p>When you shift the focus to <strong>reaching the right people with the right message</strong>, everything tightens up. The content speaks directly to your ideal client. It addresses real questions they have. It positions your company as the one that actually understands their situation. And that kind of content — specific, useful, genuine — is what drives real engagement and real leads. Not follower count.</p>
+
+            <h2>The 200-Follower Page That Booked 3 Clients</h2>
+
+            <p>We're not going to name the client, but we can tell you the story because we see variations of it all the time.</p>
+
+            <p>A professional service company came to us with about 200 followers across their social profiles. The founder was embarrassed by the number. Almost didn't want to invest in social because of it. We started posting — consistent, well-designed, on-brand content that spoke directly to their target audience.</p>
+
+            <p>Within the first three months, that page with 200 followers had generated enough profile visits and website traffic that three prospects mentioned the company's social media during discovery calls. Two of them specifically said they checked the LinkedIn page before reaching out and it "made them feel confident" about getting in touch.</p>
+
+            <p>None of those prospects followed the page. They saw a post, clicked through, liked what they saw, and picked up the phone. That's how social media actually works for service businesses. The follower count was completely irrelevant.</p>
+
+            <h2>When Followers Do Matter (A Little)</h2>
+
+            <p>We're not saying followers are completely meaningless. There is one area where your follower count does play a role: <strong>first impressions</strong>.</p>
+
+            <p>When someone lands on your company page for the first time, they do a quick scan. Logo, banner, description, recent posts — and yes, follower count. A page with 47 followers looks different from a page with 500. There's a credibility threshold, and it varies by industry and company size.</p>
+
+            <p>But here's the important part: that threshold is way lower than you think. For a 10-person IT managed services company, having 300-500 LinkedIn followers is completely normal and doesn't raise any red flags. What <em>does</em> raise red flags is a page with no recent posts, generic content, or a banner image from 2019.</p>
+
+            <p>The content on your page does infinitely more for your credibility than the follower count above it. A page with 250 followers and six months of consistent, professional content looks leagues better than a page with 2,000 followers and nothing posted since last year.</p>
+
+            <div class="pull-quote">
+                <p>Prospects aren't counting your followers. They're scrolling your last few posts to see if you look like a company they'd trust with their business. Give them something worth seeing.</p>
+            </div>
+
+            <h2>What to Focus on Instead</h2>
+
+            <p>If you're a service business owner staring at a low follower count and wondering whether social media is worth the effort, here's where to put your attention:</p>
+
+            <ul>
+                <li><strong>Post consistently.</strong> Pick a frequency you can actually maintain — even two or three times a week — and stick with it. Consistency builds recognition faster than anything else.</li>
+                <li><strong>Make the content specific.</strong> Talk to your actual audience. If you're a dental practice, post about dental anxiety, insurance questions, what to expect during a first visit. Not generic health tips. Not motivational quotes.</li>
+                <li><strong>Look professional.</strong> Your content should look like it belongs to a company that's serious about what they do. Custom graphics, clean design, thoughtful copy. This is where a lot of DIY pages fall apart — the content might be decent, but it looks like it was made in five minutes.</li>
+                <li><strong>Track the right metrics.</strong> Impressions, profile visits, engagement rate, website clicks. Review them monthly. If those numbers are moving in the right direction, your page is working — regardless of follower count.</li>
+                <li><strong>Give it time.</strong> Organic social is a long game. Three months of consistent content is when you start seeing real momentum. Six months is when it really compounds. If you're judging success after two weeks, you're measuring with the wrong timeline.</li>
+            </ul>
+
+            <h2>Your Follower Count Isn't the Problem</h2>
+
+            <p>The businesses that win on social media — especially in professional services — aren't the ones with the biggest audiences. They're the ones that show up consistently with content that actually means something to the people they want to reach.</p>
+
+            <p>Your company page doesn't need 5,000 followers to do its job. It needs to be active, professional, and specific to your audience. That's it. And if you can nail those three things, the followers will come on their own — not because you chased them, but because you gave people a reason to pay attention.</p>
+
+            <p>Stop worrying about the number at the top of the page. Start worrying about what people see when they actually look at it.</p>
+
+            <!-- CTA BOX -->
+            <div class="cta-box">
+                <h3>Want a Company Page That Actually Works?</h3>
+                <p>We build and manage company pages for professional service businesses — with a full team behind every account. Let's talk about what yours could look like.</p>
+                <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="cta-button">Book Your Strategy Session</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
