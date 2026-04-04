@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to Do With Your Company Page When You Hate Being on Camera | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .logo-i {
+            text-transform: lowercase;
+            color: inherit !important;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background-color: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+        .hero {
+            background-color: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background-color: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 28px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--terracotta);
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta .author {
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        .hero-meta .separator {
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+
+        /* ARTICLE */
+        .article-wrapper {
+            background-color: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        .article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.5em;
+        }
+
+        .article p.intro {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .article h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.35rem;
+            color: var(--charcoal);
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+        }
+
+        .article strong {
+            font-weight: 600;
+        }
+
+        .article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .article a:hover {
+            color: #c44e32;
+        }
+
+        .article ul, .article ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            padding-left: 1.5em;
+        }
+
+        .article li {
+            margin-bottom: 0.5em;
+        }
+
+        /* PULL QUOTE */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            padding: 24px 28px;
+            margin: 2.5em 0;
+            background-color: #f3fafa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 0;
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            background-color: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .cta-box p {
+            font-size: 1.05rem;
+            color: var(--pale-teal);
+            margin-bottom: 28px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-box .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .cta-box .cta-button:hover {
+            background-color: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--charcoal);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pale-teal);
+            opacity: 0.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 120px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .hero-meta .separator {
+                display: none;
+            }
+
+            .hero-meta span {
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            .article p,
+            .article ul,
+            .article ol {
+                font-size: 1rem;
+            }
+
+            .article p.intro {
+                font-size: 1.1rem;
+            }
+
+            .article h2 {
+                font-size: 1.5rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+                margin: 2em 0;
+            }
+
+            .pull-quote p {
+                font-size: 1.05rem;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Back to Home</a>
+            <a href="index.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-tag">Company Pages</div>
+        <h1>What to Do With Your Company Page When You Hate Being on <em>Camera</em></h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>April 24, 2026</span>
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">Every week I talk to a founder who opens with some version of the same line: "I know we need to be doing more on social, but I'm not getting on camera." Sometimes it's said with an apology. Sometimes it's said defensively, like they're expecting me to push back. Either way, the underlying message is the same — they've been told a thousand times that the only way to grow on social media is to put their face in front of a lens, and they absolutely do not want to do it. And they feel guilty about it.</p>
+
+            <p>What I tell every single one of them is this: you don't have to. Not once. Not ever. Your company page can grow, build trust, and drive real business without you ever filming a single selfie video. The reason most founders don't believe that is because the loudest voices on social media are people whose entire business model depends on being on camera.</p>
+
+            <p>If you run a professional service business, your playbook is completely different. Let me walk you through what it actually looks like.</p>
+
+            <h2>The On-Camera Pressure Is Coming From the Wrong People</h2>
+
+            <p>Most of the social media advice floating around LinkedIn and YouTube is being given by people whose entire product is their personality. Coaches, consultants, content creators, personal brand people. Their whole business model rests on being the face of something. Of course they're telling everyone to get on camera — that's how they win.</p>
+
+            <p>But your accounting firm isn't selling a person. Your IT managed services company isn't selling a personality. Your dental practice isn't competing with influencers for attention. You're selling a service that people buy based on trust, expertise, and whether they believe you'll deliver. None of those things require your face on a reel.</p>
+
+            <p>The advice that works for a business coach does not work for a commercial cleaning company. And almost nobody is willing to say that out loud.</p>
+
+            <h2>What a Strong Camera-Free Company Page Actually Looks Like</h2>
+
+            <p>A company page that never shows the founder's face can still be warm, human, and engaging — if you build it right. Here's what goes into one that actually works.</p>
+
+            <h3>Your Team (Even Just a Few Of Them)</h3>
+
+            <p>Not every team member has to hide. If someone on your team is comfortable being photographed or on camera, that's a gift — feature them. Put faces on the page, just not necessarily yours. A senior technician at an IT managed services company walking through a common security mistake in 45 seconds is more useful than a founder awkwardly reading a teleprompter.</p>
+
+            <p>If nobody on your team wants to be filmed either, that's still fine. Photos of people at their desks, in meetings, at team lunches — these all work. People connect with people, and any face from your company counts. It doesn't have to be yours.</p>
+
+            <h3>Written Client Stories and Results</h3>
+
+            <p>Case studies, testimonials, and client win posts are some of the highest-performing content on company pages when they're written well. You don't need to film a client testimonial for it to work. A well-designed carousel or a sharp written post with real numbers and a real story will do the job — often better than a video.</p>
+
+            <h3>Process and Behind-the-Scenes (Without Faces)</h3>
+
+            <p>Show the work. Screenshots of a process, photos of a job site, before-and-afters, desks, whiteboards, handwritten notes, a team member's hands typing on a keyboard, a monitor full of dashboards. None of this requires anyone to look at a camera.</p>
+
+            <p>For a commercial cleaning company, a time-lapse photo series of a job can be gold. For an accounting firm, a carousel walking through how to read a cash flow statement is real value. For an HR consulting company, a written breakdown of a common hiring mistake will get saved and shared. Zero faces needed.</p>
+
+            <h3>Industry Insights and Opinions</h3>
+
+            <p>Strong opinions backed by real expertise do well on LinkedIn and on company pages specifically. A written post that says "here's what we think about this industry problem and here's why most people get it wrong" will outperform a video of someone reading the same thing — especially if the written version is tight and sharp.</p>
+
+            <h3>Data, Carousels, and Visual Breakdowns</h3>
+
+            <p>LinkedIn carousels get six times the engagement of regular image posts. Instagram carousels get around ten percent engagement on average. Neither of those formats requires a face. They require a clear point of view, good design, and a story told across a few slides. That's it.</p>
+
+            <h2>If You Want Video Without Being in It</h2>
+
+            <p>Video performs well on almost every platform right now, and you don't have to write it off just because you don't want to be in it. There are a few ways to do video without putting yourself on screen:</p>
+
+            <ul>
+                <li>B-roll of your team at work, your office, your job sites, your tools — with voiceover or text captions</li>
+                <li>Screen recordings with voiceover walking through a process, a tool, or a concept</li>
+                <li>Animated text-driven videos that make a single point (Canva, Kapwing, and CapCut all do this well)</li>
+                <li>Team members who are comfortable on camera, even if that's not the founder</li>
+                <li>Photo-based motion content — Ken Burns-style pans and zooms over still images with music and captions</li>
+            </ul>
+
+            <p>Some of the highest-performing content we've put out for service business clients is video that doesn't show a single human face. It's the message, the design, and the delivery that matter — not whether there's a person staring into a webcam.</p>
+
+            <h2>Why This Actually Performs Better for B2B Services</h2>
+
+            <p>There's a detail nobody tells you: for a lot of professional service industries, face-heavy content performs worse than you'd think. B2B buyers are doing research, not looking for entertainment. They want proof that you know what you're doing. A well-designed carousel breaking down a technical concept is, for most B2B buyers, more useful than a founder talking to a phone camera.</p>
+
+            <p>Compare two posts from a fictional IT managed services company:</p>
+
+            <ul>
+                <li><strong>Post A:</strong> the founder films a 30-second video saying "patching your systems is important, here's why you should do it," while walking around the office.</li>
+                <li><strong>Post B:</strong> a five-slide carousel showing the real cost of one unpatched system, with numbers, a clean design, and a clear takeaway.</li>
+            </ul>
+
+            <p>Which one is a buyer more likely to save, share with their IT director, or remember a week later? Post B. Every time. And nobody had to be filmed.</p>
+
+            <div class="pull-quote">
+                <p>You're not missing out by staying off camera. You're just playing the right game for your industry. The content formats that work for service businesses don't require anyone's face — they require clarity, consistency, and a point of view.</p>
+            </div>
+
+            <h2>What to Stop Feeling Guilty About</h2>
+
+            <p>Let me save you some mental energy.</p>
+
+            <ul>
+                <li>Stop feeling guilty for not being on TikTok doing trending audio.</li>
+                <li>Stop feeling guilty for not sharing your morning routine.</li>
+                <li>Stop feeling guilty for not posting selfies at conferences.</li>
+                <li>Stop feeling guilty for not going live every week.</li>
+                <li>Stop feeling guilty for not building a "personal brand" when your business doesn't need one to grow.</li>
+            </ul>
+
+            <p>None of those things are going to move the needle for a professional service business with a real team and a real product. They're going to cost you time and mental load, and they're going to leave you feeling like a fraud — because they're not you.</p>
+
+            <p>What your business actually needs is a company page that shows up consistently, tells your story, highlights your work, and gives prospects a reason to trust you before they ever reach out. That doesn't require your face. It requires a plan and a team that knows how to run it well.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Hating being on camera is not a weakness. It's information. It tells you exactly what kind of content approach you need — one that plays to the strengths of your business instead of forcing you into a format built for a different kind of company.</p>
+
+            <p>Your company page can be fantastic without ever showing your face. You just need to stop listening to advice that wasn't written for businesses like yours.</p>
+
+            <!-- CTA BOX -->
+            <div class="cta-box">
+                <h3>Not Sure Where to Start?</h3>
+                <p>We run company pages for founders who never want to be on camera. Full team, done-for-you, across every platform that matters for your business.</p>
+                <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="cta-button">Book Your Strategy Session</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
