@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to Steal (and What to Skip) When You're Studying Other Brands' Social Media | StickyPost.Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #272626;
+            --cream: #FDFCFA;
+            --terracotta: #DC5A3B;
+            --teal: #30A5A5;
+            --pale-teal: #B2E8E3;
+            --yellow: #FCD547;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--charcoal);
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+        }
+
+        .logo-i {
+            text-transform: lowercase;
+            color: inherit !important;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--cream);
+        }
+
+        .nav-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .nav-cta:hover {
+            background-color: #c44e32;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+        .hero {
+            background-color: var(--charcoal);
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            background-color: var(--teal);
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.15;
+            color: var(--cream);
+            max-width: 940px;
+            margin: 0 auto 28px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--terracotta);
+        }
+
+        .hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--pale-teal);
+            line-height: 1.6;
+        }
+
+        .hero-meta .author {
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        .hero-meta .separator {
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+
+        /* ARTICLE */
+        .article-wrapper {
+            background-color: var(--cream);
+            padding: 64px 24px 80px;
+        }
+
+        .article {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .article p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.5em;
+        }
+
+        .article p.intro {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .article h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-top: 2.5em;
+            margin-bottom: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .article h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.35rem;
+            color: var(--charcoal);
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+        }
+
+        .article strong {
+            font-weight: 600;
+        }
+
+        .article a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .article a:hover {
+            color: #c44e32;
+        }
+
+        .article ul, .article ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            padding-left: 1.5em;
+        }
+
+        .article li {
+            margin-bottom: 0.5em;
+        }
+
+        /* PULL QUOTE */
+        .pull-quote {
+            border-left: 4px solid var(--teal);
+            padding: 24px 28px;
+            margin: 2.5em 0;
+            background-color: #f3fafa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 0;
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            background-color: var(--charcoal);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 3.5em;
+        }
+
+        .cta-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .cta-box p {
+            font-size: 1.05rem;
+            color: var(--pale-teal);
+            margin-bottom: 28px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-box .cta-button {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background-color: var(--terracotta);
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .cta-box .cta-button:hover {
+            background-color: #c44e32;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--charcoal);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pale-teal);
+            opacity: 0.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 56px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-cta {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .hero {
+                padding: 120px 20px 56px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.85rem;
+            }
+
+            .hero-meta .separator {
+                display: none;
+            }
+
+            .hero-meta span {
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .article-wrapper {
+                padding: 40px 20px 56px;
+            }
+
+            .article p,
+            .article ul,
+            .article ol {
+                font-size: 1rem;
+            }
+
+            .article p.intro {
+                font-size: 1.1rem;
+            }
+
+            .article h2 {
+                font-size: 1.5rem;
+            }
+
+            .pull-quote {
+                padding: 20px 22px;
+                margin: 2em 0;
+            }
+
+            .pull-quote p {
+                font-size: 1.05rem;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.35rem;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="nav-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Back to Home</a>
+            <a href="index.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-tag">Strategy</div>
+        <h1>What to Steal (and What to Skip) When You're Studying Other Brands' <em>Social Media</em></h1>
+        <div class="hero-meta">
+            <span class="author">By Clarisse, Founder of StickyPost.Social</span>
+            <span class="separator">|</span>
+            <span>April 28, 2026</span>
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <div class="article-wrapper">
+        <article class="article">
+
+            <p class="intro">One of the best things a business owner can do for their social media is pay attention to what other brands are doing well. Studying other accounts is how you build taste, spot ideas worth trying, and figure out what's actually landing right now versus what's last year's trend. I do it all the time. Everyone on my team does it all the time. The problem isn't watching other brands — the problem is copying what you see without asking whether it even applies to your business.</p>
+
+            <p>I've watched smart founders fall into this trap over and over. They'll find a brand they admire, love what that brand is doing on Instagram or LinkedIn, and then try to run the exact same playbook for their own business. Three months later, nothing is working, and they assume social media is broken. But social media isn't broken. They just pulled the wrong things from the brand they were studying — and skipped the parts that would have actually worked.</p>
+
+            <p>Here's how to look at other brands the right way.</p>
+
+            <h2>The Problem Isn't Looking. It's Copying Without Context.</h2>
+
+            <p>Every good marketer studies other brands. That's not a bad habit — it's a prerequisite. Even the biggest agencies in the world have someone whose entire job is watching what's working across industries and feeding ideas back to the team. On our team at StickyPost.Social, we do this for every single client before we create a single post. We look at competitors, we look at adjacent brands, we look at brands in completely different industries that have nailed a format we want to adapt. That's normal and healthy.</p>
+
+            <p>Where it breaks down is the leap from "that's cool" to "we should do exactly that." Because every brand's social media strategy is the product of a specific buying cycle, a specific audience, a specific team, a specific platform mix, and a specific budget. When you copy what you see without understanding why it works for them, you end up running someone else's playbook with your own constraints — and it almost never lines up.</p>
+
+            <p>The fix isn't to stop looking. The fix is to get better at separating what transfers from what doesn't.</p>
+
+            <h2>What Almost Always Transfers</h2>
+
+            <p>There's a layer of good social media that works across basically every kind of business — B2B, B2C, services, products, industries you've heard of and industries you haven't. If another brand is winning at any of these things, it's worth studying and borrowing from. These things transfer.</p>
+
+            <h3>A Clear Point of View</h3>
+
+            <p>Brands that win on social have an opinion. They stand for something, and they're willing to say it out loud. It doesn't matter if it's a skincare line, a B2B SaaS company, a dental practice, or a commercial cleaning business — a clear point of view lands in every industry. If you're watching a brand and they feel sharp and confident about who they are and what they believe, that's one of the first things worth borrowing.</p>
+
+            <h3>Strong Hooks and Openers</h3>
+
+            <p>The first line of a LinkedIn post or the first three seconds of a video decides whether anyone keeps reading or watching. Good hook writing is universal. If a brand is nailing their openers, study the structure. Pay attention to how they set up a question, a tension, or a surprising statement. That skill travels from a DTC brand to an accounting firm without breaking.</p>
+
+            <h3>Storytelling Structure</h3>
+
+            <p>Setup, tension, resolution. Before, after. Question, answer. The skeletons of good storytelling don't care what industry you're in. If another brand is telling great stories on social, you can copy the structure even if the subject matter is wildly different from yours.</p>
+
+            <h3>Design Discipline</h3>
+
+            <p>Consistent color, type, spacing, and layout will make your content look professional no matter what you're selling. If a brand's feed looks polished, study their design system. A well-designed carousel about B2B payroll software uses the same principles as a well-designed carousel about skincare.</p>
+
+            <h3>Consistency and Cadence Discipline</h3>
+
+            <p>Not the exact frequency — more on that in a second — but the discipline of showing up reliably, whatever your schedule is. If a brand you admire posts twice a week forever without missing, that habit is worth borrowing even if the twice-a-week number isn't.</p>
+
+            <h3>Respect for the Audience</h3>
+
+            <p>The best brands on social treat their audience like adults. They don't talk down. They don't use clickbait. They don't beg for engagement. Watch for that tone and borrow it freely.</p>
+
+            <h2>What Usually Doesn't Transfer (and Why)</h2>
+
+            <p>This is where most people get tripped up. These are the things that look transferable but are actually tied to something specific about the brand you're watching. Copy them blindly and you'll be confused when they don't land.</p>
+
+            <h3>Posting Frequency</h3>
+
+            <p>A DTC beauty brand posting seven times a day has a content team, an influencer program, and an audience that treats social like entertainment. Their cadence is tied to that whole system. If you're a professional services firm with a team of three and a buyer who checks LinkedIn twice a week, seven posts a day is nonsense for you. Frequency is a function of team capacity, content type, and audience behavior — not a universal best practice.</p>
+
+            <h3>Trending Audio and Formats</h3>
+
+            <p>Trending formats work for brands whose buyers are actually on TikTok or Reels in entertainment mode. For some businesses, that's a genuine fit — including some B2C service businesses where prospects scroll socially, not just professionally. For others, it isn't. Before you chase a trend, ask whether your buyer encounters your brand in entertainment mode or research mode. The answer tells you whether the format transfers.</p>
+
+            <h3>Specific CTAs</h3>
+
+            <p>"Tap the link to buy" works for a $35 product on Instagram. "Book a strategy call" works for a $3,000 service. "Download the whitepaper" works for a B2B SaaS buyer deep in a research cycle. The CTA a brand uses is tied to the length of their buying cycle and the size of the decision. Swap them without thinking and you'll confuse your audience.</p>
+
+            <h3>Tone and Voice</h3>
+
+            <p>Every brand's tone is tied to their brand identity. A playful, meme-heavy voice works for some brands and would be a disaster for others. When you admire a brand's tone, don't copy the surface — study what's underneath. A healthcare brand and a fintech brand might both be "warm and human," but what that sounds like is wildly different in each context.</p>
+
+            <h3>Platform Mix</h3>
+
+            <p>The best platform for any brand depends on where their buyers actually are, not where the social media advice industry is loudest. Just because a brand you admire is crushing it on TikTok doesn't mean TikTok is where your buyers live. Platform choice is a strategy decision, not a copy-paste one.</p>
+
+            <div class="pull-quote">
+                <p>Studying other brands is one of the most valuable things you can do for your own social media. Just watch with the right lens. Not everything you see is meant for you to run — some of it is theirs alone.</p>
+            </div>
+
+            <h2>The Questions to Ask Before You Copy Anything</h2>
+
+            <p>When you spot a brand doing something you want to borrow, run it through these four questions first. If the answer to most of them is yes, it's probably safe to steal. If the answer is no, the thing you're looking at is tied to their context, not transferable to yours.</p>
+
+            <ol>
+                <li><strong>Is their buying cycle similar to mine?</strong> A $50 impulse purchase and a $5,000 considered purchase need different content rhythms.</li>
+                <li><strong>Does their audience live on the same platforms as mine?</strong> If their buyers are on TikTok and yours are on LinkedIn, their format choices may not transfer.</li>
+                <li><strong>Are their trust drivers the same as mine?</strong> Some buyers trust aesthetic and aspiration. Others trust expertise and proof. These groups respond to very different content.</li>
+                <li><strong>Do they have a content team that can sustain this? Do I?</strong> A lot of "impressive" brand playbooks are only possible because there are ten people behind them. If you can't match the engine, don't try to match the output.</li>
+            </ol>
+
+            <p>Run those four questions and the signal gets a lot clearer really fast.</p>
+
+            <h2>Three Quick Examples</h2>
+
+            <p>Here's what it looks like in practice.</p>
+
+            <p><strong>A B2B SaaS brand doing sharp short-form video.</strong> The transferable part: their hooks, their storytelling structure, their willingness to have a strong opinion on camera. The non-transferable part: their frequency (they have a three-person content team), and their reliance on their founder as the on-camera personality (not everyone has a founder who wants to be on camera, and not every brand needs one).</p>
+
+            <p><strong>A B2C dental practice crushing it with carousels.</strong> The transferable part: their design system, the way they turn complicated clinical topics into simple visual explanations, and their consistency. The non-transferable part: some of their specific CTAs are tied to local walk-in behavior, which doesn't translate to a national B2B firm.</p>
+
+            <p><strong>A DTC brand running tight storytelling campaigns.</strong> The transferable part: their ability to build a narrative across multiple posts, their hook writing, their visual identity. The non-transferable part: their posting volume, their influencer program, and their heavy reliance on retargeting ads to close the loop.</p>
+
+            <p>Every one of those brands is worth studying. None of them should be copied wholesale.</p>
+
+            <h2>This Is Exactly What Our Team Does</h2>
+
+            <p>When we take on a new client at StickyPost.Social, the first thing the team does is study. Not just the client's business — the brands around them, the brands adjacent to them, and the brands doing interesting things in totally different industries. Every person on the team brings ideas back to the table, and we have a conversation about what's worth borrowing and what's specific to the brand we were watching. By the time we start creating content, we've filtered everything through the client's actual context — their buyers, their buying cycle, their team capacity, their platform mix.</p>
+
+            <p>That filtering step is the whole difference between content that feels like it was made for the client and content that feels like it was copy-pasted from somewhere else. Anyone can watch other brands. The work is in knowing what to do with what you see.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Keep studying other brands. Study more of them, not fewer. Study brands in your industry and brands nowhere near it. Steal the fundamentals — clear point of view, strong hooks, good storytelling, design discipline, consistency, respect for the audience. And leave behind the things that only work because of who they are, who their buyers are, and what they've built behind the scenes. The best social media strategies are never copied. They're built by people who looked at a lot of other brands and figured out what was worth taking.</p>
+
+            <!-- CTA BOX -->
+            <div class="cta-box">
+                <h3>Want a Team That Actually Studies Before It Builds?</h3>
+                <p>We run social media for professional service businesses — built around your buyers, your cycle, and your brand. Not copy-pasted from someone else's playbook.</p>
+                <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="cta-button">Book Your Strategy Session</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">St<span class="logo-i">i</span>cky<span>Post</span>.Soc<span class="logo-i">i</span>al</div>
+        <div class="footer-text">&copy; 2026 StickyPost.Social. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
