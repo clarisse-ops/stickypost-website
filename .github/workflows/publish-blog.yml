@@ -3,7 +3,7 @@ name: Publish Scheduled Blog Posts
 on:
   schedule:
     # 9:00 AM Eastern (13:00 UTC) on Tuesdays and Fridays
-    - cron: '0 13 * * 2,5'
+    - cron: '0 13 * * 2'
 
   # Manual trigger from GitHub Actions UI
   workflow_dispatch:
