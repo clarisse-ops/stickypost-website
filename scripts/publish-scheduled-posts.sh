@@ -24,8 +24,8 @@ for dir in "$SCHEDULED_DIR"/*/; do
 
     echo "Publishing $folder_name (scheduled: $publish_date)..."
 
-    # Find the blog post HTML file
-    post_file=$(find "$dir" -name "stickypost-blog-post-*.html" -maxdepth 1 | head -1)
+    # Find the blog post HTML file — any .html in the folder except card.html
+    post_file=$(find "$dir" -maxdepth 1 -name "*.html" -not -name "card.html" | head -1)
     card_file="$dir/card.html"
 
     if [ -z "$post_file" ] || [ ! -f "$card_file" ]; then

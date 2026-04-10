@@ -1,0 +1,57 @@
+# 301 redirects from old numbered blog URLs to new slug URLs
+# Both .html and extensionless variants are covered, because Netlify Pretty URLs
+# strips .html by default — old links using either form need to resolve.
+
+/stickypost-blog-post-1.html    /why-company-page-matters-more-than-personal-brand    301!
+/stickypost-blog-post-1         /why-company-page-matters-more-than-personal-brand    301!
+
+/stickypost-blog-post-2.html    /handing-social-media-to-your-va                      301!
+/stickypost-blog-post-2         /handing-social-media-to-your-va                      301!
+
+/stickypost-blog-post-3.html    /boring-industries-win-at-social-media                301!
+/stickypost-blog-post-3         /boring-industries-win-at-social-media                301!
+
+/stickypost-blog-post-4.html    /real-cost-inconsistent-social-media-presence         301!
+/stickypost-blog-post-4         /real-cost-inconsistent-social-media-presence         301!
+
+/stickypost-blog-post-5.html    /one-social-media-manager-vs-full-team                301!
+/stickypost-blog-post-5         /one-social-media-manager-vs-full-team                301!
+
+/stickypost-blog-post-6.html    /why-we-dont-do-lock-in-contracts                     301!
+/stickypost-blog-post-6         /why-we-dont-do-lock-in-contracts                     301!
+
+/stickypost-blog-post-7.html    /84-percent-executives-check-social-before-calling    301!
+/stickypost-blog-post-7         /84-percent-executives-check-social-before-calling    301!
+
+/stickypost-blog-post-8.html    /you-dont-have-content-problem                        301!
+/stickypost-blog-post-8         /you-dont-have-content-problem                        301!
+
+/stickypost-blog-post-9.html    /linkedin-carousels-6x-more-engagement                301!
+/stickypost-blog-post-9         /linkedin-carousels-6x-more-engagement                301!
+
+/stickypost-blog-post-10.html   /linkedin-playbook-professional-service-company-pages 301!
+/stickypost-blog-post-10        /linkedin-playbook-professional-service-company-pages 301!
+
+/stickypost-blog-post-11.html   /instagram-service-businesses-without-product-photos  301!
+/stickypost-blog-post-11        /instagram-service-businesses-without-product-photos  301!
+
+/stickypost-blog-post-12.html   /facebook-tiktok-platforms-that-still-matter          301!
+/stickypost-blog-post-12        /facebook-tiktok-platforms-that-still-matter          301!
+
+/stickypost-blog-post-13.html   /tried-agency-before-didnt-work-heres-why             301!
+/stickypost-blog-post-13        /tried-agency-before-didnt-work-heres-why             301!
+
+/stickypost-blog-post-14.html   /how-we-research-new-client                           301!
+/stickypost-blog-post-14        /how-we-research-new-client                           301!
+
+/stickypost-blog-post-15.html   /what-happens-after-you-sign-up-onboarding            301!
+/stickypost-blog-post-15        /what-happens-after-you-sign-up-onboarding            301!
+
+/stickypost-blog-post-16.html   /what-roi-actually-looks-like-organic-social-media    301!
+/stickypost-blog-post-16        /what-roi-actually-looks-like-organic-social-media    301!
+
+/stickypost-blog-post-17.html   /social-media-metrics-that-matter-service-businesses  301!
+/stickypost-blog-post-17        /social-media-metrics-that-matter-service-businesses  301!
+
+/stickypost-blog-post-18.html   /content-calendar-wont-save-social-media              301!
+/stickypost-blog-post-18        /content-calendar-wont-save-social-media              301!
