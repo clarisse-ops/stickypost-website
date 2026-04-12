@@ -230,6 +230,48 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-1px);
 }
 
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 12px;
+  background: #272626;
+  border: 1px solid rgba(253,252,250,0.1);
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 8px;
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 13px !important;
+  color: rgba(253,252,250,0.7) !important;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a:hover {
+  background: rgba(253,252,250,0.06);
+  color: #FAF7F2 !important;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1561,6 +1603,12 @@ h1, h2, h3, h4, h5, h6 {
       <a href="#pricing" onclick="closeNav()">Pricing</a>
       <a href="#faq" onclick="closeNav()">FAQ</a>
       <a href="stickypost-blog.html" onclick="closeNav()">Blog</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger">Case Studies <svg viewBox="0 0 12 8" style="width:10px;height:7px;margin-left:3px;fill:currentColor;vertical-align:middle;"><path d="M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z"/></svg></a>
+        <div class="nav-dropdown-menu">
+          <a href="stickypost-case-study-healthcare.html">Collaborating Docs</a>
+        </div>
+      </div>
       <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer" class="nav-cta" onclick="closeNav()">Book a Call</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleNav()">
@@ -1708,6 +1756,25 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CASE STUDY TEASER
+     ============================================ -->
+<section style="background:#30A5A5; padding:48px 0 52px; text-align:center;">
+  <div class="container" style="max-width:1100px;">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.6); display:block; margin-bottom:16px;">Real Results &mdash; Healthcare Client</span>
+    <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin-bottom:6px;">
+      <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(24px,3vw,36px); color:rgba(255,255,255,0.4); line-height:1;">145</span>
+      <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(18px,2vw,28px); color:rgba(255,255,255,0.4);">&#8594;</span>
+      <span style="font-family:'Oswald',sans-serif; font-weight:800; font-size:clamp(48px,6vw,72px); color:#fff; line-height:1;">7,842</span>
+      <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:clamp(14px,1.5vw,18px); text-transform:uppercase; letter-spacing:1px; color:#fff; margin-left:6px; white-space:nowrap;">LinkedIn Followers</span>
+    </div>
+    <p style="font-family:'Oswald',sans-serif; font-size:clamp(11px,1.2vw,14px); font-weight:600; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.45); margin-bottom:24px; white-space:nowrap;">
+      $0 ad spend &bull; 4 years &bull; 100% organic &bull; 10.7% peak engagement &bull; 37 warm leads from polls
+    </p>
+    <a href="stickypost-case-study-healthcare.html" style="display:inline-block; font-family:'Oswald',sans-serif; font-weight:700; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#fff; transition:all 0.2s ease; text-decoration:none; border-bottom:2px solid rgba(255,255,255,0.5); padding-bottom:3px;" onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.5)'">Read the Full Case Study &rarr;</a>
   </div>
 </section>
 
@@ -2088,6 +2155,7 @@ h1, h2, h3, h4, h5, h6 {
         <a href="#team">Team</a>
         <a href="#pricing">Pricing</a>
         <a href="stickypost-blog.html">Blog</a>
+        <a href="stickypost-case-study-healthcare.html">Case Studies</a>
         <a href="https://calendly.com/essiralc/strategy-audit-session" target="_blank" rel="noopener noreferrer">Contact</a>
       </div>
       <p class="footer-copy">&copy; 2026 StickyPost.Social. All rights reserved.</p>

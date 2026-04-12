@@ -135,6 +135,22 @@
       transform: translateY(-1px);
     }
 
+    .nav-dropdown { position: relative; list-style: none; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; cursor: pointer; }
+    .nav-dropdown-menu {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      margin-top: 12px; background: #272626; border: 1px solid rgba(253,252,250,0.1);
+      border-radius: 8px; padding: 8px 0; min-width: 200px;
+      opacity: 0; visibility: hidden; transition: all 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; margin-top: 8px; }
+    .nav-dropdown-menu a {
+      display: block; padding: 10px 20px; font-size: 13px !important;
+      color: rgba(253,252,250,0.7) !important; transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { background: rgba(253,252,250,0.06); color: #FAF7F2 !important; }
+
     /* Hamburger */
     .hamburger {
       display: none;
@@ -637,6 +653,12 @@
         <li><a href="index.html#pricing">Pricing</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li><a href="stickypost-blog.html" class="active">Blog</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-dropdown-trigger">Case Studies <svg viewBox="0 0 12 8" style="width:10px;height:7px;margin-left:3px;fill:currentColor;vertical-align:middle;"><path d="M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="stickypost-case-study-healthcare.html">Collaborating Docs</a>
+          </div>
+        </li>
         <li><a href="stickypost-contact.html" class="nav-cta">Book a Call</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -652,6 +674,7 @@
       <a href="index.html#pricing">Pricing</a>
       <a href="index.html#faq">FAQ</a>
       <a href="stickypost-blog.html" class="active">Blog</a>
+      <a href="stickypost-case-study-healthcare.html">Case Studies</a>
       <a href="stickypost-contact.html" class="nav-cta">Book a Call</a>
     </div>
   </nav>
@@ -954,6 +977,7 @@
           <a href="index.html#pricing">Pricing</a>
           <a href="index.html#faq">FAQ</a>
           <a href="stickypost-blog.html">Blog</a>
+          <a href="stickypost-case-study-healthcare.html">Case Studies</a>
           <a href="stickypost-contact.html">Contact</a>
         </div>
         <p class="footer-copy">&copy; 2026 StickyPost.Social. All rights reserved.</p>
