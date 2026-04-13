@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's Your Company Page Score? | StickyPost.Social</title>
+  <meta name="description" content="7 questions. 60 seconds. Find out if your company's social media is working for you — or against you.">
+  <meta property="og:title" content="What's Your Company Page Score?">
+  <meta property="og:description" content="7 questions. 60 seconds. Find out if your social media is working for you — or against you.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --charcoal: #272626;
+      --cream: #FAF7F2;
+      --terracotta: #DC5A3B;
+      --teal: #30A5A5;
+      --pale-teal: #B2E8E3;
+      --white: #FFFFFF;
+      --border: #E8E2D9;
+      --text-muted: #6B6563;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .screen {
+      display: none;
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .screen.active {
+      display: flex;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+    }
+
+    /* ── LOGO ── */
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo .sticky { color: var(--charcoal); }
+    .logo .post { color: var(--terracotta); }
+    .logo .social { color: var(--teal); font-weight: 400; }
+
+    /* ── LANDING SCREEN ── */
+    .landing-content {
+      text-align: center;
+    }
+
+    .landing-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .landing-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    .landing-title em {
+      font-style: normal;
+      color: var(--terracotta);
+    }
+
+    .landing-subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .landing-bullets {
+      list-style: none;
+      text-align: left;
+      max-width: 420px;
+      margin: 0 auto 36px;
+    }
+
+    .landing-bullets li {
+      font-size: 15px;
+      padding: 8px 0 8px 32px;
+      position: relative;
+      color: var(--charcoal);
+    }
+
+    .landing-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 15px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--terracotta);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 18px 48px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: #C44E31;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:active { transform: translateY(0); }
+
+    .landing-proof {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .landing-proof strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    /* ── QUIZ SCREEN ── */
+    .quiz-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+
+    /* Progress bar */
+    .progress-bar-track {
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--terracotta));
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    .progress-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .progress-label span { font-weight: 600; color: var(--charcoal); }
+
+    /* Question */
+    .question-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+    }
+
+    /* Answer options */
+    .options-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      padding: 18px 20px;
+      background: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--charcoal);
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--teal);
+      background: rgba(48,165,165,0.04);
+      transform: translateX(4px);
+    }
+
+    .option-btn.selected {
+      border-color: var(--terracotta);
+      background: rgba(220,90,59,0.05);
+    }
+
+    .option-letter {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 8px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .option-btn.selected .option-letter {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: var(--white);
+    }
+
+    /* ── EMAIL CAPTURE SCREEN ── */
+    .email-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 56px 48px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .email-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(220,90,59,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .email-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+
+    .email-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 12px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--charcoal);
+      background: var(--cream);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-input:focus {
+      border-color: var(--teal);
+    }
+
+    .email-input::placeholder {
+      color: #B0A9A5;
+    }
+
+    .email-submit {
+      padding: 16px 28px;
+      background: var(--terracotta);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .email-submit:hover { background: #C44E31; }
+
+    .email-fine-print {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    .email-error {
+      color: var(--terracotta);
+      font-size: 13px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    /* ── RESULTS SCREEN ── */
+    .results-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .results-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .results-score {
+      font-family: 'Oswald', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+
+    .results-score span { color: var(--text-muted); font-weight: 400; font-size: 32px; }
+
+    .results-tier {
+      font-family: 'Oswald', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    .results-tier.ghost { color: #B04A3A; }
+    .results-tier.random { color: var(--terracotta); }
+    .results-tier.steady { color: var(--teal); }
+    .results-tier.authority { color: #2A8A3E; }
+
+    .results-description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 12px auto 0;
+      text-align: center;
+    }
+
+    /* Score bar */
+    .score-bar-container {
+      margin: 28px 0 36px;
+    }
+
+    .score-bar-track {
+      height: 12px;
+      background: var(--border);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 1s ease;
+    }
+
+    .score-bar-fill.ghost { background: #B04A3A; }
+    .score-bar-fill.random { background: var(--terracotta); }
+    .score-bar-fill.steady { background: var(--teal); }
+    .score-bar-fill.authority { background: #2A8A3E; }
+
+    .score-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+
+    .score-bar-labels span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    /* Recommendations */
+    .results-section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .results-section-title.good { color: var(--teal); }
+    .results-section-title.fix { color: var(--terracotta); }
+
+    .rec-item {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(232,226,217,0.5);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .rec-item:last-child { border-bottom: none; }
+
+    .rec-icon {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .rec-icon.good { background: rgba(48,165,165,0.1); color: var(--teal); }
+    .rec-icon.fix { background: rgba(220,90,59,0.1); color: var(--terracotta); }
+
+    .rec-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--charcoal);
+    }
+
+    .rec-text strong { font-weight: 600; }
+
+    /* Results CTA */
+    .results-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+
+    .results-cta {
+      text-align: center;
+    }
+
+    .results-credibility {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .results-credibility strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .results-cta-btn {
+      display: inline-block;
+      background: var(--terracotta);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 18px 40px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .results-cta-btn:hover {
+      background: #C44E31;
+      transform: translateY(-1px);
+    }
+
+    .results-cta-url {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* ── BACK BUTTON ── */
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--cream);
+      color: var(--charcoal);
+    }
+
+    .back-btn.hidden { visibility: hidden; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.4s ease forwards;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .quiz-card, .email-card, .results-card { padding: 32px 24px; }
+      .email-form { flex-direction: column; }
+      .landing-title { font-size: 32px; }
+      .question-text { font-size: 19px; }
+      .results-score { font-size: 44px; }
+      .results-tier { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ SCREEN 1: LANDING ═══════════════ -->
+  <div class="screen active" id="screen-landing">
+    <div class="container">
+      <div class="logo">
+        <span class="sticky">STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span>
+      </div>
+      <div class="landing-content">
+        <div class="landing-eyebrow">Free Assessment</div>
+        <h1 class="landing-title">
+          What's Your<br><em>Company Page Score?</em>
+        </h1>
+        <p class="landing-subtitle">
+          7 questions. 60 seconds. Find out if your social media is working for you — or against you.
+        </p>
+        <ul class="landing-bullets">
+          <li>Instant score with personalized recommendations</li>
+          <li>See where your page stands on visibility, credibility, and conversion</li>
+          <li>Get specific next steps based on your answers</li>
+        </ul>
+        <button class="btn-primary" onclick="startQuiz()">
+          Take the Quiz
+        </button>
+        <p class="landing-proof">
+          Built by the team behind <strong>10,000+ company page posts</strong> across 7 industries
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SCREEN 2: QUIZ ═══════════════ -->
+  <div class="screen" id="screen-quiz">
+    <div class="container">
+      <div class="logo">
+        <span class="sticky">STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span>
+      </div>
+      <div class="quiz-card animate-in" id="quiz-card">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-fill" style="width: 14.28%"></div>
+        </div>
+        <div class="quiz-nav">
+          <button class="back-btn hidden" id="back-btn" onclick="goBack()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+            Back
+          </button>
+          <div class="progress-label" style="margin-bottom: 0;">
+            Question <span id="q-current">1</span> of <span>7</span>
+          </div>
+        </div>
+        <div class="question-text" id="question-text"></div>
+        <ul class="options-list" id="options-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SCREEN 3: EMAIL CAPTURE ═══════════════ -->
+  <div class="screen" id="screen-email">
+    <div class="container">
+      <div class="logo">
+        <span class="sticky">STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span>
+      </div>
+      <div class="email-card animate-in">
+        <div class="email-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#DC5A3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22,7 13.5,12.5 5,7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        </div>
+        <div class="email-title">Your Results Are Ready</div>
+        <p class="email-subtitle">
+          Enter your email to see your Company Page Score and get your personalized action plan.
+        </p>
+        <div class="email-form">
+          <input type="email" class="email-input" id="email-input" placeholder="your@email.com" autocomplete="email">
+          <button class="email-submit" onclick="submitEmail()">See My Score</button>
+        </div>
+        <div class="email-error" id="email-error">Please enter a valid email address.</div>
+        <p class="email-fine-print">Your results appear instantly on the next screen. No spam, unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SCREEN 4: RESULTS ═══════════════ -->
+  <div class="screen" id="screen-results">
+    <div class="container">
+      <div class="logo">
+        <span class="sticky">STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span>
+      </div>
+      <div class="results-card animate-in">
+
+        <div class="results-header">
+          <div class="results-eyebrow">Your Company Page Score</div>
+          <div class="results-score" id="results-score">14<span>/28</span></div>
+          <div class="results-tier" id="results-tier">The Random Poster</div>
+          <p class="results-description" id="results-description"></p>
+        </div>
+
+        <div class="score-bar-container">
+          <div class="score-bar-track">
+            <div class="score-bar-fill" id="score-bar-fill" style="width: 0%"></div>
+          </div>
+          <div class="score-bar-labels">
+            <span>Ghost Page</span>
+            <span>Random Poster</span>
+            <span>Steady Builder</span>
+            <span>Authority Page</span>
+          </div>
+        </div>
+
+        <!-- Strongest area -->
+        <div id="results-good" style="margin-bottom: 28px;">
+          <div class="results-section-title good">Where You're Doing Well</div>
+          <div id="good-items"></div>
+        </div>
+
+        <!-- Focus areas -->
+        <div id="results-fix">
+          <div class="results-section-title fix">Where to Focus First</div>
+          <div id="fix-items"></div>
+        </div>
+
+        <div class="results-divider"></div>
+
+        <div class="results-cta">
+          <p class="results-credibility">
+            We've built <strong>10,000+ posts</strong> for company pages across healthcare, IT, real estate, and more.
+            One client went from <strong>142 to 7,834 followers</strong> — 95% from organic content alone.
+          </p>
+          <a href="https://calendly.com/essiralc/strategy-audit-session" class="results-cta-btn" target="_blank" rel="noopener">
+            Get a Free Company Page Audit
+          </a>
+          <p class="results-cta-url">stickypost.social</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── QUIZ DATA ──
+    const questions = [
+      {
+        text: "If a potential client looked at your company's social media right now, what would they think?",
+        options: [
+          { text: "We don't really have social media", points: 1 },
+          { text: "It exists, but it's been quiet for a while", points: 2 },
+          { text: "It looks decent but doesn't really represent what we do", points: 3 },
+          { text: "It accurately reflects our brand and what we offer", points: 4 }
+        ],
+        goodMsg: "Your page makes a strong first impression — that's a real advantage most company pages don't have.",
+        fixMsg: "First impressions count. When potential clients search for you and find an empty or outdated page, it raises doubt — even if your actual service is excellent."
+      },
+      {
+        text: "When's the last time your company page posted something?",
+        options: [
+          { text: "I honestly don't remember", points: 1 },
+          { text: "A few weeks ago, maybe longer", points: 2 },
+          { text: "Within the last week", points: 3 },
+          { text: "We post multiple times a week on a schedule", points: 4 }
+        ],
+        goodMsg: "Consistent posting is one of the hardest habits to build, and you've got it. The algorithm rewards this.",
+        fixMsg: "An inactive page sends one message: this company isn't paying attention. Start with 3 posts per week on a set schedule. Consistency beats perfection."
+      },
+      {
+        text: "Does your company page bio clearly explain what you do, who you serve, and how to contact you?",
+        options: [
+          { text: "I'm not sure what our bio says right now", points: 1 },
+          { text: "It has some info but it's probably outdated", points: 2 },
+          { text: "It covers the basics", points: 3 },
+          { text: "Yes — it's specific, current, and has a clear next step for visitors", points: 4 }
+        ],
+        goodMsg: "A clear, complete bio is doing silent work for you 24/7. Most company pages neglect this entirely.",
+        fixMsg: "Your bio is your storefront. If someone lands on your page and can't immediately tell what you do, who you help, and how to reach you, they leave. Update it today — it takes 10 minutes."
+      },
+      {
+        text: "When someone comments on your posts or sends a message, what happens?",
+        options: [
+          { text: "We've never really gotten comments or messages", points: 1 },
+          { text: "Sometimes we notice, but we don't always respond", points: 2 },
+          { text: "We try to respond when we see them", points: 3 },
+          { text: "We respond to every comment and message within 24 hours", points: 4 }
+        ],
+        goodMsg: "Responding to every interaction is what separates growing pages from stagnant ones. You're building real trust here.",
+        fixMsg: "Posting and ghosting is the #1 company page killer. Every unanswered comment is a missed relationship. The algorithm also buries pages that don't engage. Start responding to everything within 24 hours."
+      },
+      {
+        text: "What does most of your content look like?",
+        options: [
+          { text: "Mostly company announcements, job postings, or holiday graphics", points: 1 },
+          { text: "A mix of things, but we're not sure what's actually working", points: 2 },
+          { text: "We share useful info for our audience, but the format is usually the same", points: 3 },
+          { text: "We mix formats — polls, carousels, video, stories — based on what gets engagement", points: 4 }
+        ],
+        goodMsg: "Mixing content formats keeps your audience engaged and signals to the algorithm that your page is worth showing. Well done.",
+        fixMsg: "If your feed is all announcements and holiday posts, you're talking at your audience, not to them. Try polls, behind-the-scenes photos, and posts that teach something. Variety keeps people coming back."
+      },
+      {
+        text: "Could you describe your company's social media strategy in one sentence?",
+        options: [
+          { text: "We don't have one — we post when someone remembers to", points: 1 },
+          { text: "We try to post regularly, but there's no real plan behind it", points: 2 },
+          { text: "We have a general idea of what we want to do", points: 3 },
+          { text: "Yes — we have content themes, a calendar, and we know exactly who we're trying to reach", points: 4 }
+        ],
+        goodMsg: "Having a documented strategy puts you ahead of 80%+ of company pages. This is what turns random posting into real results.",
+        fixMsg: "Without a strategy, you're guessing. Define 3-5 content themes, pick your platforms based on where your audience actually spends time, and plan at least 2 weeks ahead. Random posting produces random results."
+      },
+      {
+        text: "Has a potential client or customer ever found you through your company's social media?",
+        options: [
+          { text: "Not that I know of", points: 1 },
+          { text: "Maybe — but we wouldn't know because we don't track it", points: 2 },
+          { text: "A few times, but it's not consistent", points: 3 },
+          { text: "Yes — social media is an active part of how people discover and trust us", points: 4 }
+        ],
+        goodMsg: "Social is actively driving business for you. That's the goal — and you're there. The focus now is compounding that.",
+        fixMsg: "If your social media isn't generating leads, it's a visibility problem, a content problem, or both. Track where inquiries come from. Ask new clients how they found you. What you can't measure, you can't improve."
+      }
+    ];
+
+    const tiers = [
+      {
+        name: "The Ghost Page",
+        cssClass: "ghost",
+        min: 7,
+        max: 11,
+        description: "Your page exists, but it's not doing any work for you. Potential clients who check your social media are seeing silence — and silence says something. The good news: the bar is low, which means small changes will show results fast."
+      },
+      {
+        name: "The Random Poster",
+        cssClass: "random",
+        min: 12,
+        max: 17,
+        description: "You're showing up sometimes, but without a clear strategy behind it, the effort isn't compounding. Your audience doesn't know what to expect from you, and the algorithm doesn't know what to do with you. A plan changes everything here."
+      },
+      {
+        name: "The Steady Builder",
+        cssClass: "steady",
+        min: 18,
+        max: 23,
+        description: "You've got a real foundation — consistent posting, some engagement, a profile that makes sense. The gap now is conversion: turning that visibility into actual leads and business. This is where strategy gets specific."
+      },
+      {
+        name: "The Authority Page",
+        cssClass: "authority",
+        min: 24,
+        max: 28,
+        description: "Your company page is doing real work for your business. You're posting with intention, engaging your audience, and people are finding you. Now it's about compounding — more of what works, less of what doesn't, and scaling what you've built."
+      }
+    ];
+
+    // ── STATE ──
+    let currentQuestion = 0;
+    let scores = [];
+    const letters = ['A', 'B', 'C', 'D'];
+
+    // ── FUNCTIONS ──
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function startQuiz() {
+      currentQuestion = 0;
+      scores = [];
+      showScreen('screen-quiz');
+      renderQuestion();
+    }
+
+    function goBack() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        renderQuestion();
+      }
+    }
+
+    function renderQuestion() {
+      const q = questions[currentQuestion];
+      const pct = ((currentQuestion + 1) / questions.length) * 100;
+
+      document.getElementById('progress-fill').style.width = pct + '%';
+      document.getElementById('q-current').textContent = currentQuestion + 1;
+      document.getElementById('question-text').textContent = q.text;
+
+      // Show/hide back button
+      const backBtn = document.getElementById('back-btn');
+      if (currentQuestion === 0) {
+        backBtn.classList.add('hidden');
+      } else {
+        backBtn.classList.remove('hidden');
+      }
+
+      const list = document.getElementById('options-list');
+      list.innerHTML = '';
+
+      q.options.forEach((opt, i) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        // Pre-select if they already answered this question (going back)
+        if (scores[currentQuestion] === opt.points) {
+          btn.classList.add('selected');
+        }
+        btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt.text}</span>`;
+        btn.addEventListener('click', () => selectOption(i, opt.points));
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+
+      // Animate in
+      const card = document.getElementById('quiz-card');
+      card.classList.remove('animate-in');
+      void card.offsetWidth;
+      card.classList.add('animate-in');
+    }
+
+    function selectOption(index, points) {
+      // Highlight selected
+      const btns = document.querySelectorAll('.option-btn');
+      btns.forEach(b => b.classList.remove('selected'));
+      btns[index].classList.add('selected');
+
+      // Store score
+      scores[currentQuestion] = points;
+
+      // Auto-advance after brief delay
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          renderQuestion();
+        } else {
+          showScreen('screen-email');
+        }
+      }, 400);
+    }
+
+    function submitEmail() {
+      const input = document.getElementById('email-input');
+      const error = document.getElementById('email-error');
+      const email = input.value.trim();
+
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        error.style.display = 'block';
+        input.style.borderColor = '#DC5A3B';
+        return;
+      }
+
+      error.style.display = 'none';
+      input.style.borderColor = '#E8E2D9';
+
+      // Kit (ConvertKit) API — subscribe to Pine form, triggers Welcome Series
+      const KIT_API_KEY = '4-O-bDiACWfWuCYlwJklWA';
+      const FORM_ID = '9231926';
+
+      fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          api_key: KIT_API_KEY,
+          email: email
+        })
+      }).catch(err => console.warn('Kit API error:', err));
+
+      showResults();
+    }
+
+    // Allow Enter key to submit email
+    document.getElementById('email-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') submitEmail();
+    });
+
+    function showResults() {
+      const total = scores.reduce((a, b) => a + b, 0);
+
+      // Determine tier
+      let tier = tiers[0];
+      for (const t of tiers) {
+        if (total >= t.min && total <= t.max) {
+          tier = t;
+          break;
+        }
+      }
+
+      // Update header
+      document.getElementById('results-score').innerHTML = `${total}<span>/28</span>`;
+
+      const tierEl = document.getElementById('results-tier');
+      tierEl.textContent = tier.name;
+      tierEl.className = 'results-tier ' + tier.cssClass;
+
+      document.getElementById('results-description').textContent = tier.description;
+
+      // Score bar
+      const barPct = (total / 28) * 100;
+      const barFill = document.getElementById('score-bar-fill');
+      barFill.className = 'score-bar-fill ' + tier.cssClass;
+      setTimeout(() => { barFill.style.width = barPct + '%'; }, 100);
+
+      // Find best and worst questions
+      const indexed = scores.map((s, i) => ({ score: s, index: i }));
+      const sorted = [...indexed].sort((a, b) => a.score - b.score);
+
+      // Worst 3 (or fewer if they scored high)
+      const worst = sorted.filter(s => s.score <= 2).slice(0, 3);
+      if (worst.length === 0) worst.push(sorted[0]); // at least one
+
+      // Best 2
+      const best = [...indexed].sort((a, b) => b.score - a.score).filter(s => s.score >= 3).slice(0, 2);
+      if (best.length === 0) best.push(sorted[sorted.length - 1]);
+
+      // Render good items
+      const goodContainer = document.getElementById('good-items');
+      goodContainer.innerHTML = '';
+      best.forEach(item => {
+        goodContainer.innerHTML += `
+          <div class="rec-item">
+            <div class="rec-icon good">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20,6 9,17 4,12"/></svg>
+            </div>
+            <div class="rec-text">${questions[item.index].goodMsg}</div>
+          </div>
+        `;
+      });
+
+      // Render fix items
+      const fixContainer = document.getElementById('fix-items');
+      fixContainer.innerHTML = '';
+      worst.forEach(item => {
+        fixContainer.innerHTML += `
+          <div class="rec-item">
+            <div class="rec-icon fix">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg>
+            </div>
+            <div class="rec-text"><strong>${questions[item.index].text}</strong><br>${questions[item.index].fixMsg}</div>
+          </div>
+        `;
+      });
+
+      showScreen('screen-results');
+    }
+  </script>
+
+</body>
+</html>

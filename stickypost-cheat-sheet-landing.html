@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Cheat Sheet: What to Post on Your Company Page | StickyPost.Social</title>
+  <meta name="description" content="25 post ideas for healthcare company pages, organized by content pillar. No face on camera required. Download the free cheat sheet.">
+  <meta property="og:title" content="The Company Page Cheat Sheet — What to Post When You Have No Idea What to Post">
+  <meta property="og:description" content="25 ready-to-use post ideas for healthcare company pages. No face on camera required.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --charcoal: #272626;
+      --cream: #FAF7F2;
+      --terracotta: #DC5A3B;
+      --teal: #30A5A5;
+      --pale-teal: #B2E8E3;
+      --white: #FFFFFF;
+      --border: #E8E2D9;
+      --text-muted: #6B6563;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NO NAVIGATION — single purpose page ── */
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1080px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-content { max-width: 640px; }
+
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 28px;
+    }
+
+    .logo .sticky { color: var(--charcoal); }
+    .logo .post { color: var(--terracotta); }
+    .logo .social { color: var(--teal); font-weight: 400; }
+
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--terracotta);
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .hero-bullets li {
+      font-size: 14px;
+      padding: 6px 0 6px 28px;
+      position: relative;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+
+    .hero-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 13px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* ── FORM ── */
+    .capture-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .capture-input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--charcoal);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .capture-input:focus { border-color: var(--teal); }
+    .capture-input::placeholder { color: #B0A9A5; }
+
+    .capture-btn {
+      padding: 16px 24px;
+      background: var(--terracotta);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .capture-btn:hover { background: #C44E31; transform: translateY(-1px); }
+
+    .capture-fine-print {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .capture-error {
+      color: var(--terracotta);
+      font-size: 13px;
+      margin-bottom: 8px;
+      display: none;
+    }
+
+    .capture-success {
+      background: rgba(48,165,165,0.08);
+      border: 1px solid var(--teal);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .capture-success p {
+      font-size: 15px;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    .capture-success .redirect-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── MOCKUP ── */
+    .hero-mockup {
+      position: relative;
+    }
+
+    .mockup-frame {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+      overflow: hidden;
+      transform: perspective(800px) rotateY(-4deg) rotateX(2deg);
+      transition: transform 0.3s ease;
+    }
+
+    .mockup-frame:hover {
+      transform: perspective(800px) rotateY(-1deg) rotateX(0.5deg);
+    }
+
+    .mockup-bar {
+      height: 32px;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 6px;
+    }
+
+    .mockup-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #555;
+    }
+
+    .mockup-content {
+      padding: 24px;
+      background: var(--cream);
+    }
+
+    .mockup-header {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .mockup-header em { font-style: normal; color: var(--terracotta); }
+
+    .mockup-sub {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .mockup-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .mockup-pillar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 8px;
+    }
+
+    .mockup-pillar-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--terracotta);
+      line-height: 1;
+    }
+
+    .mockup-pillar-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--charcoal);
+      margin-top: 2px;
+    }
+
+    .mockup-pillar-lines {
+      margin-top: 6px;
+    }
+
+    .mockup-line {
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-bottom: 3px;
+    }
+
+    .mockup-line:nth-child(odd) { width: 90%; }
+    .mockup-line:nth-child(even) { width: 70%; }
+
+    .mockup-pillars-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 0 40px;
+    }
+
+    .mockup-badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-align: center;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .mockup-badge-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--pale-teal);
+    }
+
+    .mockup-badge-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* ── BELOW THE FOLD ── */
+    .below-fold {
+      background: var(--white);
+      padding: 64px 24px;
+    }
+
+    .below-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* Who this is for */
+    .who-section {
+      margin-bottom: 48px;
+    }
+
+    .section-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .who-card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--cream);
+    }
+
+    .who-card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .who-card-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Credibility */
+    .credibility {
+      background: var(--charcoal);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .cred-stats {
+      display: flex;
+      gap: 32px;
+      flex-shrink: 0;
+    }
+
+    .cred-stat { text-align: center; }
+
+    .cred-stat-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--terracotta);
+      line-height: 1;
+    }
+
+    .cred-stat-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--pale-teal);
+      margin-top: 4px;
+    }
+
+    .cred-text {
+      font-size: 14px;
+      color: var(--pale-teal);
+      line-height: 1.6;
+    }
+
+    .cred-text strong { color: var(--white); }
+
+    /* FAQ */
+    .faq-section { margin-bottom: 48px; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .faq-question {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--charcoal);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-toggle {
+      font-size: 20px;
+      color: var(--teal);
+      transition: transform 0.2s;
+      user-select: none;
+    }
+
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer { max-height: 200px; }
+
+    .faq-answer p {
+      padding-top: 12px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Bottom CTA */
+    .bottom-cta {
+      text-align: center;
+      padding: 40px;
+      background: var(--cream);
+      border-radius: 12px;
+      border: 2px solid var(--border);
+    }
+
+    .bottom-cta-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+
+    .bottom-cta-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .bottom-cta .capture-form {
+      max-width: 440px;
+      margin: 0 auto 12px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .hero-content { max-width: 100%; }
+      .hero-bullets { text-align: left; }
+      .capture-form { flex-direction: column; }
+      .mockup-frame { transform: none; }
+      .mockup-frame:hover { transform: none; }
+      .who-grid { grid-template-columns: 1fr; }
+      .credibility { flex-direction: column; gap: 20px; text-align: center; }
+      .bottom-cta .capture-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <div class="logo">
+          <span class="sticky">STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span>
+        </div>
+        <div class="hero-eyebrow">Free Download</div>
+        <h1 class="hero-title">
+          The Company Page Cheat Sheet<br>
+          <em>What to Post When You Have No Idea What to Post</em>
+        </h1>
+        <p class="hero-subtitle">
+          25 ready-to-use post ideas organized by content pillar, plus the rules behind pages that actually grow. Built for professional service businesses. No face on camera required.
+        </p>
+        <ul class="hero-bullets">
+          <li>25 specific post ideas across 5 content pillars</li>
+          <li>The posting rules that separate growing pages from dead ones</li>
+          <li>A 2-week quick-start plan you can begin today</li>
+        </ul>
+
+        <div id="form-area">
+          <div class="capture-form" id="capture-form">
+            <input type="email" class="capture-input" id="email-input" placeholder="your@email.com" autocomplete="email">
+            <button class="capture-btn" onclick="submitForm()">Send Me the Cheat Sheet</button>
+          </div>
+          <div class="capture-error" id="capture-error">Please enter a valid email address.</div>
+          <p class="capture-fine-print">Free PDF + web version. No spam, unsubscribe anytime.</p>
+        </div>
+
+        <div class="capture-success" id="capture-success">
+          <p>Check your inbox — your cheat sheet is on the way.</p>
+          <p class="redirect-note">Redirecting you to the cheat sheet now...</p>
+        </div>
+      </div>
+
+      <div class="hero-mockup">
+        <div class="mockup-badge">
+          <div class="mockup-badge-label">Built For</div>
+          <div class="mockup-badge-text">Company Pages</div>
+        </div>
+        <div class="mockup-frame">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-header">The Company Page Cheat Sheet<br><em>What to Post When You Have No Idea What to Post</em></div>
+            <div class="mockup-sub">25 ready-to-use post ideas · 5 content pillars · Built for company pages</div>
+            <div class="mockup-pillars">
+              <div class="mockup-pillar">
+                <div class="mockup-pillar-num">1</div>
+                <div class="mockup-pillar-name">Educate</div>
+                <div class="mockup-pillar-lines"><div class="mockup-line"></div><div class="mockup-line"></div><div class="mockup-line"></div></div>
+              </div>
+              <div class="mockup-pillar">
+                <div class="mockup-pillar-num">2</div>
+                <div class="mockup-pillar-name">Human Side</div>
+                <div class="mockup-pillar-lines"><div class="mockup-line"></div><div class="mockup-line"></div><div class="mockup-line"></div></div>
+              </div>
+              <div class="mockup-pillar">
+                <div class="mockup-pillar-num">3</div>
+                <div class="mockup-pillar-name">Trust</div>
+                <div class="mockup-pillar-lines"><div class="mockup-line"></div><div class="mockup-line"></div><div class="mockup-line"></div></div>
+              </div>
+            </div>
+            <div class="mockup-pillars-bottom">
+              <div class="mockup-pillar">
+                <div class="mockup-pillar-num">4</div>
+                <div class="mockup-pillar-name">Conversations</div>
+                <div class="mockup-pillar-lines"><div class="mockup-line"></div><div class="mockup-line"></div><div class="mockup-line"></div></div>
+              </div>
+              <div class="mockup-pillar">
+                <div class="mockup-pillar-num">5</div>
+                <div class="mockup-pillar-name">Expertise</div>
+                <div class="mockup-pillar-lines"><div class="mockup-line"></div><div class="mockup-line"></div><div class="mockup-line"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ BELOW THE FOLD ═══════════════ -->
+  <section class="below-fold">
+    <div class="below-inner">
+
+      <!-- Who this is for -->
+      <div class="who-section">
+        <div class="section-eyebrow">Who This Is For</div>
+        <h2 class="section-heading">This cheat sheet was built for you if...</h2>
+        <div class="who-grid">
+          <div class="who-card">
+            <div class="who-card-title">Your page is quiet</div>
+            <div class="who-card-text">You haven't posted in weeks (or months), and every time you think about it, you don't know where to start.</div>
+          </div>
+          <div class="who-card">
+            <div class="who-card-title">You're stuck on what to post</div>
+            <div class="who-card-text">You know you should be on social media, but coming up with ideas feels like pulling teeth.</div>
+          </div>
+          <div class="who-card">
+            <div class="who-card-title">Your content isn't working</div>
+            <div class="who-card-text">You post here and there — holiday graphics, company announcements — but nothing gets engagement or leads.</div>
+          </div>
+          <div class="who-card">
+            <div class="who-card-title">You don't want to be on camera</div>
+            <div class="who-card-text">Every social media guru says you need to do video and show your face. These 25 ideas don't require either.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credibility -->
+      <div class="credibility">
+        <div class="cred-stats">
+          <div class="cred-stat">
+            <div class="cred-stat-number">10,000+</div>
+            <div class="cred-stat-label">Posts Created</div>
+          </div>
+          <div class="cred-stat">
+            <div class="cred-stat-number">95%</div>
+            <div class="cred-stat-label">Organic</div>
+          </div>
+        </div>
+        <div class="cred-text">
+          This cheat sheet comes from the same team that grew a healthcare client's company page from <strong>142 to 7,834 followers</strong> — with <strong>95% of that growth from organic content alone</strong>. We've created over 10,000 posts for company pages across healthcare, IT, real estate, and more.
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <div class="section-eyebrow">Questions</div>
+        <h2 class="section-heading">Before you download</h2>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Is this really free?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. No credit card, no trial, no catch. We built this because we know what it's like to stare at a blank page and have no idea what to post. If it helps you, great. If you ever want a team to take it off your plate entirely, we're here.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Will you email me a bunch of stuff?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You'll get the cheat sheet, a couple of follow-up emails with extra tips and a real client case study, and that's it. No daily newsletters, no spam. Unsubscribe anytime with one click.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Is this only for healthcare companies?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>The examples are healthcare-flavored, but the 5 content pillars and posting strategy work for any company page — especially professional service businesses. We use this same framework with clients across IT, real estate, commercial cleaning, and more. If you have a company page that needs content, this applies to you.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="bottom-cta">
+        <div class="bottom-cta-title">Get the cheat sheet</div>
+        <p class="bottom-cta-sub">25 post ideas. 5 content pillars. One page. Free.</p>
+        <div class="capture-form" id="capture-form-bottom">
+          <input type="email" class="capture-input" id="email-input-bottom" placeholder="your@email.com" autocomplete="email">
+          <button class="capture-btn" onclick="submitFormBottom()">Send Me the Cheat Sheet</button>
+        </div>
+        <div class="capture-error" id="capture-error-bottom" style="display:none;">Please enter a valid email address.</div>
+        <p class="capture-fine-print">Free PDF + web version. No spam, unsubscribe anytime.</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // ── FAQ TOGGLE ──
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      // Open clicked (if wasn't already open)
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Kit (ConvertKit) API config
+    const KIT_API_KEY = '4-O-bDiACWfWuCYlwJklWA';
+    const FORM_ID = '9231926';
+
+    // ── FORM SUBMIT (top) ──
+    function submitForm() {
+      const input = document.getElementById('email-input');
+      const error = document.getElementById('capture-error');
+      const email = input.value.trim();
+
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        error.style.display = 'block';
+        input.style.borderColor = '#DC5A3B';
+        return;
+      }
+
+      error.style.display = 'none';
+
+      fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          api_key: KIT_API_KEY,
+          email: email
+        })
+      }).catch(err => console.warn('Kit API error:', err));
+
+      // Show success
+      document.getElementById('form-area').querySelector('.capture-form').style.display = 'none';
+      document.getElementById('form-area').querySelector('.capture-fine-print').style.display = 'none';
+      document.getElementById('capture-success').style.display = 'block';
+
+      // Redirect to cheat sheet after 2 seconds
+      setTimeout(() => {
+        window.location.href = 'stickypost-cheat-sheet.html';
+      }, 2000);
+    }
+
+    // ── FORM SUBMIT (bottom) ──
+    function submitFormBottom() {
+      const input = document.getElementById('email-input-bottom');
+      const error = document.getElementById('capture-error-bottom');
+      const email = input.value.trim();
+
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        error.style.display = 'block';
+        input.style.borderColor = '#DC5A3B';
+        return;
+      }
+
+      error.style.display = 'none';
+
+      // Kit (ConvertKit) API integration
+      fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          api_key: KIT_API_KEY,
+          email: email
+        })
+      }).catch(err => console.warn('Kit API error:', err));
+
+      // Scroll to top and show success
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('form-area').querySelector('.capture-form').style.display = 'none';
+        document.getElementById('form-area').querySelector('.capture-fine-print').style.display = 'none';
+        document.getElementById('capture-success').style.display = 'block';
+        setTimeout(() => {
+          window.location.href = 'stickypost-cheat-sheet.html';
+        }, 2000);
+      }, 500);
+    }
+
+    // Allow Enter key
+    document.getElementById('email-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') submitForm();
+    });
+    document.getElementById('email-input-bottom').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') submitFormBottom();
+    });
+  </script>
+
+</body>
+</html>

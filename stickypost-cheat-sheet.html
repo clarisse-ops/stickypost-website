@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Company Page Cheat Sheet | StickyPost.Social</title>
+  <meta name="description" content="25 post ideas for company pages. No face on camera required. Built by the team behind 10,000+ organic posts.">
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --charcoal: #272626;
+      --cream: #FAF7F2;
+      --terracotta: #DC5A3B;
+      --teal: #30A5A5;
+      --pale-teal: #B2E8E3;
+      --white: #FFFFFF;
+      --border: #E8E2D9;
+      --text-muted: #6B6563;
+    }
+
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #E8E2D9;
+      color: var(--charcoal);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── PAGE CONTAINER ── */
+    .page {
+      width: 950px;
+      margin: 40px auto;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    /* ── TOP ACCENT BAR ── */
+    .accent-bar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--terracotta) 0%, var(--terracotta) 50%, var(--teal) 50%, var(--teal) 100%);
+    }
+
+    /* ── HEADER (cover page) ── */
+    .header {
+      padding: 48px 56px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-left { flex: 1; max-width: 520px; }
+
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+    }
+
+    .logo .post { color: var(--terracotta); }
+    .logo .social { color: var(--teal); font-weight: 400; }
+
+    .header-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: var(--charcoal);
+      letter-spacing: 0.5px;
+    }
+
+    .header-title em {
+      font-style: normal;
+      color: var(--terracotta);
+      display: block;
+      margin-top: 4px;
+    }
+
+    .header-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    .header-badge {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 18px 22px;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 180px;
+      margin-top: 8px;
+    }
+
+    .badge-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--pale-teal);
+      margin-bottom: 4px;
+    }
+
+    .badge-edition {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .badge-note {
+      font-size: 11px;
+      color: var(--pale-teal);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ── DIVIDER ── */
+    .divider { margin: 0 56px; height: 1px; background: var(--border); }
+
+    /* ── SECTION INTRO ── */
+    .section-intro { padding: 32px 56px 12px; }
+
+    .section-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      letter-spacing: 0.5px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ── PILLAR OVERVIEW (cover page) ── */
+    .pillar-overview {
+      padding: 28px 56px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .pillar-overview-last-row {
+      padding: 0 140px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .po-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .po-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--terracotta);
+      line-height: 1;
+      min-width: 30px;
+    }
+
+    .po-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .po-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── PILLAR DETAIL PAGES ── */
+    .pillar-detail {
+      padding: 32px 56px 48px;
+    }
+
+    .pillar-detail-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .pd-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--terracotta);
+      line-height: 1;
+    }
+
+    .pd-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--charcoal);
+    }
+
+    .pd-tag {
+      font-size: 12px;
+      color: var(--teal);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .pd-description {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    .idea-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .idea-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .idea-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--teal);
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .idea-content {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+
+    .idea-content strong {
+      font-weight: 600;
+    }
+
+    /* ── TIPS PAGE ── */
+    .tips-grid {
+      padding: 24px 56px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .tip-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .tip-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .tip-icon.terracotta { background: rgba(220,90,59,0.1); color: var(--terracotta); }
+    .tip-icon.teal { background: rgba(48,165,165,0.1); color: var(--teal); }
+
+    .tip-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .tip-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .tip-body strong { color: var(--charcoal); font-weight: 600; }
+
+    /* ── QUICK START ── */
+    .quickstart {
+      margin: 8px 56px 28px;
+      background: var(--charcoal);
+      border-radius: 12px;
+      padding: 32px 36px;
+    }
+
+    .quickstart-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .quickstart-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .quickstart-steps {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+    }
+
+    .quickstart-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--pale-teal);
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      margin: 0 56px 36px;
+      padding: 32px 36px;
+      background: var(--white);
+      border: 2px solid var(--terracotta);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .cta-eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--teal); margin-bottom: 8px; }
+    .cta-headline { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 600; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px; }
+    .cta-body { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.5; }
+
+    .cta-stats { display: flex; justify-content: center; gap: 32px; margin: 16px 0; }
+    .cta-stat { text-align: center; }
+    .cta-stat-number { font-family: 'Oswald', sans-serif; font-size: 26px; font-weight: 700; color: var(--terracotta); line-height: 1; }
+    .cta-stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 4px; }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--terracotta);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .cta-button:hover { background: #C44E31; }
+    .cta-url { font-size: 11px; color: var(--text-muted); margin-top: 10px; }
+
+    /* ── PAGE FOOTER ── */
+    .page-footer {
+      background: var(--charcoal);
+      padding: 14px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--white);
+    }
+
+    .footer-logo .post { color: var(--terracotta); }
+    .footer-logo .social { color: var(--teal); font-weight: 400; }
+    .footer-page { font-size: 11px; color: var(--pale-teal); letter-spacing: 1px; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; page-break-after: always; width: 100%; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page { width: 100%; margin: 20px 0; }
+      .header, .section-intro, .pillar-detail, .divider { padding-left: 24px; padding-right: 24px; }
+      .header { flex-direction: column; gap: 20px; }
+      .pillar-overview, .pillar-overview-last-row { padding-left: 24px; padding-right: 24px; }
+      .pillar-overview { grid-template-columns: 1fr; }
+      .pillar-overview-last-row { grid-template-columns: 1fr; padding-left: 24px; padding-right: 24px; }
+      .tips-grid { grid-template-columns: 1fr; padding-left: 24px; padding-right: 24px; }
+      .quickstart { margin-left: 24px; margin-right: 24px; }
+      .quickstart-steps { grid-template-columns: 1fr; }
+      .cta-section { margin-left: 24px; margin-right: 24px; }
+      .cta-stats { flex-direction: column; gap: 12px; }
+      .page-footer { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ PAGE 1: HEADER + PILLARS 1 & 2 ═══════════ -->
+  <div class="page">
+    <div class="accent-bar"></div>
+
+    <div class="header">
+      <div class="header-left">
+        <div class="logo">
+          <span>STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span>
+        </div>
+        <h1 class="header-title">
+          The Company Page Cheat Sheet
+          <em>What to Post When You Have No Idea What to Post</em>
+        </h1>
+        <p class="header-subtitle">
+          25 ready-to-use post ideas across 5 content pillars. Built for company pages. No face on camera required.
+        </p>
+      </div>
+      <div class="header-badge">
+        <div class="badge-label">Built For</div>
+        <div class="badge-edition">Professional<br>Service Businesses</div>
+        <div class="badge-note">No face on camera required.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="pillar-detail">
+      <div class="pillar-detail-header">
+        <div class="pd-number">1</div>
+        <div>
+          <div class="pd-name">Educate Your Audience</div>
+          <div class="pd-tag">Build authority</div>
+        </div>
+      </div>
+      <p class="pd-description">Teach something your audience needs to know. When your page is where people get reliable answers, they come back — and they bring others.</p>
+      <div class="idea-list">
+        <div class="idea-item">
+          <div class="idea-number">1</div>
+          <div class="idea-content"><strong>Post a myth vs. fact</strong> about a common misconception in your specialty</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">2</div>
+          <div class="idea-content"><strong>Explain one thing</strong> patients always ask about at their first visit</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">3</div>
+          <div class="idea-content"><strong>Share an industry stat</strong> (burnout rates, patient trends) and add your professional take</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">4</div>
+          <div class="idea-content"><strong>Break down a process</strong> patients find confusing: referrals, insurance verification, what to expect</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">5</div>
+          <div class="idea-content"><strong>Answer a question</strong> your front desk gets asked every single day</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="pillar-detail">
+      <div class="pillar-detail-header">
+        <div class="pd-number">2</div>
+        <div>
+          <div class="pd-name">Show the Human Side</div>
+          <div class="pd-tag">No face on camera required</div>
+        </div>
+      </div>
+      <p class="pd-description">People connect with people, not logos. These ideas show the real humans behind your company — without anyone needing to get on camera.</p>
+      <div class="idea-list">
+        <div class="idea-item">
+          <div class="idea-number">6</div>
+          <div class="idea-content"><strong>Snap a photo</strong> of your workspace, break room, or lobby and caption it "A day at [your practice]"</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">7</div>
+          <div class="idea-content"><strong>Celebrate something:</strong> a team member's certification, a work anniversary, a practice milestone</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">8</div>
+          <div class="idea-content"><strong>Run a "day in the life" series</strong> using photos and captions only</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">9</div>
+          <div class="idea-content"><strong>Share what your team</strong> is reading, attending, or training on this month</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">10</div>
+          <div class="idea-content"><strong>Post a behind-the-scenes look</strong> at how your office prepares for the day</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-logo"><span>STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span></div>
+      <div class="footer-page">PAGE 1 OF 4</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PAGE 3: PILLARS 3 & 4 ═══════════ -->
+  <div class="page">
+    <div class="accent-bar"></div>
+
+    <div class="pillar-detail">
+      <div class="pillar-detail-header">
+        <div class="pd-number">3</div>
+        <div>
+          <div class="pd-name">Build Trust With Proof</div>
+          <div class="pd-tag">Let results speak</div>
+        </div>
+      </div>
+      <p class="pd-description">Social proof isn't optional — it's how strangers decide whether to trust you. Show real numbers, real reviews, and real growth.</p>
+      <div class="idea-list">
+        <div class="idea-item">
+          <div class="idea-number">11</div>
+          <div class="idea-content"><strong>Share a patient outcome</strong> with specific numbers (anonymized): "87% of our patients report improvement within 6 weeks"</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">12</div>
+          <div class="idea-content"><strong>Screenshot a Google review</strong> and caption it with the backstory</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">13</div>
+          <div class="idea-content"><strong>Explain what you do differently</strong> from other practices in your area</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">14</div>
+          <div class="idea-content"><strong>Show your growth:</strong> "When we opened, we had 12 patients. Here's where we are now."</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">15</div>
+          <div class="idea-content"><strong>Highlight a specific process</strong> or standard your practice follows that others skip</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="pillar-detail">
+      <div class="pillar-detail-header">
+        <div class="pd-number">4</div>
+        <div>
+          <div class="pd-name">Start Real Conversations</div>
+          <div class="pd-tag">Engagement that compounds</div>
+        </div>
+      </div>
+      <p class="pd-description">The algorithm rewards pages that generate interaction. Polls, questions, and opinion posts turn passive followers into active participants.</p>
+      <div class="idea-list">
+        <div class="idea-item">
+          <div class="idea-number">16</div>
+          <div class="idea-content"><strong>Run a LinkedIn poll:</strong> "What's the biggest admin burden in your practice right now?"</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">17</div>
+          <div class="idea-content"><strong>Post a "this or that" question:</strong> "Telehealth vs. in-person — which do your patients prefer?"</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">18</div>
+          <div class="idea-content"><strong>Ask:</strong> "What's one thing you wish healthcare did better?" and respond to every comment</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">19</div>
+          <div class="idea-content"><strong>Share an opinion</strong> most people in your field agree with but nobody says out loud</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">20</div>
+          <div class="idea-content"><strong>Post a question for other providers:</strong> "What's one tool your practice can't run without?"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-logo"><span>STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span></div>
+      <div class="footer-page">PAGE 2 OF 4</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PAGE 4: PILLAR 5 + TIPS ═══════════ -->
+  <div class="page">
+    <div class="accent-bar"></div>
+
+    <div class="pillar-detail">
+      <div class="pillar-detail-header">
+        <div class="pd-number">5</div>
+        <div>
+          <div class="pd-name">Show You're the Expert</div>
+          <div class="pd-tag">Own your lane</div>
+        </div>
+      </div>
+      <p class="pd-description">When you share your perspective on what's happening in your industry, you stop being "another practice" and start being the one people listen to.</p>
+      <div class="idea-list">
+        <div class="idea-item">
+          <div class="idea-number">21</div>
+          <div class="idea-content"><strong>Break down a healthcare trend</strong> (AI in diagnostics, staffing shortages) and what it means for practices like yours</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">22</div>
+          <div class="idea-content"><strong>Post:</strong> "5 things I wish patients knew about [your specialty]"</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">23</div>
+          <div class="idea-content"><strong>Share a lesson</strong> that changed how you run your practice</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">24</div>
+          <div class="idea-content"><strong>Weigh in on industry news:</strong> add your professional perspective, not just a reshare</div>
+        </div>
+        <div class="idea-item">
+          <div class="idea-number">25</div>
+          <div class="idea-content"><strong>Post a "things we stopped doing</strong> at our practice (and why)" reflection</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-intro">
+      <div class="section-eyebrow">Make It Work</div>
+      <div class="section-title">The rules behind the posts</div>
+      <p class="section-subtitle">Post ideas are only half the picture. These four rules separate pages that grow from pages that stall.</p>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon terracotta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <div class="tip-title">The 80/20 Rule</div>
+        <div class="tip-body"><strong>80% value and conversation. 20% promotion.</strong> If every post is a sales pitch, an announcement, or a holiday graphic, nobody's listening.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon teal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+        </div>
+        <div class="tip-title">How Often to Post</div>
+        <div class="tip-body"><strong>3-4 times per week, minimum.</strong> Consistency matters more than perfection. The algorithm rewards pages that show up regularly.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon terracotta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="tip-title">Stop Posting and Ghosting</div>
+        <div class="tip-body"><strong>This is the #1 mistake we see.</strong> Respond to every comment. Reply to every message. That's where the real growth happens.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon teal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+        </div>
+        <div class="tip-title">Where to Focus First</div>
+        <div class="tip-body"><strong>LinkedIn for professionals. Instagram for patient trust.</strong> Don't try to be everywhere. Own one platform first, then expand.</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="footer-logo"><span>STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span></div>
+      <div class="footer-page">PAGE 3 OF 4</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PAGE 5: QUICK START + CTA ═══════════ -->
+  <div class="page">
+    <div class="accent-bar"></div>
+
+    <div class="section-intro">
+      <div class="section-eyebrow">Your Action Plan</div>
+      <div class="section-title">Go from "we should post something" to actually doing it</div>
+    </div>
+
+    <div class="quickstart">
+      <div class="quickstart-eyebrow">Your 2-Week Quick Start</div>
+      <div class="quickstart-title">Start this week. Not next month. This week.</div>
+      <ol class="quickstart-steps">
+        <li>
+          <span class="step-number">1</span>
+          <span>Pick <strong style="color:#fff;">5 post ideas</strong> from this cheat sheet. Don't overthink it. Just pick the ones that feel easiest to write right now.</span>
+        </li>
+        <li>
+          <span class="step-number">2</span>
+          <span><strong style="color:#fff;">Schedule them</strong> across the next 10 business days. One every other day. Use the platform's built-in scheduler.</span>
+        </li>
+        <li>
+          <span class="step-number">3</span>
+          <span><strong style="color:#fff;">Respond to every comment</strong> and message within 24 hours. This is where the algorithm starts working for you.</span>
+        </li>
+        <li>
+          <span class="step-number">4</span>
+          <span>After 2 weeks, <strong style="color:#fff;">check what got the most engagement.</strong> Do more of that. Repeat the cycle with 5 new ideas.</span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="cta-section">
+      <div class="cta-eyebrow">When You're Ready for a Team</div>
+      <div class="cta-headline">We'll handle your company page so you can run your practice</div>
+      <p class="cta-body">
+        Full-team approach: strategist, designer, video editor, and project manager.
+        We study your practice, your audience, and your voice before we create anything.
+      </p>
+      <div class="cta-stats">
+        <div class="cta-stat">
+          <div class="cta-stat-number">10,000+</div>
+          <div class="cta-stat-label">Posts Created</div>
+        </div>
+        <div class="cta-stat">
+          <div class="cta-stat-number">95%</div>
+          <div class="cta-stat-label">Organic Growth</div>
+        </div>
+        <div class="cta-stat">
+          <div class="cta-stat-number">142 → 7,834</div>
+          <div class="cta-stat-label">Real Client Results</div>
+        </div>
+      </div>
+      <a href="https://calendly.com/essiralc/strategy-audit-session" class="cta-button" target="_blank" rel="noopener">
+        Book a Free Strategy Audit
+      </a>
+      <div class="cta-url">stickypost.social</div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div class="page-footer">
+      <div class="footer-logo"><span>STiCKY</span><span class="post">POST</span><span class="social">.SOCiAL</span></div>
+      <div class="footer-page">PAGE 4 OF 4</div>
+    </div>
+  </div>
+
+</body>
+</html>
